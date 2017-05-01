@@ -24,6 +24,7 @@
 		4C7A27521EB721C30074C220 /* JobBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27511EB721C30074C220 /* JobBehavior.swift */; };
 		4C7A27551EB7226F0074C220 /* Warrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27541EB7226F0074C220 /* Warrior.swift */; };
 		4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27561EB72A180074C220 /* BattleViewController.swift */; };
+		4C7A275C1EB72C390074C220 /* ARItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A275B1EB72C390074C220 /* ARItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		4C7A27511EB721C30074C220 /* JobBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobBehavior.swift; sourceTree = "<group>"; };
 		4C7A27541EB7226F0074C220 /* Warrior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Warrior.swift; sourceTree = "<group>"; };
 		4C7A27561EB72A180074C220 /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		4C7A275B1EB72C390074C220 /* ARItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				4C7A274A1EB7044F0074C220 /* Player Character */,
 				4C7A27411EB6E4160074C220 /* EntityBehavior.swift */,
+				4C7A275B1EB72C390074C220 /* ARItem.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				4C7A27461EB6FBE60074C220 /* Character.swift in Sources */,
 				4C7A27191EB6E3A10074C220 /* ARRPG.xcdatamodeld in Sources */,
 				4C7A27501EB7211A0074C220 /* MonsterBehavior.swift in Sources */,
+				4C7A275C1EB72C390074C220 /* ARItem.swift in Sources */,
 				4C7A27481EB6FC900074C220 /* Job.swift in Sources */,
 				4C7A27421EB6E4160074C220 /* EntityBehavior.swift in Sources */,
 			);

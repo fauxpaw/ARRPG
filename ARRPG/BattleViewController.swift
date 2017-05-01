@@ -13,9 +13,13 @@ import AVFoundation
 
 class BattleViewController: UIViewController {
 
+    let player = Character(hp: 100, mp: 10)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,5 +28,9 @@ class BattleViewController: UIViewController {
     
     }
  
+    @IBAction func attackButtonPressed(_ sender: Any) {
+        
+         player.attack()
+    }
 
 }

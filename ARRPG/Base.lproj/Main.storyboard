@@ -32,15 +32,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="U1c-wY-tWa" kind="show" identifier="toBattle" id="hRE-l5-48Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
-        <!--View Controller-->
+        <!--Battle View Controller-->
         <scene sceneID="Buf-U5-POl">
             <objects>
-                <viewController id="U1c-wY-tWa" sceneMemberID="viewController">
+                <viewController id="U1c-wY-tWa" customClass="BattleViewController" customModule="ARRPG" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XFd-uQ-WCf"/>
                         <viewControllerLayoutGuide type="bottom" id="3nf-ul-5c8"/>
@@ -48,12 +51,22 @@
                     <view key="view" contentMode="scaleToFill" id="iha-bD-6Bv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wq-sU-HKf">
+                                <rect key="frame" x="143" y="318" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Attack"/>
+                                <connections>
+                                    <action selector="attackButtonPressed:" destination="U1c-wY-tWa" eventType="touchUpInside" id="8J3-i8-Bff"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Pi-BN-G0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="36"/>
+            <point key="canvasLocation" x="893.60000000000002" y="35.532233883058474"/>
         </scene>
     </scenes>
 </document>

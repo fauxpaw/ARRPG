@@ -10,13 +10,9 @@ import UIKit
 
 class TestViewController: UIViewController {
 
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let player = Character(hp: 100, mp: 10)
-        player.attack()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +23,8 @@ class TestViewController: UIViewController {
     
     @IBAction func fightButtonPressed(_ sender: Any) {
         
-        
+        performSegue(withIdentifier: "toBattle", sender: sender)
+    
     }
     
     
