@@ -38,6 +38,7 @@ class BattleViewController: UIViewController {
         //scene.rootNode.addChildNode((target?.itemNode)!)
         scene.rootNode.addChildNode(targetNode)
         targetNode.position.y += 1
+        self.setupMob()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +48,9 @@ class BattleViewController: UIViewController {
     }
     
     func setupMob() {
-        let mob = Monster(target: self.player)
+        //let mob = Monster(target: self.player)
+        let monster = Monster(target: self.player)
+        self.mob = monster
         player.target = mob
     }
     
@@ -109,10 +112,7 @@ class BattleViewController: UIViewController {
     @IBAction func attackButtonPressed(_ sender: Any) {
         
         //roll to see who attacks first?
-        
-        
-        
-        
+        self.mob?.attack()
         
     }
 

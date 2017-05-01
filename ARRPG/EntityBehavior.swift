@@ -10,6 +10,11 @@ import Foundation
 
 protocol EntityBehavior {
     
+    var currentHP : Int { get set}
+    var maxHP: Int { get set}
+    var currentMP : Int { get set}
+    var maxMP : Int { get set}
+    
     func attack()
     func takeDmg(amount: Int)
     func expire()

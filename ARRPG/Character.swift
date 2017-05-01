@@ -39,7 +39,10 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     
     func takeDmg(amount: Int) {
         print("Ow, you took \(amount) dmg")
-
+        self.currentHP -= amount
+        if self.currentHP <= 0 {
+            self.expire()
+        }
     }
     
     func expire() {
