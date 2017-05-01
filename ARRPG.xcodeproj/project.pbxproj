@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C27356F1EB7985E006B4642 /* HealthBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C27356E1EB7985E006B4642 /* HealthBar.swift */; };
+		4C2735711EB7A338006B4642 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2735701EB7A338006B4642 /* MainScene.swift */; };
+		4C2735741EB7ACFF006B4642 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2735731EB7ACFF006B4642 /* LocationController.swift */; };
 		4C7A27111EB6E3A10074C220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27101EB6E3A10074C220 /* AppDelegate.swift */; };
 		4C7A27131EB6E3A10074C220 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27121EB6E3A10074C220 /* TestViewController.swift */; };
 		4C7A27161EB6E3A10074C220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A27141EB6E3A10074C220 /* Main.storyboard */; };
@@ -27,7 +29,6 @@
 		4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27561EB72A180074C220 /* BattleViewController.swift */; };
 		4C7A275C1EB72C390074C220 /* ARItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A275B1EB72C390074C220 /* ARItem.swift */; };
 		4C7A275E1EB762140074C220 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A275D1EB762140074C220 /* Entity.swift */; };
-		4C7A27601EB7799A0074C220 /* CharacterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A275F1EB7799A0074C220 /* CharacterCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		4C27356E1EB7985E006B4642 /* HealthBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthBar.swift; sourceTree = "<group>"; };
+		4C2735701EB7A338006B4642 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
+		4C2735731EB7ACFF006B4642 /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		4C7A270D1EB6E3A10074C220 /* ARRPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARRPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7A27101EB6E3A10074C220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C7A27121EB6E3A10074C220 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +77,6 @@
 		4C7A27561EB72A180074C220 /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		4C7A275B1EB72C390074C220 /* ARItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARItem.swift; sourceTree = "<group>"; };
 		4C7A275D1EB762140074C220 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
-		4C7A275F1EB7799A0074C220 /* CharacterCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C2735721EB7A33C006B4642 /* Battle Scene */ = {
+			isa = PBXGroup;
+			children = (
+				4C2735701EB7A338006B4642 /* MainScene.swift */,
+			);
+			name = "Battle Scene";
+			sourceTree = "<group>";
+		};
 		4C7A27041EB6E3A10074C220 = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +217,7 @@
 			children = (
 				4C7A27121EB6E3A10074C220 /* TestViewController.swift */,
 				4C7A27561EB72A180074C220 /* BattleViewController.swift */,
+				4C2735731EB7ACFF006B4642 /* LocationController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -226,7 +237,7 @@
 			children = (
 				4C7A27141EB6E3A10074C220 /* Main.storyboard */,
 				4C7A271C1EB6E3A10074C220 /* LaunchScreen.storyboard */,
-				4C7A275F1EB7799A0074C220 /* CharacterCard.swift */,
+				4C2735721EB7A33C006B4642 /* Battle Scene */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -368,7 +379,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C7A27601EB7799A0074C220 /* CharacterCard.swift in Sources */,
 				4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */,
 				4C7A274D1EB7209D0074C220 /* Monster.swift in Sources */,
 				4C7A275E1EB762140074C220 /* Entity.swift in Sources */,
@@ -382,7 +392,9 @@
 				4C7A27191EB6E3A10074C220 /* ARRPG.xcdatamodeld in Sources */,
 				4C7A27501EB7211A0074C220 /* MonsterBehavior.swift in Sources */,
 				4C7A275C1EB72C390074C220 /* ARItem.swift in Sources */,
+				4C2735711EB7A338006B4642 /* MainScene.swift in Sources */,
 				4C7A27481EB6FC900074C220 /* Job.swift in Sources */,
+				4C2735741EB7ACFF006B4642 /* LocationController.swift in Sources */,
 				4C7A27421EB6E4160074C220 /* EntityBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
