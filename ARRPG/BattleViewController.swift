@@ -13,21 +13,45 @@ import AVFoundation
 
 class BattleViewController: UIViewController {
 
-    let player = Character(hp: 100, mp: 10)
+    var player = Character(hp: 100, mp: 10)
+    var mob : Monster?
     var cameraSession: AVCaptureSession?
     var cameraLayer: AVCaptureVideoPreviewLayer?
-    
+    //var target: ARItem?
+    let scene = SCNScene()
+    let cameraNode = SCNNode()
+    let targetNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
 
+    @IBOutlet weak var sceneView: SCNView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadCamera()
         self.cameraSession?.startRunning()
+        sceneView.scene = scene
+        cameraNode.camera = SCNCamera()
+        cameraNode.position = SCNVector3(0, 0, 10)
+        scene.rootNode.addChildNode(cameraNode)
+        //targetNode.name = "Enemy"
+        //self.target?.itemNode = targetNode
+        //scene.rootNode.addChildNode((target?.itemNode)!)
+        scene.rootNode.addChildNode(targetNode)
+        targetNode.position.y += 1
+        self.setupMob()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     
     
+    }
+    
+    func setupMob() {
+        //let mob = Monster(target: self.player)
+        let monster = Monster(target: self.player)
+        self.mob = monster
+        player.target = mob
     }
     
     func createCaptureSession() -> (session: AVCaptureSession?, error: NSError?) {
@@ -87,7 +111,9 @@ class BattleViewController: UIViewController {
  
     @IBAction func attackButtonPressed(_ sender: Any) {
         
-         player.attack()
+        //roll to see who attacks first?
+        self.mob?.attack()
+        
     }
 
 }

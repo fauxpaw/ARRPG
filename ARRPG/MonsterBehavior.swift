@@ -10,7 +10,6 @@ import Foundation
 
 protocol MonsterBehavior {
     
-
 }
 
 extension MonsterBehavior {
