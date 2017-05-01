@@ -10,6 +10,7 @@ import Foundation
 
 class Character:Entity, EntityBehavior, CharacterBehavior {
     
+    var exp: Int = 0
     var maxHP: Int
     var currentHP: Int
     var maxMP: Int
@@ -25,6 +26,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         self.currentHP = hp
         self.maxMP = mp
         self.currentMP = mp
+        
     }
     
     func attack() {

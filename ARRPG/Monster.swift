@@ -20,6 +20,7 @@ class Monster: Entity, EntityBehavior, MonsterBehavior {
     var attackDMG = 5
     var target : Character
     
+    
     init(target: Character) {
         self.target = target
     }

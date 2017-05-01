@@ -9,7 +9,7 @@
 import Foundation
 
 class Entity {
-    
-    
+
+    var Lvl = 1
     
 }

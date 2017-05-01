@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import AVFoundation
+import SpriteKit
 //import CoreLocation
 
 class BattleViewController: UIViewController {
@@ -22,37 +23,48 @@ class BattleViewController: UIViewController {
     let cameraNode = SCNNode()
     let targetNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
 
+    @IBOutlet weak var attackButton: UIButton!
+    
+    @IBOutlet weak var magicButton: UIButton!
+    
+    @IBOutlet weak var itemButton: UIButton!
+    
+    @IBOutlet weak var runButton: UIButton!
+    
     @IBOutlet weak var sceneView: SCNView!
     
     @IBOutlet weak var enemyHPLabel: UILabel!
     
     @IBOutlet weak var playerHPLabel: UILabel!
     
+    @IBOutlet weak var playerLvlLabel: UILabel!
     
+    @IBOutlet weak var playerNameLabel: UILabel!
     
+    @IBOutlet weak var playerMPLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //targetNode.name = "Enemy"
+        //self.target?.itemNode = targetNode
+        //scene.rootNode.addChildNode((target?.itemNode)!)
+        self.setupScene()
+        self.setupMob()
+        self.styleUI()
+        self.updateUI()
+    }
+    
+    func setupScene() {
         self.loadCamera()
         self.cameraSession?.startRunning()
         sceneView.scene = scene
         cameraNode.camera = SCNCamera()
         cameraNode.position = SCNVector3(0, 0, 10)
         scene.rootNode.addChildNode(cameraNode)
-        //targetNode.name = "Enemy"
-        //self.target?.itemNode = targetNode
-        //scene.rootNode.addChildNode((target?.itemNode)!)
         scene.rootNode.addChildNode(targetNode)
         targetNode.position.y += 1
-        self.setupMob()
-        self.updateUI()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    
-    
     }
     
     func setupMob() {
@@ -60,6 +72,22 @@ class BattleViewController: UIViewController {
         let monster = Monster(target: self.player)
         self.mob = monster
         player.target = mob
+    }
+    
+    func styleUI(){
+        playerNameLabel.layer.borderWidth = 4
+        playerNameLabel.layer.borderColor = UIColor.white.cgColor
+        let labels = [playerNameLabel, playerLvlLabel, playerHPLabel, playerMPLabel]
+        let buttons = [runButton, attackButton, magicButton, itemButton]
+        for label in labels {
+            label?.layer.backgroundColor = UIColor(red: 0/255, green: 159/255, blue: 184/255, alpha: 0.5).cgColor
+        }
+        
+        for button in buttons {
+            button?.layer.cornerRadius = 25
+            button?.layer.backgroundColor = UIColor(red: 0/255, green: 159/255, blue: 184/255, alpha: 0.5).cgColor
+        }
+        
     }
     
     func updateUI() {
@@ -72,8 +100,11 @@ class BattleViewController: UIViewController {
                 NSFontAttributeName : UIFont.boldSystemFont(ofSize: 16)
                 ] as [String : Any]
             
+            playerNameLabel.attributedText = NSMutableAttributedString(string: "SweetAvatarName", attributes: strokeTextAttributes)
+            playerLvlLabel.attributedText = NSMutableAttributedString(string: "Lvl: \(player.Lvl)", attributes: strokeTextAttributes)
             enemyHPLabel.attributedText = NSMutableAttributedString(string: "Enemy HP: \(mons.currentHP)", attributes: strokeTextAttributes)
-            playerHPLabel.attributedText = NSMutableAttributedString(string: "Player HP: \(player.currentHP)", attributes: strokeTextAttributes)
+            playerMPLabel.attributedText = NSMutableAttributedString(string: "MP: \(player.currentMP)", attributes: strokeTextAttributes)
+            playerHPLabel.attributedText = NSMutableAttributedString(string: "HP: \(player.currentHP)", attributes: strokeTextAttributes)
         }
     }
     
@@ -136,12 +167,32 @@ class BattleViewController: UIViewController {
         //add roll to see who attacks first?
         guard let monster = mob else { return }
         if monster.currentHP > 0 {
-            player.attack()
+            self.player.attack()
             self.updateUI()
-            self.mob?.attack()
+            monster.attack()
             self.updateUI()
         } else {
             print("its dead!")
         }
     }
+
+    @IBAction func magicButtonSelected(_ sender: Any) {
+    
+        print("Casting magic")
+    
+    }
+    
+    
+    @IBAction func itemButtonSelected(_ sender: Any) {
+        
+        print("Which item would you like to use?")
+        
+    }
+    
+    @IBAction func runButtonSelected(_ sender: Any) {
+        
+        print("Trying to run away!")
+        
+    }
+    
 }
