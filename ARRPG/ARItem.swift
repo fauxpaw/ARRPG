@@ -15,6 +15,6 @@ struct ARItem {
     
     let itemDescription : String
     let location : CLLocation
-    var itemNode: SCNNode
+    var itemNode: SCNNode?
     
 }

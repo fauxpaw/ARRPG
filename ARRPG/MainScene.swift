@@ -12,11 +12,15 @@ import SceneKit
 
 class MainScene: SCNScene {
     
+    let locController = LocationController()
     let cameraNode = SCNNode()
     let targetNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
     
     override init() {
         super.init()
+        //targetNode.name = "Enemy"
+        //self.target?.itemNode = targetNode
+        //scene.rootNode.addChildNode((target?.itemNode)!)
         self.cameraNode.camera = SCNCamera()
         self.cameraNode.position = SCNVector3(0, 0, 10)
         self.rootNode.addChildNode(cameraNode)
@@ -28,4 +32,6 @@ class MainScene: SCNScene {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
 }

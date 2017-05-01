@@ -8,16 +8,18 @@
 
 import UIKit
 import SceneKit
+import CoreLocation
 import AVFoundation
 //import CoreLocation
 
 class BattleViewController: UIViewController {
 
+    var locationController = LocationController()
     var player = Character(hp: 100, mp: 10)
     var mob : Monster?
     var cameraSession: AVCaptureSession?
     var cameraLayer: AVCaptureVideoPreviewLayer?
-    //var target: ARItem?
+    var target: ARItem?
     
     @IBOutlet weak var attackButton: UIButton!
     @IBOutlet weak var magicButton: UIButton!
@@ -32,9 +34,8 @@ class BattleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //targetNode.name = "Enemy"
-        //self.target?.itemNode = targetNode
-        //scene.rootNode.addChildNode((target?.itemNode)!)
+        self.target = ARItem(itemDescription: "Panda", location: CLLocation(latitude: 47.5184, longitude: -122.3902), itemNode: nil)
+        
         self.setupScene()
         self.setupMob()
         self.styleUI()
@@ -45,6 +46,8 @@ class BattleViewController: UIViewController {
         self.loadCamera()
         self.cameraSession?.startRunning()
         sceneView.scene = MainScene()
+        self.locationController.scene = sceneView.scene!
+        self.locationController.target = self.target
     }
     
     func setupMob() {
