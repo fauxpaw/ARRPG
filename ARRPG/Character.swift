@@ -14,7 +14,7 @@ class Character: EntityBehavior, CharacterBehavior {
     var currentHP: Int
     var maxMP: Int
     var currentMP: Int
-    var weapon: WeaponBehavior?
+    //var weapon: WeaponBehavior?
     //var inventory:
     //var gear:
     

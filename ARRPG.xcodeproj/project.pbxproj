@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C7A27111EB6E3A10074C220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27101EB6E3A10074C220 /* AppDelegate.swift */; };
-		4C7A27131EB6E3A10074C220 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27121EB6E3A10074C220 /* ViewController.swift */; };
+		4C7A27131EB6E3A10074C220 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27121EB6E3A10074C220 /* TestViewController.swift */; };
 		4C7A27161EB6E3A10074C220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A27141EB6E3A10074C220 /* Main.storyboard */; };
 		4C7A27191EB6E3A10074C220 /* ARRPG.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27171EB6E3A10074C220 /* ARRPG.xcdatamodeld */; };
 		4C7A271B1EB6E3A10074C220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A271A1EB6E3A10074C220 /* Assets.xcassets */; };
@@ -23,6 +23,8 @@
 		4C7A27501EB7211A0074C220 /* MonsterBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A274F1EB7211A0074C220 /* MonsterBehavior.swift */; };
 		4C7A27521EB721C30074C220 /* JobBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27511EB721C30074C220 /* JobBehavior.swift */; };
 		4C7A27551EB7226F0074C220 /* Warrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27541EB7226F0074C220 /* Warrior.swift */; };
+		4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27561EB72A180074C220 /* BattleViewController.swift */; };
+		4C7A275C1EB72C390074C220 /* ARItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A275B1EB72C390074C220 /* ARItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +47,7 @@
 /* Begin PBXFileReference section */
 		4C7A270D1EB6E3A10074C220 /* ARRPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARRPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7A27101EB6E3A10074C220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C7A27121EB6E3A10074C220 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4C7A27121EB6E3A10074C220 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		4C7A27151EB6E3A10074C220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C7A27181EB6E3A10074C220 /* ARRPG.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ARRPG.xcdatamodel; sourceTree = "<group>"; };
 		4C7A271A1EB6E3A10074C220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +67,8 @@
 		4C7A274F1EB7211A0074C220 /* MonsterBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterBehavior.swift; sourceTree = "<group>"; };
 		4C7A27511EB721C30074C220 /* JobBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobBehavior.swift; sourceTree = "<group>"; };
 		4C7A27541EB7226F0074C220 /* Warrior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Warrior.swift; sourceTree = "<group>"; };
+		4C7A27561EB72A180074C220 /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		4C7A275B1EB72C390074C220 /* ARItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,12 +119,9 @@
 		4C7A270F1EB6E3A10074C220 /* ARRPG */ = {
 			isa = PBXGroup;
 			children = (
-				4C7A27101EB6E3A10074C220 /* AppDelegate.swift */,
-				4C7A27121EB6E3A10074C220 /* ViewController.swift */,
-				4C7A27141EB6E3A10074C220 /* Main.storyboard */,
-				4C7A271A1EB6E3A10074C220 /* Assets.xcassets */,
-				4C7A271C1EB6E3A10074C220 /* LaunchScreen.storyboard */,
-				4C7A271F1EB6E3A10074C220 /* Info.plist */,
+				4C7A27591EB72A400074C220 /* App Global */,
+				4C7A27581EB72A220074C220 /* Controller */,
+				4C7A275A1EB72A5F0074C220 /* View */,
 				4C7A27171EB6E3A10074C220 /* ARRPG.xcdatamodeld */,
 				4C7A27491EB7043E0074C220 /* Model */,
 			);
@@ -169,6 +170,7 @@
 			children = (
 				4C7A274A1EB7044F0074C220 /* Player Character */,
 				4C7A27411EB6E4160074C220 /* EntityBehavior.swift */,
+				4C7A275B1EB72C390074C220 /* ARItem.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -190,6 +192,34 @@
 				4C7A27541EB7226F0074C220 /* Warrior.swift */,
 			);
 			name = Job;
+			sourceTree = "<group>";
+		};
+		4C7A27581EB72A220074C220 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C7A27121EB6E3A10074C220 /* TestViewController.swift */,
+				4C7A27561EB72A180074C220 /* BattleViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4C7A27591EB72A400074C220 /* App Global */ = {
+			isa = PBXGroup;
+			children = (
+				4C7A27101EB6E3A10074C220 /* AppDelegate.swift */,
+				4C7A271F1EB6E3A10074C220 /* Info.plist */,
+				4C7A271A1EB6E3A10074C220 /* Assets.xcassets */,
+			);
+			name = "App Global";
+			sourceTree = "<group>";
+		};
+		4C7A275A1EB72A5F0074C220 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C7A27141EB6E3A10074C220 /* Main.storyboard */,
+				4C7A271C1EB6E3A10074C220 /* LaunchScreen.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,15 +359,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */,
 				4C7A274D1EB7209D0074C220 /* Monster.swift in Sources */,
 				4C7A27441EB6FB9C0074C220 /* CharacterBehavior.swift in Sources */,
 				4C7A27551EB7226F0074C220 /* Warrior.swift in Sources */,
-				4C7A27131EB6E3A10074C220 /* ViewController.swift in Sources */,
+				4C7A27131EB6E3A10074C220 /* TestViewController.swift in Sources */,
 				4C7A27521EB721C30074C220 /* JobBehavior.swift in Sources */,
 				4C7A27111EB6E3A10074C220 /* AppDelegate.swift in Sources */,
 				4C7A27461EB6FBE60074C220 /* Character.swift in Sources */,
 				4C7A27191EB6E3A10074C220 /* ARRPG.xcdatamodeld in Sources */,
 				4C7A27501EB7211A0074C220 /* MonsterBehavior.swift in Sources */,
+				4C7A275C1EB72C390074C220 /* ARItem.swift in Sources */,
 				4C7A27481EB6FC900074C220 /* Job.swift in Sources */,
 				4C7A27421EB6E4160074C220 /* EntityBehavior.swift in Sources */,
 			);

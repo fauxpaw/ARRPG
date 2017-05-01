@@ -8,12 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let player = Character(hp: 100, mp: 10)
-        player.attack()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +20,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func fightButtonPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toBattle", sender: sender)
+    
+    }
+    
+    
 
 }
 
