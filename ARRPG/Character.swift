@@ -16,6 +16,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     var maxMP: Int
     var currentMP: Int
     var attackDMG = 5
+    
     //var weapon: WeaponBehavior?
     //var inventory:
     //var gear:
@@ -48,6 +49,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     }
     
     func expire() {
+        //run any animations...
         print("You have died...game over")
     }
     

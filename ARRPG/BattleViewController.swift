@@ -9,7 +9,6 @@
 import UIKit
 import SceneKit
 import AVFoundation
-import SpriteKit
 //import CoreLocation
 
 class BattleViewController: UIViewController {
@@ -19,34 +18,20 @@ class BattleViewController: UIViewController {
     var cameraSession: AVCaptureSession?
     var cameraLayer: AVCaptureVideoPreviewLayer?
     //var target: ARItem?
-    let scene = SCNScene()
-    let cameraNode = SCNNode()
-    let targetNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
-
+    
     @IBOutlet weak var attackButton: UIButton!
-    
     @IBOutlet weak var magicButton: UIButton!
-    
     @IBOutlet weak var itemButton: UIButton!
-    
     @IBOutlet weak var runButton: UIButton!
-    
     @IBOutlet weak var sceneView: SCNView!
-    
     @IBOutlet weak var enemyHPLabel: UILabel!
-    
     @IBOutlet weak var playerHPLabel: UILabel!
-    
     @IBOutlet weak var playerLvlLabel: UILabel!
-    
     @IBOutlet weak var playerNameLabel: UILabel!
-    
     @IBOutlet weak var playerMPLabel: UILabel!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //targetNode.name = "Enemy"
         //self.target?.itemNode = targetNode
         //scene.rootNode.addChildNode((target?.itemNode)!)
@@ -59,12 +44,7 @@ class BattleViewController: UIViewController {
     func setupScene() {
         self.loadCamera()
         self.cameraSession?.startRunning()
-        sceneView.scene = scene
-        cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(0, 0, 10)
-        scene.rootNode.addChildNode(cameraNode)
-        scene.rootNode.addChildNode(targetNode)
-        targetNode.position.y += 1
+        sceneView.scene = MainScene()
     }
     
     func setupMob() {
@@ -171,15 +151,16 @@ class BattleViewController: UIViewController {
             self.updateUI()
             monster.attack()
             self.updateUI()
+            
         } else {
             print("its dead!")
         }
     }
 
     @IBAction func magicButtonSelected(_ sender: Any) {
-    
+        
         print("Casting magic")
-    
+        
     }
     
     
