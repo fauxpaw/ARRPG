@@ -24,6 +24,13 @@ class BattleViewController: UIViewController {
 
     @IBOutlet weak var sceneView: SCNView!
     
+    @IBOutlet weak var enemyHPLabel: UILabel!
+    
+    @IBOutlet weak var playerHPLabel: UILabel!
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +46,7 @@ class BattleViewController: UIViewController {
         scene.rootNode.addChildNode(targetNode)
         targetNode.position.y += 1
         self.setupMob()
+        self.updateUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +60,21 @@ class BattleViewController: UIViewController {
         let monster = Monster(target: self.player)
         self.mob = monster
         player.target = mob
+    }
+    
+    func updateUI() {
+        
+        if let mons = mob {
+            let strokeTextAttributes = [
+                NSStrokeColorAttributeName : UIColor.black,
+                NSForegroundColorAttributeName : UIColor.white,
+                NSStrokeWidthAttributeName : -4.0,
+                NSFontAttributeName : UIFont.boldSystemFont(ofSize: 16)
+                ] as [String : Any]
+            
+            enemyHPLabel.attributedText = NSMutableAttributedString(string: "Enemy HP: \(mons.currentHP)", attributes: strokeTextAttributes)
+            playerHPLabel.attributedText = NSMutableAttributedString(string: "Player HP: \(player.currentHP)", attributes: strokeTextAttributes)
+        }
     }
     
     func createCaptureSession() -> (session: AVCaptureSession?, error: NSError?) {
@@ -106,14 +129,19 @@ class BattleViewController: UIViewController {
             self.view.layer.insertSublayer(cameraLayer, at: 0)
             self.cameraLayer = cameraLayer
         }
-        
     }
  
     @IBAction func attackButtonPressed(_ sender: Any) {
         
-        //roll to see who attacks first?
-        self.mob?.attack()
-        
+        //add roll to see who attacks first?
+        guard let monster = mob else { return }
+        if monster.currentHP > 0 {
+            player.attack()
+            self.updateUI()
+            self.mob?.attack()
+            self.updateUI()
+        } else {
+            print("its dead!")
+        }
     }
-
 }

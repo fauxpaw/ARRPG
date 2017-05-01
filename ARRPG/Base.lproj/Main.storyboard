@@ -91,6 +91,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="enemyHPLabel" destination="cKy-EG-WMe" id="uuo-C5-JSe"/>
+                        <outlet property="playerHPLabel" destination="YbW-SG-fMj" id="zwQ-iE-bsY"/>
                         <outlet property="sceneView" destination="NHR-rz-D3I" id="ivE-Yb-kJE"/>
                     </connections>
                 </viewController>
