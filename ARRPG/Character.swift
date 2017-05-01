@@ -8,15 +8,17 @@
 
 import Foundation
 
-class Character: EntityBehavior, CharacterBehavior {
+class Character:Entity, EntityBehavior, CharacterBehavior {
     
     var maxHP: Int
     var currentHP: Int
     var maxMP: Int
     var currentMP: Int
+    var attackDMG = 5
     //var weapon: WeaponBehavior?
     //var inventory:
     //var gear:
+    var target : Monster?
     
     init(hp: Int, mp: Int) {
         self.maxHP = hp
@@ -26,11 +28,22 @@ class Character: EntityBehavior, CharacterBehavior {
     }
     
     func attack() {
-        print("Swings for crazy dmg")
+        if self.target != nil {
+            print("You swing for mighty dmg")
+            self.target?.takeDmg(amount: self.attackDMG)
+        }
+        else {
+            print("player has no target to attack")
+        }
     }
     
-    func takeDmg() {
-        print("Ow, took dmg")
+    func takeDmg(amount: Int) {
+        print("Ow, you took \(amount) dmg")
+
+    }
+    
+    func expire() {
+        print("You have died...game over")
     }
     
     func equipItem() {

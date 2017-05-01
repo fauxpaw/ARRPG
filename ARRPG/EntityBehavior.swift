@@ -11,7 +11,8 @@ import Foundation
 protocol EntityBehavior {
     
     func attack()
-    func takeDmg()
+    func takeDmg(amount: Int)
+    func expire()
     func consume()
     
 }

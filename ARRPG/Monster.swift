@@ -7,15 +7,32 @@
 //
 
 import Foundation
+import SceneKit
 
-class Monster: EntityBehavior, MonsterBehavior {
+class Monster: Entity, EntityBehavior, MonsterBehavior {
     
-    func attack() {
-        print("Monster attacks you!")
+    let name = "Enemy"
+    let monsterNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
+    var HP = 20
+    var attackDMG = 5
+    var target : Character
+    
+    init(target: Character) {
+        self.target = target
     }
     
-    func takeDmg() {
-        print("Monster got hit!")
+    func attack() {
+        print("Monster Attacks!")
+        self.target.takeDmg(amount: self.attackDMG)
+    }
+    
+    func takeDmg(amount: Int) {
+        print("Monster got hit for \(amount)!")
+
+    }
+    
+    func expire() {
+        print("Monster has died!")
     }
     
     func consume() {

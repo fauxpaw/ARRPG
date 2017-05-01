@@ -25,6 +25,7 @@
 		4C7A27551EB7226F0074C220 /* Warrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27541EB7226F0074C220 /* Warrior.swift */; };
 		4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27561EB72A180074C220 /* BattleViewController.swift */; };
 		4C7A275C1EB72C390074C220 /* ARItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A275B1EB72C390074C220 /* ARItem.swift */; };
+		4C7A275E1EB762140074C220 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A275D1EB762140074C220 /* Entity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		4C7A27541EB7226F0074C220 /* Warrior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Warrior.swift; sourceTree = "<group>"; };
 		4C7A27561EB72A180074C220 /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		4C7A275B1EB72C390074C220 /* ARItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARItem.swift; sourceTree = "<group>"; };
+		4C7A275D1EB762140074C220 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				4C7A274A1EB7044F0074C220 /* Player Character */,
 				4C7A27411EB6E4160074C220 /* EntityBehavior.swift */,
 				4C7A275B1EB72C390074C220 /* ARItem.swift */,
+				4C7A275D1EB762140074C220 /* Entity.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			files = (
 				4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */,
 				4C7A274D1EB7209D0074C220 /* Monster.swift in Sources */,
+				4C7A275E1EB762140074C220 /* Entity.swift in Sources */,
 				4C7A27441EB6FB9C0074C220 /* CharacterBehavior.swift in Sources */,
 				4C7A27551EB7226F0074C220 /* Warrior.swift in Sources */,
 				4C7A27131EB6E3A10074C220 /* TestViewController.swift in Sources */,
