@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 import CoreLocation
 
-class MainScene: SCNScene {
+class MainScene: SCNView {
     
     let locationManager = CLLocationManager()
     var heading: Double = 0.0
@@ -20,12 +20,7 @@ class MainScene: SCNScene {
     //var target: ARItem!
     let target = ARItem(itemDescription: "wolf", location: CLLocation(latitude: 47.7487386, longitude: -122.30575994599825), itemNode: SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)))
     
-    override init() {
-        super.init()
-        //targetNode.name = "Enemy"
-        //self.target?.itemNode = targetNode
-        //scene.rootNode.addChildNode((target?.itemNode)!)
-        //self.target.itemNode = targetNode
+    func setup() {
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
@@ -33,14 +28,14 @@ class MainScene: SCNScene {
         self.locationManager.startUpdatingHeading()
         self.cameraNode.camera = SCNCamera()
         self.cameraNode.position = SCNVector3(0, 0, 10)
-        self.rootNode.addChildNode(cameraNode)
-        self.rootNode.addChildNode(target.itemNode!)
-        //.position.y += 1
-        
+        self.scene?.rootNode.addChildNode(cameraNode)
+        self.scene?.rootNode.addChildNode(target.itemNode!)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func tearDown() {
+        self.locationManager.stopUpdatingHeading()
+        self.locationManager.stopUpdatingLocation()
+        
     }
     
     func repositionTarget() {
@@ -53,25 +48,25 @@ class MainScene: SCNScene {
          if delta < -15.0 {
          //leftIndicator.isHidden = false
          //rightIndicator.isHidden = true
+            print("Go left")
          } else if delta > 15 {
          //leftIndicator.isHidden = true
          //rightIndicator.isHidden = false
+            print("Go right")
          } else {
          //leftIndicator.isHidden = true
          //rightIndicator.isHidden = true
-            print("Should be seeing it")
+            print("Enemy in sight")
          }
         
         //3
         let distance = userLocation.distance(from: target.location)
-        print("distance is: \(distance)")
         //4
         if let node = target.itemNode {
             //5
             if node.parent == nil {
                 node.position = SCNVector3(x: Float(delta), y: 0, z: Float(-distance))
-                self.rootNode.addChildNode(node)
-                //print("adding node?")
+                self.scene?.rootNode.addChildNode(node)
                 
             } else {
                 //6
@@ -117,7 +112,6 @@ extension MainScene: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("did update location")
         guard let current = locations.last else {return}
         self.userLocation = current
     }

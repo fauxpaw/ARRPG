@@ -12,7 +12,13 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     
     var exp: Int = 0
     var maxHP: Int
-    var currentHP: Int
+    var currentHP: Int {
+        didSet {
+            if currentHP <= 0 {
+                print("HP is in death bounds")
+            }
+        }
+    }
     var maxMP: Int
     var currentMP: Int
     var attackDMG = 5
@@ -43,9 +49,6 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     func takeDmg(amount: Int) {
         print("Ow, you took \(amount) dmg")
         self.currentHP -= amount
-        if self.currentHP <= 0 {
-            self.expire()
-        }
     }
     
     func expire() {
