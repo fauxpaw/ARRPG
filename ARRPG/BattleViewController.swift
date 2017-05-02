@@ -14,12 +14,11 @@ import AVFoundation
 
 class BattleViewController: UIViewController {
 
-    var locationController = LocationController()
     var player = Character(hp: 100, mp: 10)
     var mob : Monster?
     var cameraSession: AVCaptureSession?
     var cameraLayer: AVCaptureVideoPreviewLayer?
-    var target: ARItem?
+    //var target: ARItem?
     
     @IBOutlet weak var attackButton: UIButton!
     @IBOutlet weak var magicButton: UIButton!
@@ -34,27 +33,31 @@ class BattleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.target = ARItem(itemDescription: "Panda", location: CLLocation(latitude: 47.5184, longitude: -122.3902), itemNode: nil)
-        
+        self.setupCamera()
         self.setupScene()
         self.setupMob()
         self.styleUI()
         self.updateUI()
     }
+
     
     func setupScene() {
+        sceneView.scene = MainScene()
+    }
+    
+    func setupCamera() {
         self.loadCamera()
         self.cameraSession?.startRunning()
-        sceneView.scene = MainScene()
-        self.locationController.scene = sceneView.scene!
-        self.locationController.target = self.target
     }
     
     func setupMob() {
-        //let mob = Monster(target: self.player)
+        //backing model setup
         let monster = Monster(target: self.player)
         self.mob = monster
         player.target = mob
+        //3d model view setup
+        
+        
     }
     
     func styleUI(){
