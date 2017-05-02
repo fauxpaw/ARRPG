@@ -12,6 +12,7 @@ import CoreLocation
 
 class MainScene: SCNView {
     
+    var arrowsDelegate : arrowsUIProtocol?
     let locationManager = CLLocationManager()
     var heading: Double = 0.0
     var userLocation = CLLocation()
@@ -19,6 +20,7 @@ class MainScene: SCNView {
     //let targetNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
     var target = ARItem(itemDescription: "monster", location: CLLocation(latitude: 47.7487386, longitude: -122.30575994599825), itemNode: SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)))
     
+
     func setup() {
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -59,17 +61,14 @@ class MainScene: SCNView {
         let delta = heading - self.heading
         
          if delta < -15.0 {
-         //leftIndicator.isHidden = false
-         //rightIndicator.isHidden = true
-            print("Go left")
+            arrowsDelegate?.showLeftArrow()
+            arrowsDelegate?.hideRightArrow()
          } else if delta > 15 {
-         //leftIndicator.isHidden = true
-         //rightIndicator.isHidden = false
-            print("Go right")
+            arrowsDelegate?.hideLeftArrow()
+            arrowsDelegate?.showRightArrow()
          } else {
-         //leftIndicator.isHidden = true
-         //rightIndicator.isHidden = true
-            print("Enemy in sight")
+            arrowsDelegate?.hideLeftArrow()
+            arrowsDelegate?.hideRightArrow()
          }
         
         //3

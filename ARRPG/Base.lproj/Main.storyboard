@@ -125,6 +125,16 @@
                                     <action selector="runButtonSelected:" destination="U1c-wY-tWa" eventType="touchUpInside" id="42b-q7-y9r"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdT-V8-Ty6">
+                                <rect key="frame" x="16" y="328" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.050765626940152075" blue="0.89479305866490444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOP-Sa-4cm">
+                                <rect key="frame" x="313" y="328" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.050765626940152075" blue="0.89479305866490444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -163,11 +173,13 @@
                         <outlet property="attackButton" destination="2wq-sU-HKf" id="yQt-KM-bK8"/>
                         <outlet property="enemyHPLabel" destination="cKy-EG-WMe" id="uuo-C5-JSe"/>
                         <outlet property="itemButton" destination="GMZ-Jm-vLr" id="p2U-hm-KXo"/>
+                        <outlet property="leftArrow" destination="JdT-V8-Ty6" id="e24-Sn-HbV"/>
                         <outlet property="magicButton" destination="QKo-aP-uG1" id="T72-13-yAs"/>
                         <outlet property="playerHPLabel" destination="YbW-SG-fMj" id="zwQ-iE-bsY"/>
                         <outlet property="playerLvlLabel" destination="SwF-TO-8t0" id="Ijt-N5-eCV"/>
                         <outlet property="playerMPLabel" destination="yPb-oK-KFg" id="Sqa-sN-Jfx"/>
                         <outlet property="playerNameLabel" destination="ALV-iX-zaq" id="NQA-fk-NML"/>
+                        <outlet property="rightArrow" destination="wOP-Sa-4cm" id="yyN-xL-Lgi"/>
                         <outlet property="runButton" destination="nNM-bq-2OR" id="Ogv-kT-spg"/>
                         <outlet property="sceneView" destination="NHR-rz-D3I" id="ivE-Yb-kJE"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="endBattle" id="rs1-Fg-oTL"/>

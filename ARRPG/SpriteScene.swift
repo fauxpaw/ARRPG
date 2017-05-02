@@ -11,6 +11,6 @@ import SpriteKit
 
 class SpriteScene: SKScene {
     
-    
+    //use this class to do UI for menus etc
     
 }
