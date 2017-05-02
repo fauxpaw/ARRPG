@@ -87,8 +87,7 @@ class BattleViewController: UIViewController {
         guard let monster = mob else {return}
         if monster.currentHP <= 0 {
             player.target = nil
-            monster.expire()
-            self.spawnLoot()
+            self.sceneView.removeMonster()
             performSegue(withIdentifier: "endBattle", sender: self)
         }
         

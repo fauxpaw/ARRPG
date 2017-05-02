@@ -16,9 +16,8 @@ class MainScene: SCNView {
     var heading: Double = 0.0
     var userLocation = CLLocation()
     let cameraNode = SCNNode()
-    let targetNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
-    //var target: ARItem!
-    let target = ARItem(itemDescription: "wolf", location: CLLocation(latitude: 47.7487386, longitude: -122.30575994599825), itemNode: SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)))
+    //let targetNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
+    var target = ARItem(itemDescription: "monster", location: CLLocation(latitude: 47.7487386, longitude: -122.30575994599825), itemNode: SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)))
     
     func setup() {
         self.locationManager.delegate = self
@@ -35,7 +34,21 @@ class MainScene: SCNView {
     func tearDown() {
         self.locationManager.stopUpdatingHeading()
         self.locationManager.stopUpdatingLocation()
+    }
+    
+    func removeMonster() {
         
+        target.itemNode?.runAction(SCNAction.sequence([SCNAction.wait(duration: 0.5), SCNAction.removeFromParentNode(), SCNAction.hide()]))
+        print("monster removed from scene!")
+        self.showLoot()
+    }
+    
+    func showLoot() {
+        print("A wild treasure chest appears")
+    }
+    
+    func removeLoot() {
+        print("Chest has despawned")
     }
     
     func repositionTarget() {
@@ -72,7 +85,6 @@ class MainScene: SCNView {
                 //6
                 node.removeAllActions()
                 node.runAction(SCNAction.move(to: SCNVector3(x: Float(delta), y: 0, z: Float(-distance)), duration: 0.2))
-                //print("moving node?")
             }
         }
     }
