@@ -163,6 +163,7 @@
 		4C7A27491EB7043E0074C220 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4CDC5B351EB8E43E00A194DD /* UI */,
 				4C7A274B1EB7208A0074C220 /* Entity */,
 			);
 			name = Model;
@@ -171,10 +172,8 @@
 		4C7A274A1EB7044F0074C220 /* Player Character */ = {
 			isa = PBXGroup;
 			children = (
-				4C7A27531EB722230074C220 /* Job */,
 				4C7A27431EB6FB9C0074C220 /* CharacterBehavior.swift */,
 				4C7A27451EB6FBE60074C220 /* Character.swift */,
-				4C7A274E1EB720B80074C220 /* Monster */,
 			);
 			name = "Player Character";
 			sourceTree = "<group>";
@@ -182,11 +181,12 @@
 		4C7A274B1EB7208A0074C220 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				4C7A274E1EB720B80074C220 /* Monster */,
+				4C7A27531EB722230074C220 /* Job */,
 				4C7A274A1EB7044F0074C220 /* Player Character */,
 				4C7A27411EB6E4160074C220 /* EntityBehavior.swift */,
 				4C7A275B1EB72C390074C220 /* ARItem.swift */,
 				4C7A275D1EB762140074C220 /* Entity.swift */,
-				4C27356E1EB7985E006B4642 /* HealthBar.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -232,11 +232,27 @@
 		4C7A275A1EB72A5F0074C220 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4C7A27141EB6E3A10074C220 /* Main.storyboard */,
-				4C7A271C1EB6E3A10074C220 /* LaunchScreen.storyboard */,
+				4CDC5B361EB8E46300A194DD /* Story Boards */,
 				4C2735721EB7A33C006B4642 /* Battle Scene */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		4CDC5B351EB8E43E00A194DD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4C27356E1EB7985E006B4642 /* HealthBar.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		4CDC5B361EB8E46300A194DD /* Story Boards */ = {
+			isa = PBXGroup;
+			children = (
+				4C7A27141EB6E3A10074C220 /* Main.storyboard */,
+				4C7A271C1EB6E3A10074C220 /* LaunchScreen.storyboard */,
+			);
+			name = "Story Boards";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

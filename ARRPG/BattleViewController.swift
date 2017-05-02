@@ -24,7 +24,7 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var magicButton: UIButton!
     @IBOutlet weak var itemButton: UIButton!
     @IBOutlet weak var runButton: UIButton!
-    @IBOutlet weak var sceneView: SCNView!
+    @IBOutlet weak var sceneView: MainScene!
     @IBOutlet weak var enemyHPLabel: UILabel!
     @IBOutlet weak var playerHPLabel: UILabel!
     @IBOutlet weak var playerLvlLabel: UILabel!
@@ -34,15 +34,24 @@ class BattleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupCamera()
-        self.setupScene()
-        self.setupMob()
+        //self.setupScene()
         self.styleUI()
         self.updateUI()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.sceneView.setup()
+        self.setupMob()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.sceneView.tearDown()
+    }
     
     func setupScene() {
-        sceneView.scene = MainScene()
+        //sceneView.scene = MainScene()
     }
     
     func setupCamera() {
@@ -56,8 +65,6 @@ class BattleViewController: UIViewController {
         self.mob = monster
         player.target = mob
         //3d model view setup
-        
-        
     }
     
     func styleUI(){
@@ -74,6 +81,27 @@ class BattleViewController: UIViewController {
             button?.layer.backgroundColor = UIColor(red: 0/255, green: 159/255, blue: 184/255, alpha: 0.5).cgColor
         }
         
+    }
+    
+    func deathChecks() {
+        guard let monster = mob else {return}
+        if monster.currentHP <= 0 {
+            player.target = nil
+            monster.expire()
+            self.spawnLoot()
+            performSegue(withIdentifier: "endBattle", sender: self)
+        }
+        
+        if player.currentHP <= 0 {
+            player.expire()
+            performSegue(withIdentifier: "death", sender: self)
+        }
+    }
+    
+    func spawnLoot(){
+        print("here is the lewts")
+        //change menu options for collecting
+        //create and add the loot model for scene
     }
     
     func updateUI() {
@@ -154,8 +182,10 @@ class BattleViewController: UIViewController {
         guard let monster = mob else { return }
         if monster.currentHP > 0 {
             self.player.attack()
+            self.deathChecks()
             self.updateUI()
             monster.attack()
+            self.deathChecks()
             self.updateUI()
             
         } else {
@@ -179,6 +209,7 @@ class BattleViewController: UIViewController {
     @IBAction func runButtonSelected(_ sender: Any) {
         
         print("Trying to run away!")
+        performSegue(withIdentifier: "endBattle", sender: self)
         
     }
     
