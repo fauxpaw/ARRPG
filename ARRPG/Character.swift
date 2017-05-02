@@ -19,6 +19,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
             }
         }
     }
+    
     var maxMP: Int
     var currentMP: Int
     var attackDMG = 5
