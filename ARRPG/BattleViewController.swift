@@ -8,9 +8,7 @@
 
 import UIKit
 import SceneKit
-import CoreLocation
 import AVFoundation
-//import CoreLocation
 
 class BattleViewController: UIViewController, arrowsUIProtocol {
 
@@ -18,9 +16,7 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
     var mob : Monster?
     var cameraSession: AVCaptureSession?
     var cameraLayer: AVCaptureVideoPreviewLayer?
-    //var target: ARItem?
     
-
     @IBOutlet weak var rightArrow: UIButton!
     @IBOutlet weak var leftArrow: UIButton!
     @IBOutlet weak var attackButton: UIButton!
@@ -39,7 +35,8 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
         self.setupCamera()
         self.setupScene()
         self.styleUI()
-        self.updateUI()
+        //self.updateUI()
+        self.updateStats()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,16 +76,18 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
         itemButton.setImage(UIImage(named: "scroll")?.withRenderingMode(.alwaysOriginal), for: .normal)
         runButton.setImage(UIImage(named: "x")?.withRenderingMode(.alwaysOriginal), for: .normal)
         playerNameLabel.layer.borderWidth = 4
-        playerNameLabel.layer.borderColor = UIColor.white.cgColor
+        playerNameLabel.layer.borderColor = UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 0.5).cgColor
         let labels = [playerNameLabel, playerLvlLabel, playerHPLabel, playerMPLabel]
         let buttons = [runButton, attackButton, magicButton, itemButton]
         for label in labels {
-            label?.layer.backgroundColor = UIColor(red: 0/255, green: 159/255, blue: 184/255, alpha: 0.5).cgColor
+            label?.layer.backgroundColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
         }
         
         for button in buttons {
             button?.layer.cornerRadius = 25
             button?.layer.backgroundColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
+            button?.layer.borderWidth = 2
+            button?.layer.borderColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
         }
     }
     
@@ -132,6 +131,12 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
     
     func showRightArrow() {
         self.rightArrow.isHidden = false
+    }
+    
+    func updateStats() {
+        playerLvlLabel.text = "Lvl: \(player.Lvl)"
+        playerHPLabel.text = "HP: \(player.currentHP)"
+        playerMPLabel.text = "MP: \(player.currentMP)"
     }
     
     func updateUI() {
@@ -213,10 +218,12 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
         if monster.currentHP > 0 {
             self.player.attack()
             self.deathChecks()
-            self.updateUI()
+            //self.updateUI()
+            self.updateStats()
             monster.attack()
             self.deathChecks()
-            self.updateUI()
+            self.updateStats()
+            //self.updateUI()
             
         } else {
             print("its dead!")
