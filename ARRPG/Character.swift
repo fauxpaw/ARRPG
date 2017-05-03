@@ -41,6 +41,8 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     func attack() {
         if self.target != nil {
             print("You swing for mighty dmg")
+            //damgage calculation here?
+            //get player attack, get monster def, submit to dmg algorithm
             self.target?.takeDmg(amount: self.attackDMG)
         }
         else {

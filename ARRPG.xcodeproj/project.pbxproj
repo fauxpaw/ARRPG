@@ -30,6 +30,10 @@
 		4C7A275E1EB762140074C220 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A275D1EB762140074C220 /* Entity.swift */; };
 		4CDC5B381EB935D300A194DD /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B371EB935D300A194DD /* SpriteScene.swift */; };
 		4CDC5B3A1EB9399A00A194DD /* arrowsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */; };
+		4CDC5B401EBA133400A194DD /* BattleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */; };
+		4CDC5B421EBA13B200A194DD /* BattleMenuState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B411EBA13B200A194DD /* BattleMenuState.swift */; };
+		4CDC5B441EBA156B00A194DD /* AttackMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B431EBA156B00A194DD /* AttackMenuButton.swift */; };
+		4CDC5B461EBA188E00A194DD /* LootMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B451EBA188E00A194DD /* LootMenuButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		4C7A275D1EB762140074C220 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		4CDC5B371EB935D300A194DD /* SpriteScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
 		4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arrowsProtocol.swift; sourceTree = "<group>"; };
+		4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleMenu.swift; sourceTree = "<group>"; };
+		4CDC5B411EBA13B200A194DD /* BattleMenuState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleMenuState.swift; sourceTree = "<group>"; };
+		4CDC5B431EBA156B00A194DD /* AttackMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackMenuButton.swift; sourceTree = "<group>"; };
+		4CDC5B451EBA188E00A194DD /* LootMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LootMenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,10 @@
 				4C2735701EB7A338006B4642 /* MainScene.swift */,
 				4CDC5B371EB935D300A194DD /* SpriteScene.swift */,
 				4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */,
+				4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */,
+				4CDC5B411EBA13B200A194DD /* BattleMenuState.swift */,
+				4CDC5B431EBA156B00A194DD /* AttackMenuButton.swift */,
+				4CDC5B451EBA188E00A194DD /* LootMenuButton.swift */,
 			);
 			name = "Battle Scene";
 			sourceTree = "<group>";
@@ -398,13 +410,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CDC5B401EBA133400A194DD /* BattleMenu.swift in Sources */,
 				4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */,
+				4CDC5B421EBA13B200A194DD /* BattleMenuState.swift in Sources */,
 				4C7A274D1EB7209D0074C220 /* Monster.swift in Sources */,
 				4C7A275E1EB762140074C220 /* Entity.swift in Sources */,
 				4C7A27441EB6FB9C0074C220 /* CharacterBehavior.swift in Sources */,
 				4C27356F1EB7985E006B4642 /* HealthBar.swift in Sources */,
 				4C7A27551EB7226F0074C220 /* Warrior.swift in Sources */,
+				4CDC5B461EBA188E00A194DD /* LootMenuButton.swift in Sources */,
 				4CDC5B381EB935D300A194DD /* SpriteScene.swift in Sources */,
+				4CDC5B441EBA156B00A194DD /* AttackMenuButton.swift in Sources */,
 				4C7A27131EB6E3A10074C220 /* TestViewController.swift in Sources */,
 				4C7A27521EB721C30074C220 /* JobBehavior.swift in Sources */,
 				4CDC5B3A1EB9399A00A194DD /* arrowsProtocol.swift in Sources */,
