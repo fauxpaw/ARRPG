@@ -12,7 +12,7 @@ import CoreLocation
 import AVFoundation
 //import CoreLocation
 
-class BattleViewController: UIViewController {
+class BattleViewController: UIViewController, arrowsUIProtocol {
 
     var player = Character(hp: 100, mp: 10)
     var mob : Monster?
@@ -20,6 +20,9 @@ class BattleViewController: UIViewController {
     var cameraLayer: AVCaptureVideoPreviewLayer?
     //var target: ARItem?
     
+
+    @IBOutlet weak var rightArrow: UIButton!
+    @IBOutlet weak var leftArrow: UIButton!
     @IBOutlet weak var attackButton: UIButton!
     @IBOutlet weak var magicButton: UIButton!
     @IBOutlet weak var itemButton: UIButton!
@@ -34,7 +37,7 @@ class BattleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupCamera()
-        //self.setupScene()
+        self.setupScene()
         self.styleUI()
         self.updateUI()
     }
@@ -51,7 +54,9 @@ class BattleViewController: UIViewController {
     }
     
     func setupScene() {
-        //sceneView.scene = MainScene()
+        sceneView.arrowsDelegate = self
+        self.hideRightArrow()
+        self.hideLeftArrow()
     }
     
     func setupCamera() {
@@ -88,6 +93,7 @@ class BattleViewController: UIViewController {
         if monster.currentHP <= 0 {
             player.target = nil
             self.sceneView.removeMonster()
+            collectLootItem()
             performSegue(withIdentifier: "endBattle", sender: self)
         }
         
@@ -97,10 +103,31 @@ class BattleViewController: UIViewController {
         }
     }
     
-    func spawnLoot(){
-        print("here is the lewts")
+    func enterLootState() {
         //change menu options for collecting
         //create and add the loot model for scene
+    }
+    
+    func collectLootItem(){
+        let item = "Great Sword"
+        player.collectItem(itemToCollect: item)
+    }
+    
+    
+    func hideLeftArrow() {
+        self.leftArrow.isHidden = true
+    }
+    
+    func hideRightArrow() {
+        self.rightArrow.isHidden = true
+    }
+    
+    func showLeftArrow() {
+        self.leftArrow.isHidden = false
+    }
+    
+    func showRightArrow() {
+        self.rightArrow.isHidden = false
     }
     
     func updateUI() {

@@ -10,6 +10,7 @@ import Foundation
 
 class Character:Entity, EntityBehavior, CharacterBehavior {
     
+    var bag = [String]()
     var exp: Int = 0
     var maxHP: Int
     var currentHP: Int {
@@ -67,6 +68,14 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     
     func consume() {
         
+    }
+    
+    //Character Behavior Protocol
+    
+    func collectItem(itemToCollect: String) {
+        
+        bag.append(itemToCollect)
+        print("You have received a \(itemToCollect)")
     }
     
 }
