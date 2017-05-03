@@ -73,6 +73,11 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
     }
     
     func styleUI(){
+        
+        attackButton.setImage(UIImage(named: "sword")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        magicButton.setImage(UIImage(named: "tome")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        itemButton.setImage(UIImage(named: "scroll")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        runButton.setImage(UIImage(named: "x")?.withRenderingMode(.alwaysOriginal), for: .normal)
         playerNameLabel.layer.borderWidth = 4
         playerNameLabel.layer.borderColor = UIColor.white.cgColor
         let labels = [playerNameLabel, playerLvlLabel, playerHPLabel, playerMPLabel]
@@ -83,9 +88,8 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
         
         for button in buttons {
             button?.layer.cornerRadius = 25
-            button?.layer.backgroundColor = UIColor(red: 0/255, green: 159/255, blue: 184/255, alpha: 0.5).cgColor
+            button?.layer.backgroundColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
         }
-        
     }
     
     func deathChecks() {
