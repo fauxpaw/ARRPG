@@ -18,6 +18,7 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
     var cameraLayer: AVCaptureVideoPreviewLayer?
     var menuController = BattleMenu()
     
+    
     @IBOutlet weak var rightArrow: UIButton!
     @IBOutlet weak var leftArrow: UIButton!
     @IBOutlet weak var attackButton: AttackMenuButton!
