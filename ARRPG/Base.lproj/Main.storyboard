@@ -61,25 +61,25 @@
                                 <rect key="frame" x="116" y="28" width="143" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player HP:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbW-SG-fMj">
                                 <rect key="frame" x="16" y="608" width="160" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player MP:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPb-oK-KFg">
                                 <rect key="frame" x="16" y="627.5" width="160" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Lvl: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwF-TO-8t0">
                                 <rect key="frame" x="16" y="588" width="160" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALV-iX-zaq">
@@ -88,39 +88,39 @@
                                     <constraint firstAttribute="width" constant="160" id="2Bi-gs-S6B"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wq-sU-HKf">
-                                <rect key="frame" x="271" y="453" width="88" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wq-sU-HKf" customClass="AttackMenuButton" customModule="ARRPG" customModuleProvider="target">
+                                <rect key="frame" x="295" y="434" width="64" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="SJR-jg-4HI"/>
-                                    <constraint firstAttribute="width" constant="88" id="cCx-mq-ZKU"/>
+                                    <constraint firstAttribute="height" constant="64" id="SJR-jg-4HI"/>
+                                    <constraint firstAttribute="width" constant="64" id="cCx-mq-ZKU"/>
                                 </constraints>
-                                <state key="normal" title="Attack">
+                                <state key="normal" title="A">
                                     <color key="titleColor" red="0.1176470588" green="0.52549019610000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="attackButtonPressed:" destination="U1c-wY-tWa" eventType="touchUpInside" id="8J3-i8-Bff"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKo-aP-uG1">
-                                <rect key="frame" x="183" y="503" width="88" height="50"/>
-                                <state key="normal" title="Magic"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKo-aP-uG1" customClass="AttackMenuButton" customModule="ARRPG" customModuleProvider="target">
+                                <rect key="frame" x="207" y="498" width="64" height="64"/>
+                                <state key="normal" title="M"/>
                                 <connections>
                                     <action selector="magicButtonSelected:" destination="U1c-wY-tWa" eventType="touchUpInside" id="RSv-1U-1Gz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMZ-Jm-vLr">
-                                <rect key="frame" x="271" y="558" width="88" height="50"/>
-                                <state key="normal" title="Item"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMZ-Jm-vLr" customClass="AttackMenuButton" customModule="ARRPG" customModuleProvider="target">
+                                <rect key="frame" x="295" y="539" width="64" height="64"/>
+                                <state key="normal" title="I"/>
                                 <connections>
                                     <action selector="itemButtonSelected:" destination="U1c-wY-tWa" eventType="touchUpInside" id="4QX-Ej-yUw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNM-bq-2OR">
-                                <rect key="frame" x="183" y="608" width="88" height="50"/>
-                                <state key="normal" title="Run"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNM-bq-2OR" customClass="AttackMenuButton" customModule="ARRPG" customModuleProvider="target">
+                                <rect key="frame" x="207" y="603" width="64" height="64"/>
+                                <state key="normal" title="R"/>
                                 <connections>
                                     <action selector="runButtonSelected:" destination="U1c-wY-tWa" eventType="touchUpInside" id="42b-q7-y9r"/>
                                 </connections>
@@ -129,34 +129,47 @@
                                 <rect key="frame" x="16" y="328" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.050765626940152075" blue="0.89479305866490444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOP-Sa-4cm">
                                 <rect key="frame" x="313" y="328" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.050765626940152075" blue="0.89479305866490444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VG9-dJ-5Q1" customClass="LootMenuButton" customModule="ARRPG" customModuleProvider="target">
+                                <rect key="frame" x="155" y="311" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Loot">
+                                    <color key="titleColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="lootButtonSelected:" destination="U1c-wY-tWa" eventType="touchUpInside" id="rg3-1l-6hO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GMZ-Jm-vLr" firstAttribute="width" secondItem="2wq-sU-HKf" secondAttribute="width" id="2nx-Ga-QW6"/>
                             <constraint firstItem="QKo-aP-uG1" firstAttribute="top" secondItem="2wq-sU-HKf" secondAttribute="bottom" id="3ct-Iw-Tk8"/>
-                            <constraint firstItem="GMZ-Jm-vLr" firstAttribute="top" secondItem="2wq-sU-HKf" secondAttribute="bottom" constant="55" id="4z2-7M-sDn"/>
+                            <constraint firstItem="GMZ-Jm-vLr" firstAttribute="top" secondItem="2wq-sU-HKf" secondAttribute="bottom" constant="41" id="4z2-7M-sDn"/>
                             <constraint firstItem="yPb-oK-KFg" firstAttribute="bottom" secondItem="NHR-rz-D3I" secondAttribute="bottom" constant="-20" id="6Z3-Jp-ZTc"/>
                             <constraint firstItem="YbW-SG-fMj" firstAttribute="top" secondItem="SwF-TO-8t0" secondAttribute="bottom" id="7am-vN-FJK"/>
                             <constraint firstItem="GMZ-Jm-vLr" firstAttribute="height" secondItem="2wq-sU-HKf" secondAttribute="height" id="BnS-k1-kDS"/>
                             <constraint firstItem="NHR-rz-D3I" firstAttribute="top" secondItem="XFd-uQ-WCf" secondAttribute="bottom" id="DXW-TG-r6k"/>
                             <constraint firstItem="yPb-oK-KFg" firstAttribute="width" secondItem="ALV-iX-zaq" secondAttribute="width" id="Et9-SY-3d4"/>
                             <constraint firstItem="yPb-oK-KFg" firstAttribute="leading" secondItem="NHR-rz-D3I" secondAttribute="leading" id="IlC-SR-rw7"/>
-                            <constraint firstItem="3nf-ul-5c8" firstAttribute="top" secondItem="nNM-bq-2OR" secondAttribute="bottom" constant="9" id="KtA-WN-geL"/>
+                            <constraint firstItem="3nf-ul-5c8" firstAttribute="top" secondItem="nNM-bq-2OR" secondAttribute="bottom" id="KtA-WN-geL"/>
                             <constraint firstItem="QKo-aP-uG1" firstAttribute="width" secondItem="2wq-sU-HKf" secondAttribute="width" id="L8j-gN-FhM"/>
                             <constraint firstItem="SwF-TO-8t0" firstAttribute="top" secondItem="ALV-iX-zaq" secondAttribute="bottom" id="LCJ-Qa-7ie"/>
                             <constraint firstItem="SwF-TO-8t0" firstAttribute="leading" secondItem="NHR-rz-D3I" secondAttribute="leading" id="Nhd-3f-RWR"/>
                             <constraint firstItem="yPb-oK-KFg" firstAttribute="top" secondItem="YbW-SG-fMj" secondAttribute="bottom" id="QaD-R7-8sw"/>
-                            <constraint firstItem="nNM-bq-2OR" firstAttribute="top" secondItem="QKo-aP-uG1" secondAttribute="bottom" constant="55" id="T4Z-QV-ZxW"/>
+                            <constraint firstItem="nNM-bq-2OR" firstAttribute="top" secondItem="QKo-aP-uG1" secondAttribute="bottom" constant="41" id="T4Z-QV-ZxW"/>
                             <constraint firstItem="nNM-bq-2OR" firstAttribute="width" secondItem="2wq-sU-HKf" secondAttribute="width" id="Tpi-Uf-Cei"/>
                             <constraint firstItem="NHR-rz-D3I" firstAttribute="leading" secondItem="iha-bD-6Bv" secondAttribute="leadingMargin" id="Vdy-6X-8aS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NHR-rz-D3I" secondAttribute="trailing" id="XPr-xz-dDw"/>
-                            <constraint firstItem="2wq-sU-HKf" firstAttribute="leading" secondItem="QKo-aP-uG1" secondAttribute="trailing" id="Z8q-Gw-U6k"/>
+                            <constraint firstItem="2wq-sU-HKf" firstAttribute="leading" secondItem="QKo-aP-uG1" secondAttribute="trailing" constant="24" id="Z8q-Gw-U6k"/>
                             <constraint firstItem="nNM-bq-2OR" firstAttribute="height" secondItem="2wq-sU-HKf" secondAttribute="height" id="ZDX-zr-k7w"/>
                             <constraint firstItem="ALV-iX-zaq" firstAttribute="leading" secondItem="NHR-rz-D3I" secondAttribute="leading" id="e8Y-2f-jeK"/>
                             <constraint firstItem="3nf-ul-5c8" firstAttribute="top" secondItem="NHR-rz-D3I" secondAttribute="bottom" id="ehB-Hx-lFG"/>
@@ -174,6 +187,7 @@
                         <outlet property="enemyHPLabel" destination="cKy-EG-WMe" id="uuo-C5-JSe"/>
                         <outlet property="itemButton" destination="GMZ-Jm-vLr" id="p2U-hm-KXo"/>
                         <outlet property="leftArrow" destination="JdT-V8-Ty6" id="e24-Sn-HbV"/>
+                        <outlet property="lootButton" destination="VG9-dJ-5Q1" id="Vhk-2g-jfR"/>
                         <outlet property="magicButton" destination="QKo-aP-uG1" id="T72-13-yAs"/>
                         <outlet property="playerHPLabel" destination="YbW-SG-fMj" id="zwQ-iE-bsY"/>
                         <outlet property="playerLvlLabel" destination="SwF-TO-8t0" id="Ijt-N5-eCV"/>

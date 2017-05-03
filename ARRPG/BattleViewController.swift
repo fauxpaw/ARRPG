@@ -8,9 +8,7 @@
 
 import UIKit
 import SceneKit
-import CoreLocation
 import AVFoundation
-//import CoreLocation
 
 class BattleViewController: UIViewController, arrowsUIProtocol {
 
@@ -18,16 +16,17 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
     var mob : Monster?
     var cameraSession: AVCaptureSession?
     var cameraLayer: AVCaptureVideoPreviewLayer?
-    //var target: ARItem?
+    var menuController = BattleMenu()
     
-
+    
     @IBOutlet weak var rightArrow: UIButton!
     @IBOutlet weak var leftArrow: UIButton!
-    @IBOutlet weak var attackButton: UIButton!
-    @IBOutlet weak var magicButton: UIButton!
-    @IBOutlet weak var itemButton: UIButton!
-    @IBOutlet weak var runButton: UIButton!
+    @IBOutlet weak var attackButton: AttackMenuButton!
+    @IBOutlet weak var magicButton: AttackMenuButton!
+    @IBOutlet weak var itemButton: AttackMenuButton!
+    @IBOutlet weak var runButton: AttackMenuButton!
     @IBOutlet weak var sceneView: MainScene!
+    @IBOutlet weak var lootButton: LootMenuButton!
     @IBOutlet weak var enemyHPLabel: UILabel!
     @IBOutlet weak var playerHPLabel: UILabel!
     @IBOutlet weak var playerLvlLabel: UILabel!
@@ -38,14 +37,17 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
         super.viewDidLoad()
         self.setupCamera()
         self.setupScene()
-        self.styleUI()
-        self.updateUI()
+        self.updateStats()
+        self.styleLabels()
+        self.setupMenu()
+        self.menuController.styleUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.sceneView.setup()
         self.setupMob()
+        self.menuController.attackState()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,6 +59,19 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
         sceneView.arrowsDelegate = self
         self.hideRightArrow()
         self.hideLeftArrow()
+    }
+    
+    func setupMenu() {
+        attackButton.setImage(UIImage(named: "sword")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        magicButton.setImage(UIImage(named: "tome")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        itemButton.setImage(UIImage(named: "scroll")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        runButton.setImage(UIImage(named: "x")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        menuController.buttons.append(attackButton)
+        menuController.buttons.append(magicButton)
+        menuController.buttons.append(itemButton)
+        menuController.buttons.append(runButton)
+        menuController.buttons.append(lootButton)
     }
     
     func setupCamera() {
@@ -72,20 +87,15 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
         //3d model view setup
     }
     
-    func styleUI(){
+    func styleLabels(){
+        
         playerNameLabel.layer.borderWidth = 4
-        playerNameLabel.layer.borderColor = UIColor.white.cgColor
+        playerNameLabel.layer.borderColor = UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 0.5).cgColor
         let labels = [playerNameLabel, playerLvlLabel, playerHPLabel, playerMPLabel]
-        let buttons = [runButton, attackButton, magicButton, itemButton]
         for label in labels {
-            label?.layer.backgroundColor = UIColor(red: 0/255, green: 159/255, blue: 184/255, alpha: 0.5).cgColor
+            label?.layer.backgroundColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
         }
-        
-        for button in buttons {
-            button?.layer.cornerRadius = 25
-            button?.layer.backgroundColor = UIColor(red: 0/255, green: 159/255, blue: 184/255, alpha: 0.5).cgColor
-        }
-        
+        self.menuController.styleUI()
     }
     
     func deathChecks() {
@@ -93,8 +103,7 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
         if monster.currentHP <= 0 {
             player.target = nil
             self.sceneView.removeMonster()
-            collectLootItem()
-            performSegue(withIdentifier: "endBattle", sender: self)
+            self.enterLootState()
         }
         
         if player.currentHP <= 0 {
@@ -106,9 +115,10 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
     func enterLootState() {
         //change menu options for collecting
         //create and add the loot model for scene
+        menuController.lootState()
     }
     
-    func collectLootItem(){
+    func collectAllItems(){
         let item = "Great Sword"
         player.collectItem(itemToCollect: item)
     }
@@ -130,22 +140,12 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
         self.rightArrow.isHidden = false
     }
     
-    func updateUI() {
-        
-        if let mons = mob {
-            let strokeTextAttributes = [
-                NSStrokeColorAttributeName : UIColor.black,
-                NSForegroundColorAttributeName : UIColor.white,
-                NSStrokeWidthAttributeName : -4.0,
-                NSFontAttributeName : UIFont.boldSystemFont(ofSize: 16)
-                ] as [String : Any]
-            
-            playerNameLabel.attributedText = NSMutableAttributedString(string: "SweetAvatarName", attributes: strokeTextAttributes)
-            playerLvlLabel.attributedText = NSMutableAttributedString(string: "Lvl: \(player.Lvl)", attributes: strokeTextAttributes)
-            enemyHPLabel.attributedText = NSMutableAttributedString(string: "Enemy HP: \(mons.currentHP)", attributes: strokeTextAttributes)
-            playerMPLabel.attributedText = NSMutableAttributedString(string: "MP: \(player.currentMP)", attributes: strokeTextAttributes)
-            playerHPLabel.attributedText = NSMutableAttributedString(string: "HP: \(player.currentHP)", attributes: strokeTextAttributes)
-        }
+    func updateStats() {
+        playerLvlLabel.text = "Lvl: \(player.Lvl)"
+        playerHPLabel.text = "HP: \(player.currentHP)"
+        playerMPLabel.text = "MP: \(player.currentMP)"
+        guard let mob = mob else {return}
+        enemyHPLabel.text = "Enemy HP: \(mob.currentHP)"
     }
     
     func createCaptureSession() -> (session: AVCaptureSession?, error: NSError?) {
@@ -209,10 +209,10 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
         if monster.currentHP > 0 {
             self.player.attack()
             self.deathChecks()
-            self.updateUI()
+            self.updateStats()
             monster.attack()
             self.deathChecks()
-            self.updateUI()
+            self.updateStats()
             
         } else {
             print("its dead!")
@@ -237,6 +237,12 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
         print("Trying to run away!")
         performSegue(withIdentifier: "endBattle", sender: self)
         
+    }
+        
+    @IBAction func lootButtonSelected(_ sender: Any) {
+        
+        self.collectAllItems()
+        performSegue(withIdentifier: "endBattle", sender: self)
     }
     
 }
