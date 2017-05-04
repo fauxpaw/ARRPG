@@ -10,14 +10,13 @@ import UIKit
 import SceneKit
 import AVFoundation
 
-class BattleViewController: UIViewController, arrowsUIProtocol {
+class BattleViewController: GameViewController, arrowsUIProtocol {
 
     var player = Character(hp: 100, mp: 10)
     var mob : Monster?
     var cameraSession: AVCaptureSession?
     var cameraLayer: AVCaptureVideoPreviewLayer?
     var menuController = BattleMenu()
-    
     
     @IBOutlet weak var rightArrow: UIButton!
     @IBOutlet weak var leftArrow: UIButton!
@@ -35,6 +34,7 @@ class BattleViewController: UIViewController, arrowsUIProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.setupCamera()
         self.setupScene()
         self.updateStats()
