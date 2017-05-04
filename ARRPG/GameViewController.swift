@@ -1,5 +1,5 @@
 //
-//  LootMenuButton.swift
+//  GameViewController.swift
 //  ARRPG
 //
 //  Created by Michael Sweeney on 5/3/17.
@@ -8,6 +8,8 @@
 
 import UIKit
 
-class LootMenuButton: UIButton {
+class GameViewController: UIViewController {
+    
+    var state = State()
     
 }

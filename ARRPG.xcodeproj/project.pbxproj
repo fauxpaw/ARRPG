@@ -32,6 +32,12 @@
 		4CDC5B441EBA156B00A194DD /* AttackMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B431EBA156B00A194DD /* AttackMenuButton.swift */; };
 		4CDC5B461EBA188E00A194DD /* LootMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B451EBA188E00A194DD /* LootMenuButton.swift */; };
 		4CDC5B481EBA305E00A194DD /* StatTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B471EBA305E00A194DD /* StatTypes.swift */; };
+		4CDC5B4E1EBADED500A194DD /* BattleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B4D1EBADED500A194DD /* BattleState.swift */; };
+		4CDC5B511EBADF6E00A194DD /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B501EBADF6E00A194DD /* State.swift */; };
+		4CDC5B531EBADFCF00A194DD /* StateBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B521EBADFCF00A194DD /* StateBehavior.swift */; };
+		4CDC5B551EBAE0F700A194DD /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B541EBAE0F700A194DD /* StateMachine.swift */; };
+		4CDC5B571EBAE65100A194DD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B561EBAE65100A194DD /* GameViewController.swift */; };
+		4CDC5B591EBAE88000A194DD /* NullState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B581EBAE88000A194DD /* NullState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +89,12 @@
 		4CDC5B431EBA156B00A194DD /* AttackMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackMenuButton.swift; sourceTree = "<group>"; };
 		4CDC5B451EBA188E00A194DD /* LootMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LootMenuButton.swift; sourceTree = "<group>"; };
 		4CDC5B471EBA305E00A194DD /* StatTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatTypes.swift; sourceTree = "<group>"; };
+		4CDC5B4D1EBADED500A194DD /* BattleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleState.swift; sourceTree = "<group>"; };
+		4CDC5B501EBADF6E00A194DD /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		4CDC5B521EBADFCF00A194DD /* StateBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateBehavior.swift; sourceTree = "<group>"; };
+		4CDC5B541EBAE0F700A194DD /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		4CDC5B561EBAE65100A194DD /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		4CDC5B581EBAE88000A194DD /* NullState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +125,10 @@
 		4C2735721EB7A33C006B4642 /* Battle Scene */ = {
 			isa = PBXGroup;
 			children = (
+				4CDC5B351EB8E43E00A194DD /* UI */,
 				4C2735701EB7A338006B4642 /* MainScene.swift */,
 				4CDC5B371EB935D300A194DD /* SpriteScene.swift */,
 				4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */,
-				4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */,
 				4CDC5B411EBA13B200A194DD /* BattleMenuState.swift */,
 				4CDC5B431EBA156B00A194DD /* AttackMenuButton.swift */,
 				4CDC5B451EBA188E00A194DD /* LootMenuButton.swift */,
@@ -177,8 +189,8 @@
 		4C7A27491EB7043E0074C220 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4CDC5B351EB8E43E00A194DD /* UI */,
 				4C7A274B1EB7208A0074C220 /* Entity */,
+				4CDC5B4F1EBADF5700A194DD /* State */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -219,6 +231,7 @@
 			children = (
 				4C7A27121EB6E3A10074C220 /* TestViewController.swift */,
 				4C7A27561EB72A180074C220 /* BattleViewController.swift */,
+				4CDC5B561EBAE65100A194DD /* GameViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -245,6 +258,7 @@
 		4CDC5B351EB8E43E00A194DD /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */,
 				4C27356E1EB7985E006B4642 /* HealthBar.swift */,
 			);
 			name = UI;
@@ -257,6 +271,18 @@
 				4C7A271C1EB6E3A10074C220 /* LaunchScreen.storyboard */,
 			);
 			name = "Story Boards";
+			sourceTree = "<group>";
+		};
+		4CDC5B4F1EBADF5700A194DD /* State */ = {
+			isa = PBXGroup;
+			children = (
+				4CDC5B4D1EBADED500A194DD /* BattleState.swift */,
+				4CDC5B501EBADF6E00A194DD /* State.swift */,
+				4CDC5B521EBADFCF00A194DD /* StateBehavior.swift */,
+				4CDC5B541EBAE0F700A194DD /* StateMachine.swift */,
+				4CDC5B581EBAE88000A194DD /* NullState.swift */,
+			);
+			name = State;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,9 +425,12 @@
 				4CDC5B401EBA133400A194DD /* BattleMenu.swift in Sources */,
 				4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */,
 				4CDC5B421EBA13B200A194DD /* BattleMenuState.swift in Sources */,
+				4CDC5B511EBADF6E00A194DD /* State.swift in Sources */,
 				4C7A274D1EB7209D0074C220 /* Monster.swift in Sources */,
+				4CDC5B571EBAE65100A194DD /* GameViewController.swift in Sources */,
 				4C7A275E1EB762140074C220 /* Entity.swift in Sources */,
 				4C7A27441EB6FB9C0074C220 /* CharacterBehavior.swift in Sources */,
+				4CDC5B531EBADFCF00A194DD /* StateBehavior.swift in Sources */,
 				4C27356F1EB7985E006B4642 /* HealthBar.swift in Sources */,
 				4CDC5B461EBA188E00A194DD /* LootMenuButton.swift in Sources */,
 				4CDC5B381EB935D300A194DD /* SpriteScene.swift in Sources */,
@@ -410,11 +439,14 @@
 				4CDC5B3A1EB9399A00A194DD /* arrowsProtocol.swift in Sources */,
 				4C7A27111EB6E3A10074C220 /* AppDelegate.swift in Sources */,
 				4C7A27461EB6FBE60074C220 /* Character.swift in Sources */,
+				4CDC5B4E1EBADED500A194DD /* BattleState.swift in Sources */,
 				4C7A27191EB6E3A10074C220 /* ARRPG.xcdatamodeld in Sources */,
 				4C7A27501EB7211A0074C220 /* MonsterBehavior.swift in Sources */,
+				4CDC5B551EBAE0F700A194DD /* StateMachine.swift in Sources */,
 				4C7A275C1EB72C390074C220 /* ARItem.swift in Sources */,
 				4C2735711EB7A338006B4642 /* MainScene.swift in Sources */,
 				4CDC5B481EBA305E00A194DD /* StatTypes.swift in Sources */,
+				4CDC5B591EBAE88000A194DD /* NullState.swift in Sources */,
 				4C7A27421EB6E4160074C220 /* EntityBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
