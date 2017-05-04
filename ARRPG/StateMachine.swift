@@ -12,11 +12,17 @@ class StateMachine {
     
     static let shared = StateMachine()
     
-    public private(set) var currentState: State
-    //private var inTransition = false
+    public var currentState: State {
+        get {return _currentState}
+        set { self.transition(state: newValue) }
+    }
+    
+    private var _currentState: State
+    private var inTransition = false
+    
     
     private init() {
-        currentState = State()
+        _currentState = NullState()
     }
     
     func getState(object: GameViewController) -> State {
@@ -28,8 +34,17 @@ class StateMachine {
         
     }
     
-    func transition() {
+    fileprivate func transition(state: State) {
         
+        if state == _currentState || inTransition {
+            return
+        }
+        
+        inTransition = true
+        _currentState.onExit()
+        _currentState = state
+        _currentState.onEnter()
+        inTransition = false
     }
     
 }

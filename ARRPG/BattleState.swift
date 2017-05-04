@@ -15,11 +15,11 @@ class BattleState : State {
     }
     
     override func onExit() {
-
+        print("leaving battle state")
     }
     
     override func onEnter() {
-
+        print("entering battle state")
     }
     
     override func addListeners() {
