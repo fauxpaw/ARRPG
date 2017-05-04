@@ -39,6 +39,8 @@
 		4CDC5B571EBAE65100A194DD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B561EBAE65100A194DD /* GameViewController.swift */; };
 		4CDC5B591EBAE88000A194DD /* NullState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B581EBAE88000A194DD /* NullState.swift */; };
 		4CDC5B5B1EBB4E1200A194DD /* StateMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B5A1EBB4E1200A194DD /* StateMachineTests.swift */; };
+		4CDC5B5D1EBB682400A194DD /* InitialBattleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B5C1EBB682400A194DD /* InitialBattleState.swift */; };
+		4CDC5B5F1EBB68A700A194DD /* CombatBattleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B5E1EBB68A700A194DD /* CombatBattleState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		4CDC5B561EBAE65100A194DD /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		4CDC5B581EBAE88000A194DD /* NullState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullState.swift; sourceTree = "<group>"; };
 		4CDC5B5A1EBB4E1200A194DD /* StateMachineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachineTests.swift; sourceTree = "<group>"; };
+		4CDC5B5C1EBB682400A194DD /* InitialBattleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialBattleState.swift; sourceTree = "<group>"; };
+		4CDC5B5E1EBB68A700A194DD /* CombatBattleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatBattleState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,13 +283,23 @@
 		4CDC5B4F1EBADF5700A194DD /* State */ = {
 			isa = PBXGroup;
 			children = (
-				4CDC5B4D1EBADED500A194DD /* BattleState.swift */,
 				4CDC5B501EBADF6E00A194DD /* State.swift */,
 				4CDC5B521EBADFCF00A194DD /* StateBehavior.swift */,
 				4CDC5B541EBAE0F700A194DD /* StateMachine.swift */,
 				4CDC5B581EBAE88000A194DD /* NullState.swift */,
+				4CDC5B601EBB68D100A194DD /* Battle States */,
 			);
 			name = State;
+			sourceTree = "<group>";
+		};
+		4CDC5B601EBB68D100A194DD /* Battle States */ = {
+			isa = PBXGroup;
+			children = (
+				4CDC5B4D1EBADED500A194DD /* BattleState.swift */,
+				4CDC5B5C1EBB682400A194DD /* InitialBattleState.swift */,
+				4CDC5B5E1EBB68A700A194DD /* CombatBattleState.swift */,
+			);
+			name = "Battle States";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,8 +448,10 @@
 				4C7A275E1EB762140074C220 /* Entity.swift in Sources */,
 				4C7A27441EB6FB9C0074C220 /* CharacterBehavior.swift in Sources */,
 				4CDC5B531EBADFCF00A194DD /* StateBehavior.swift in Sources */,
+				4CDC5B5F1EBB68A700A194DD /* CombatBattleState.swift in Sources */,
 				4C27356F1EB7985E006B4642 /* HealthBar.swift in Sources */,
 				4CDC5B461EBA188E00A194DD /* LootMenuButton.swift in Sources */,
+				4CDC5B5D1EBB682400A194DD /* InitialBattleState.swift in Sources */,
 				4CDC5B381EB935D300A194DD /* SpriteScene.swift in Sources */,
 				4CDC5B441EBA156B00A194DD /* AttackMenuButton.swift in Sources */,
 				4C7A27131EB6E3A10074C220 /* TestViewController.swift in Sources */,

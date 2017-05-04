@@ -16,7 +16,11 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     var mob : Monster?
     var cameraSession: AVCaptureSession?
     var cameraLayer: AVCaptureVideoPreviewLayer?
-    var menuController = BattleMenu()
+    let menuController = BattleMenu()
+    //players, monsters
+    //menu controller
+    //state machine
+    
     
     @IBOutlet weak var rightArrow: UIButton!
     @IBOutlet weak var leftArrow: UIButton!
@@ -48,6 +52,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         self.sceneView.setup()
         self.setupMob()
         self.menuController.attackState()
+        self.changeState(toState: InitialBattleState())
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -113,8 +118,6 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     }
     
     func enterLootState() {
-        //change menu options for collecting
-        //create and add the loot model for scene
         menuController.lootState()
     }
     
@@ -122,7 +125,6 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         let item = "Great Sword"
         player.collectItem(itemToCollect: item)
     }
-    
     
     func hideLeftArrow() {
         self.leftArrow.isHidden = true
