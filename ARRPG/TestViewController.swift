@@ -21,5 +21,12 @@ class TestViewController: UIViewController {
     
     }
     
+    @IBAction func mapButtonPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toMap", sender: sender)
+        
+    }
+    
+    
 }
 
