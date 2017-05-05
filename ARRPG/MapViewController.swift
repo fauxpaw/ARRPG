@@ -44,9 +44,10 @@ extension MapViewController : MKMapViewDelegate {
         self.userLocation = userLocation.location
     }
     
+        
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
-        performSegue(withIdentifier: "toBattle", sender: self)
+        //performSegue(withIdentifier: "toBattle", sender: self)
         
     }
 }
@@ -85,6 +86,7 @@ extension MapViewController : CLLocationManagerDelegate {
                             print("them targets tho: \(self.targets)")
                             for target in self.targets {
                                 let ano = PlaceAnnotation(location: target.location.coordinate, title: target.itemDescription)
+                                
                                 DispatchQueue.main.async {
                                     self.mapView.addAnnotation(ano)
                                 }
