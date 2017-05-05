@@ -21,6 +21,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     //menu controller
     //state machine
     
+    var spriteScene: SpriteScene!
     @IBOutlet weak var rightArrow: UIButton!
     @IBOutlet weak var leftArrow: UIButton!
     @IBOutlet weak var attackButton: AttackMenuButton!
@@ -37,7 +38,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         self.setupScene()
         self.updateStats()
         self.styleLabels()
@@ -47,7 +48,10 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.sceneView.setup()
+        self.spriteScene = SpriteScene(size: self.view.bounds.size)
+        self.sceneView.overlaySKScene = self.spriteScene
         self.changeState(toState: InitialBattleState(owner: self))
+        
         //below should be called after event happens (like all assets loaded)
         self.changeState(toState: CombatBattleState(owner: self))
     }
