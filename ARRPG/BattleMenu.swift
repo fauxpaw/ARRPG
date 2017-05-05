@@ -8,19 +8,10 @@
 
 import UIKit
 
-class BattleMenu: UIView, BattleMenuState {
+class BattleMenu: UIView {
     
     var buttons = [UIButton]()
-    
-    func shouldChangeState(bool: Bool) {
-        
-    }
-    
-    func changeMenuState() {
-        if "setup" == "setup" {
-            
-        }
-    }
+    var labels = [UILabel]()
     
     func attackState() {
         self.hideLootMenu()

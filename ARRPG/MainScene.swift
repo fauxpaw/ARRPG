@@ -20,7 +20,6 @@ class MainScene: SCNView {
     //let targetNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
     var target = ARItem(itemDescription: "monster", location: CLLocation(latitude: 47.7487386, longitude: -122.30575994599825), itemNode: SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)))
     
-
     func setup() {
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -97,16 +96,13 @@ class MainScene: SCNView {
     }
     
     func getHeadingForDirectionFromCoordinate(from: CLLocation, to: CLLocation) -> Double {
-        //1
+        
         let fLat = degreesToRadians(from.coordinate.latitude)
         let fLng = degreesToRadians(from.coordinate.longitude)
         let tLat = degreesToRadians(to.coordinate.latitude)
         let tLng = degreesToRadians(to.coordinate.longitude)
-        
-        //2
         let degree = radiansToDegrees(atan2(sin(tLng-fLng)*cos(tLat), cos(fLat)*sin(tLat)-sin(fLat)*cos(tLat)*cos(tLng-fLng)))
         
-        //3
         if degree >= 0 {
             return degree
         } else {
