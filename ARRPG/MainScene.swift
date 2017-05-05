@@ -22,22 +22,10 @@ class MainScene: SCNView {
     var target = ARItem(itemDescription: "monster", location: CLLocation(latitude: 47.7487386, longitude: -122.30575994599825), itemNode: SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)))
     
     func setup() {
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.distanceFilter = 5
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
-        self.locationManager.startUpdatingHeading()
-        self.cameraNode.camera = SCNCamera()
-        self.cameraNode.position = SCNVector3(0, 0, 10)
-        
-        if self.scene == nil {
-            print("creating scene...")
-            self.scene = SCNScene()
-        }
-        
-        self.scene?.rootNode.addChildNode(cameraNode)
-        self.scene?.rootNode.addChildNode(target.itemNode!)
+        self.activateLocationManager()
+        self.createScene()
+        self.addCameraToScene()
+        self.addMonsterToScene()
     }
     
     func tearDown() {
@@ -45,8 +33,30 @@ class MainScene: SCNView {
         self.locationManager.stopUpdatingLocation()
     }
     
+    func activateLocationManager() {
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.distanceFilter = 5
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        self.locationManager.startUpdatingHeading()
+    }
+    
+    fileprivate func createScene() {
+        if self.scene == nil {
+            print("creating scene...")
+            self.scene = SCNScene()
+        }
+    }
+    
+    fileprivate func addCameraToScene() {
+        self.cameraNode.camera = SCNCamera()
+        self.cameraNode.position = SCNVector3(0, 0, 10)
+        self.scene?.rootNode.addChildNode(cameraNode)
+    }
+    
     func addMonsterToScene() {
-        
+        self.scene?.rootNode.addChildNode(target.itemNode!)
     }
     
     func removeMonster() {
@@ -56,7 +66,7 @@ class MainScene: SCNView {
         
     }
     
-    func repositionTarget() {
+    fileprivate func repositionTarget() {
         //1
         let heading = getHeadingForDirectionFromCoordinate(from: userLocation, to: target.location)
         
@@ -91,15 +101,15 @@ class MainScene: SCNView {
         }
     }
     
-    func radiansToDegrees(_ radians: Double) -> Double {
+    fileprivate func radiansToDegrees(_ radians: Double) -> Double {
         return (radians) * (180.0 / M_PI)
     }
     
-    func degreesToRadians(_ degrees: Double) -> Double {
+    fileprivate func degreesToRadians(_ degrees: Double) -> Double {
         return (degrees) * (M_PI / 180.0)
     }
     
-    func getHeadingForDirectionFromCoordinate(from: CLLocation, to: CLLocation) -> Double {
+    fileprivate func getHeadingForDirectionFromCoordinate(from: CLLocation, to: CLLocation) -> Double {
         
         let fLat = degreesToRadians(from.coordinate.latitude)
         let fLng = degreesToRadians(from.coordinate.longitude)
