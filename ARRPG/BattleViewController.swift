@@ -37,8 +37,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.arController.setup(withView: self.view)
+    
         self.setupScene()
         self.updateStats()
         self.styleLabels()
@@ -94,11 +93,6 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         menuController.lootState()
     }
     
-    func collectAllItems(){
-        let item = "Great Sword"
-        player.collectItem(itemToCollect: item)
-    }
-    
     func hideLeftArrow() {
         self.leftArrow.isHidden = true
     }
@@ -123,7 +117,15 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         enemyHPLabel.text = "Enemy HP: \(mob.currentHP)"
     }
     
+    func enableAttackButton() {
+        self.attackButton.isEnabled = true
+    }
+    
     @IBAction func attackButtonPressed(_ sender: Any) {
+        //button cooldown
+        self.attackButton.isEnabled = false
+        self.attackButton.isHighlighted = true
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.enableAttackButton), userInfo: nil, repeats: false)
         
         //add roll to see who attacks first?
         guard let monster = mob else { return }
@@ -162,7 +164,6 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         
     @IBAction func lootButtonSelected(_ sender: Any) {
         
-        self.collectAllItems()
         performSegue(withIdentifier: "endBattle", sender: self)
     }
     
