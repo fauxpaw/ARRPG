@@ -38,7 +38,6 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setupScene()
         self.updateStats()
         self.styleLabels()
