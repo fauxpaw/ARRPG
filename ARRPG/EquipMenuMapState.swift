@@ -1,16 +1,14 @@
 //
-//  WorldMap.swift
+//  EquipMenuMapState.swift
 //  ARRPG
 //
 //  Created by Michael Sweeney on 5/5/17.
 //  Copyright © 2017 Michael Sweeney. All rights reserved.
 //
 
-import MapKit
+import Foundation
 
-class WorldMap: MKMapView {
-    
-    //var owner: MapViewController
+class EquipMenuMapState: WorldMapState {
     
     
 }

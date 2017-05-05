@@ -19,7 +19,7 @@ class MainScene: SCNView {
     let cameraNode = SCNNode()
     
     //let targetNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
-    var target = ARItem(itemDescription: "monster", location: CLLocation(latitude: 47.7487386, longitude: -122.30575994599825), itemNode: SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)))
+    var target = ARItem(itemDesc: "monster", loc: CLLocation(latitude: 47.7487386, longitude: -122.30575994599825), node: SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)))
     
     func setup() {
         self.activateLocationManager()
