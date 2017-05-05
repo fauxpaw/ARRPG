@@ -17,17 +17,25 @@ class MainScene: SCNView {
     var heading: Double = 0.0
     var userLocation = CLLocation()
     let cameraNode = SCNNode()
+    
     //let targetNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
     var target = ARItem(itemDescription: "monster", location: CLLocation(latitude: 47.7487386, longitude: -122.30575994599825), itemNode: SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)))
     
     func setup() {
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.distanceFilter = 5
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         self.locationManager.startUpdatingHeading()
         self.cameraNode.camera = SCNCamera()
         self.cameraNode.position = SCNVector3(0, 0, 10)
+        
+        if self.scene == nil {
+            print("creating scene...")
+            self.scene = SCNScene()
+        }
+        
         self.scene?.rootNode.addChildNode(cameraNode)
         self.scene?.rootNode.addChildNode(target.itemNode!)
     }
@@ -37,19 +45,15 @@ class MainScene: SCNView {
         self.locationManager.stopUpdatingLocation()
     }
     
+    func addMonsterToScene() {
+        
+    }
+    
     func removeMonster() {
         
         target.itemNode?.runAction(SCNAction.sequence([SCNAction.wait(duration: 0.5), SCNAction.removeFromParentNode(), SCNAction.hide()]))
         print("monster removed from scene!")
-        self.showLoot()
-    }
-    
-    func showLoot() {
-        print("A wild treasure chest appears")
-    }
-    
-    func removeLoot() {
-        print("Chest has despawned")
+        
     }
     
     func repositionTarget() {

@@ -128,10 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				4CDC5B351EB8E43E00A194DD /* UI */,
-				4C2735701EB7A338006B4642 /* MainScene.swift */,
-				4CDC5B371EB935D300A194DD /* SpriteScene.swift */,
-				4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */,
-				4CDC5B611EBCA49B00A194DD /* ARController.swift */,
 			);
 			name = "Battle Scene";
 			sourceTree = "<group>";
@@ -258,10 +254,14 @@
 		4CDC5B351EB8E43E00A194DD /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */,
+				4C2735701EB7A338006B4642 /* MainScene.swift */,
+				4CDC5B371EB935D300A194DD /* SpriteScene.swift */,
 				4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */,
 				4C27356E1EB7985E006B4642 /* HealthBar.swift */,
 				4CDC5B431EBA156B00A194DD /* AttackMenuButton.swift */,
 				4CDC5B451EBA188E00A194DD /* LootMenuButton.swift */,
+				4CDC5B651EBCACCC00A194DD /* Augmented Reality */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -294,6 +294,14 @@
 				4CDC5B5E1EBB68A700A194DD /* CombatBattleState.swift */,
 			);
 			name = "Battle States";
+			sourceTree = "<group>";
+		};
+		4CDC5B651EBCACCC00A194DD /* Augmented Reality */ = {
+			isa = PBXGroup;
+			children = (
+				4CDC5B611EBCA49B00A194DD /* ARController.swift */,
+			);
+			name = "Augmented Reality";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

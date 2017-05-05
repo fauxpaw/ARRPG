@@ -14,12 +14,6 @@ class TestViewController: UIViewController {
         super.viewDidLoad()
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
-    }
-
     
     @IBAction func fightButtonPressed(_ sender: Any) {
         
@@ -27,7 +21,5 @@ class TestViewController: UIViewController {
     
     }
     
-    
-
 }
 
