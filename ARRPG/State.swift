@@ -9,7 +9,7 @@
 import Foundation
 
 //abstract base class
-class State : StateBehavior {
+class State : NSObject, StateBehavior {
     
     func onEnter() {
         self.addListeners()

@@ -35,7 +35,6 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         self.currentHP = hp
         self.maxMP = mp
         self.currentMP = mp
-        
     }
     
     func attack() {

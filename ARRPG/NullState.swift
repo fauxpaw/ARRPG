@@ -11,10 +11,10 @@ import Foundation
 class NullState: State {
     
     override func onEnter() {
-        
+        print("entering null state")
     }
     
     override func onExit() {
-        
+        print("exiting null state")
     }
 }
