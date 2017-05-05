@@ -29,7 +29,7 @@
 		4CC90E231EBCF98200085824 /* ItemMenuMapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E221EBCF98200085824 /* ItemMenuMapState.swift */; };
 		4CC90E251EBCF9AC00085824 /* EquipMenuMapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E241EBCF9AC00085824 /* EquipMenuMapState.swift */; };
 		4CC90E271EBCFB0700085824 /* GooglePlacesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E261EBCFB0700085824 /* GooglePlacesAPI.swift */; };
-		4CC90E291EBD033400085824 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E281EBD033400085824 /* Annotation.swift */; };
+		4CC90E291EBD033400085824 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E281EBD033400085824 /* PlaceAnnotation.swift */; };
 		4CC90E2B1EBD074900085824 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E2A1EBD074900085824 /* JSONParser.swift */; };
 		4CC90E2D1EBD0B2A00085824 /* ARItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E2C1EBD0B2A00085824 /* ARItemFactory.swift */; };
 		4CDC5B381EB935D300A194DD /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B371EB935D300A194DD /* SpriteScene.swift */; };
@@ -96,7 +96,7 @@
 		4CC90E221EBCF98200085824 /* ItemMenuMapState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMenuMapState.swift; sourceTree = "<group>"; };
 		4CC90E241EBCF9AC00085824 /* EquipMenuMapState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipMenuMapState.swift; sourceTree = "<group>"; };
 		4CC90E261EBCFB0700085824 /* GooglePlacesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAPI.swift; sourceTree = "<group>"; };
-		4CC90E281EBD033400085824 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		4CC90E281EBD033400085824 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		4CC90E2A1EBD074900085824 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		4CC90E2C1EBD0B2A00085824 /* ARItemFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARItemFactory.swift; sourceTree = "<group>"; };
 		4CDC5B371EB935D300A194DD /* SpriteScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
@@ -342,7 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				4CDC5B681EBCF3A700A194DD /* WorldMap.swift */,
-				4CC90E281EBD033400085824 /* Annotation.swift */,
+				4CC90E281EBD033400085824 /* PlaceAnnotation.swift */,
 			);
 			name = "Map Scene";
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 				4CC90E2B1EBD074900085824 /* JSONParser.swift in Sources */,
 				4CDC5B381EB935D300A194DD /* SpriteScene.swift in Sources */,
 				4CDC5B441EBA156B00A194DD /* AttackMenuButton.swift in Sources */,
-				4CC90E291EBD033400085824 /* Annotation.swift in Sources */,
+				4CC90E291EBD033400085824 /* PlaceAnnotation.swift in Sources */,
 				4C7A27131EB6E3A10074C220 /* TestViewController.swift in Sources */,
 				4CC90E201EBCF8A800085824 /* WorldMapState.swift in Sources */,
 				4CDC5B3A1EB9399A00A194DD /* arrowsProtocol.swift in Sources */,

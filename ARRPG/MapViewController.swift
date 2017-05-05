@@ -28,6 +28,9 @@ class MapViewController: GameViewController {
     fileprivate func setupMapView() {
         
         self.mapView.delegate = self
+        self.locationManager.delegate = self
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
         self.mapView.userTrackingMode = .followWithHeading
 
@@ -37,29 +40,36 @@ class MapViewController: GameViewController {
 
 extension MapViewController : MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        print("map update userloc")
         self.userLocation = userLocation.location
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        performSegue(withIdentifier: "toBattle", sender: self)
+        
+    }
 }
 
 extension MapViewController : CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        //1
+        print("loc manager update loc")
+        
         if locations.count > 0 {
             let location = locations.last!
             print("Accuracy: \(location.horizontalAccuracy)")
             
-            //2
+            
             if location.horizontalAccuracy < 11 {
-                //3
+                //WARNING: ONLY ONE UPDATE CURRENTLY FOR MAP NO MATTER HOW FAR SOMEONE TRAVELS
                 manager.stopUpdatingLocation()
                 let span = MKCoordinateSpan(latitudeDelta: 0.014, longitudeDelta: 0.014)
                 let region = MKCoordinateRegion(center: location.coordinate, span: span)
                 mapView.region = region
                 
-                //1
+                
                 if !startedLoadingPOIs {
                     startedLoadingPOIs = true
                     GooglePlacesAPI.shared.getPlaces(nearLocation: location, radius: 1000, handler: { (rootDic, error) in
@@ -72,8 +82,14 @@ extension MapViewController : CLLocationManagerDelegate {
                             guard let array = JSONParser.dictionaryRootToArrayOfDict(rootObj: dic, key: "results") else {return}
                             
                             self.targets = ARItemFactory.shared.createObjectives(fromArrayOfDict: array)
+                            print("them targets tho: \(self.targets)")
+                            for target in self.targets {
+                                let ano = PlaceAnnotation(location: target.location.coordinate, title: target.itemDescription)
+                                DispatchQueue.main.async {
+                                    self.mapView.addAnnotation(ano)
+                                }
+                            }
                         }
-                        
                     })
                 }
             }
