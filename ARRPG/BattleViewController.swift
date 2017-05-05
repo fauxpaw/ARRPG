@@ -52,7 +52,8 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         self.sceneView.overlaySKScene = self.spriteScene
         self.changeState(toState: InitialBattleState(owner: self))
         
-        //below should be called after event happens (like all assets loaded)
+        //the below method should be called after event happens (like all assets loaded)
+        //possibly called from a previous state onExit?
         self.changeState(toState: CombatBattleState(owner: self))
     }
     

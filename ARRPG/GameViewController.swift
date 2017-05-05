@@ -44,4 +44,8 @@ class GameViewController: UIViewController {
         inTransition = false
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
 }

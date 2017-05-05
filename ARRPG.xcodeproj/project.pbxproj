@@ -39,6 +39,8 @@
 		4CDC5B5D1EBB682400A194DD /* InitialBattleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B5C1EBB682400A194DD /* InitialBattleState.swift */; };
 		4CDC5B5F1EBB68A700A194DD /* CombatBattleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B5E1EBB68A700A194DD /* CombatBattleState.swift */; };
 		4CDC5B621EBCA49B00A194DD /* ARController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B611EBCA49B00A194DD /* ARController.swift */; };
+		4CDC5B671EBCF28F00A194DD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B661EBCF28F00A194DD /* MapViewController.swift */; };
+		4CDC5B691EBCF3A700A194DD /* WorldMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B681EBCF3A700A194DD /* WorldMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		4CDC5B5C1EBB682400A194DD /* InitialBattleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialBattleState.swift; sourceTree = "<group>"; };
 		4CDC5B5E1EBB68A700A194DD /* CombatBattleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatBattleState.swift; sourceTree = "<group>"; };
 		4CDC5B611EBCA49B00A194DD /* ARController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARController.swift; sourceTree = "<group>"; };
+		4CDC5B661EBCF28F00A194DD /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4CDC5B681EBCF3A700A194DD /* WorldMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +232,7 @@
 				4C7A27121EB6E3A10074C220 /* TestViewController.swift */,
 				4C7A27561EB72A180074C220 /* BattleViewController.swift */,
 				4CDC5B561EBAE65100A194DD /* GameViewController.swift */,
+				4CDC5B661EBCF28F00A194DD /* MapViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 			children = (
 				4CDC5B361EB8E46300A194DD /* Story Boards */,
 				4C2735721EB7A33C006B4642 /* Battle Scene */,
+				4CDC5B6A1EBCF3CA00A194DD /* Map Scene */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -302,6 +308,14 @@
 				4CDC5B611EBCA49B00A194DD /* ARController.swift */,
 			);
 			name = "Augmented Reality";
+			sourceTree = "<group>";
+		};
+		4CDC5B6A1EBCF3CA00A194DD /* Map Scene */ = {
+			isa = PBXGroup;
+			children = (
+				4CDC5B681EBCF3A700A194DD /* WorldMap.swift */,
+			);
+			name = "Map Scene";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,6 +459,7 @@
 				4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */,
 				4CDC5B511EBADF6E00A194DD /* State.swift in Sources */,
 				4C7A274D1EB7209D0074C220 /* Monster.swift in Sources */,
+				4CDC5B691EBCF3A700A194DD /* WorldMap.swift in Sources */,
 				4CDC5B621EBCA49B00A194DD /* ARController.swift in Sources */,
 				4CDC5B571EBAE65100A194DD /* GameViewController.swift in Sources */,
 				4C7A275E1EB762140074C220 /* Entity.swift in Sources */,
@@ -468,6 +483,7 @@
 				4CDC5B481EBA305E00A194DD /* StatTypes.swift in Sources */,
 				4CDC5B591EBAE88000A194DD /* NullState.swift in Sources */,
 				4C7A27421EB6E4160074C220 /* EntityBehavior.swift in Sources */,
+				4CDC5B671EBCF28F00A194DD /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
