@@ -12,6 +12,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     
     var owner : GameViewController?
     var bag = [Item]()
+    var gear = [Item]()
     var exp: Int = 0
 
     //var weapon: WeaponBehavior?
@@ -55,8 +56,8 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         print("You have died...game over")
     }
     
-    func equipItem() {
-        
+    func equipItem(item: Item) {
+        gear.append(item)
     }
     
     func dequipItem() {
