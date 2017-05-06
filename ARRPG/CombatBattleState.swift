@@ -15,12 +15,16 @@ class CombatBattleState: BattleState {
         //setup and enable the combat menu
         print("Entering combat state")
         self.setupAttackMenu()
+        battleVC.menuController.showAttackMenu()
     }
     
     override func onExit() {
         super.onExit()
         print("leaving combat state")
+        battleVC.player.target = nil
         //disable the combat menu
+        battleVC.menuController.hideAttackMenu()
+        
     }
     
     func setupAttackMenu() {

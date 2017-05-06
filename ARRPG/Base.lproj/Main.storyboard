@@ -71,6 +71,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="sKN-Gb-Vne" id="am9-si-8AW"/>
+                        <segue destination="U1c-wY-tWa" kind="show" identifier="toBattle" id="s2x-sp-d8T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4P-uM-fX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -240,4 +241,7 @@
             <point key="canvasLocation" x="870" y="36"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hRE-l5-48Y"/>
+    </inferredMetricsTieBreakers>
 </document>

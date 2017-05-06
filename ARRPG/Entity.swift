@@ -10,6 +10,12 @@ import Foundation
 
 class Entity {
 
-    var Lvl = 1
-    
+    var lvl = 1
+    var atk = 1
+    var def = 0
+    var maxHP = 1
+    var currentHP = 1
+    var maxMP = 1
+    var currentMP =  1
+    //var weapon = unarmed
 }

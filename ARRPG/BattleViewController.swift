@@ -50,9 +50,6 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         self.spriteScene = SpriteScene(size: self.view.bounds.size)
         self.sceneView.overlaySKScene = self.spriteScene
         self.changeState(toState: InitialBattleState(owner: self))
-        
-        //the below method should be called after event happens (like all assets loaded)
-        //possibly called from a previous state onExit?
         self.changeState(toState: CombatBattleState(owner: self))
     }
     
@@ -114,7 +111,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     }
     
     func updateStats() {
-        playerLvlLabel.text = "Lvl: \(player.Lvl)"
+        playerLvlLabel.text = "Lvl: \(player.lvl)"
         playerHPLabel.text = "HP: \(player.currentHP)"
         playerMPLabel.text = "MP: \(player.currentMP)"
         guard let mob = mob else {return}
@@ -132,18 +129,13 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.enableAttackButton), userInfo: nil, repeats: false)
         
         //add roll to see who attacks first?
-        guard let monster = mob else { return }
-        if monster.currentHP > 0 {
-            self.player.attack()
-            self.deathChecks()
-            self.updateStats()
-            monster.attack()
-            self.deathChecks()
-            self.updateStats()
-            
-        } else {
-            print("its dead!")
+        let dmg = DamageHandler.shared.calculateDMG(attacker: player, defender: player.target!)
+        let hpResult = player.target!.takeDmg(amount: dmg)
+        self.updateStats()
+        if hpResult < 1 {
+            self.changeState(toState: LootBattleState(owner: self))
         }
+        
     }
 
     @IBAction func magicButtonSelected(_ sender: Any) {

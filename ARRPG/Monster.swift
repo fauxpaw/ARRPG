@@ -11,26 +11,33 @@ import SceneKit
 
 class Monster: Entity, EntityBehavior, MonsterBehavior {
     
-    var lvl = 1
-    var maxHP: Int = 20
-    var currentHP: Int = 20
-    var maxMP: Int = 10
-    var currentMP: Int = 10
-    var attackDMG = 5
     var target : Character
+    var items = [Item]()
     
-    init(target: Character) {
+    init(hp: Int, mp: Int, target: Character) {
         self.target = target
+        super.init()
+        self.maxHP = hp
+        self.currentHP = hp
+        self.maxMP = mp
+        self.currentMP = mp
+        
+        
     }
     
-    func attack() {
+    func attack(target: Entity) {
         print("Monster Attacks!")
-        self.target.takeDmg(amount: self.attackDMG)
     }
     
-    func takeDmg(amount: Int) {
+    func attack(targets: [Entity]) {
+        print("mad aoes")
+    }
+    
+    func takeDmg(amount: Int) -> Int {
         print("Monster got hit for \(amount)!")
-        self.currentHP -= amount
+        self.currentHP = max(self.currentHP - amount, 0)
+    
+        return self.currentHP
     }
     
     func expire() {

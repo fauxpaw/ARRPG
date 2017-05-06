@@ -15,6 +15,6 @@ protocol MonsterBehavior {
 extension MonsterBehavior {
     
     func dropItem() {
-        print("The monster droped this lewt!")
+        print("The monster passed its lewt to battleVC!")
     }
 }

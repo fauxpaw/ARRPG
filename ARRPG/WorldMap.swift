@@ -12,5 +12,4 @@ class WorldMap: MKMapView {
     
     //var owner: MapViewController
     
-    
 }
