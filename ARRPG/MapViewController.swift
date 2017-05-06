@@ -44,10 +44,10 @@ extension MapViewController : MKMapViewDelegate {
         self.userLocation = userLocation.location
     }
     
-        
+    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
-        //performSegue(withIdentifier: "toBattle", sender: self)
+        performSegue(withIdentifier: "toBattle", sender: self)
         
     }
 }

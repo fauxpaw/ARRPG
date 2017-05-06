@@ -25,6 +25,7 @@
 		4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27561EB72A180074C220 /* BattleViewController.swift */; };
 		4C7A275C1EB72C390074C220 /* ARItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A275B1EB72C390074C220 /* ARItem.swift */; };
 		4C7A275E1EB762140074C220 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A275D1EB762140074C220 /* Entity.swift */; };
+		4CB737881EBE2629006A92FF /* DamageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB737871EBE2628006A92FF /* DamageHandler.swift */; };
 		4CC90E201EBCF8A800085824 /* WorldMapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E1F1EBCF8A800085824 /* WorldMapState.swift */; };
 		4CC90E231EBCF98200085824 /* ItemMenuMapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E221EBCF98200085824 /* ItemMenuMapState.swift */; };
 		4CC90E251EBCF9AC00085824 /* EquipMenuMapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E241EBCF9AC00085824 /* EquipMenuMapState.swift */; };
@@ -92,6 +93,7 @@
 		4C7A27561EB72A180074C220 /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		4C7A275B1EB72C390074C220 /* ARItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARItem.swift; sourceTree = "<group>"; };
 		4C7A275D1EB762140074C220 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		4CB737871EBE2628006A92FF /* DamageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageHandler.swift; sourceTree = "<group>"; };
 		4CC90E1F1EBCF8A800085824 /* WorldMapState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldMapState.swift; sourceTree = "<group>"; };
 		4CC90E221EBCF98200085824 /* ItemMenuMapState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMenuMapState.swift; sourceTree = "<group>"; };
 		4CC90E241EBCF9AC00085824 /* EquipMenuMapState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipMenuMapState.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				4C7A275B1EB72C390074C220 /* ARItem.swift */,
 				4CC90E261EBCFB0700085824 /* GooglePlacesAPI.swift */,
 				4CC90E2A1EBD074900085824 /* JSONParser.swift */,
+				4CB737871EBE2628006A92FF /* DamageHandler.swift */,
 				4C7A274B1EB7208A0074C220 /* Entity */,
 				4CDC5B4F1EBADF5700A194DD /* State */,
 			);
@@ -512,6 +515,7 @@
 				4CC90E271EBCFB0700085824 /* GooglePlacesAPI.swift in Sources */,
 				4CDC5B4E1EBADED500A194DD /* BattleState.swift in Sources */,
 				4C7A27191EB6E3A10074C220 /* ARRPG.xcdatamodeld in Sources */,
+				4CB737881EBE2629006A92FF /* DamageHandler.swift in Sources */,
 				4C7A27501EB7211A0074C220 /* MonsterBehavior.swift in Sources */,
 				4C7A275C1EB72C390074C220 /* ARItem.swift in Sources */,
 				4C2735711EB7A338006B4642 /* MainScene.swift in Sources */,

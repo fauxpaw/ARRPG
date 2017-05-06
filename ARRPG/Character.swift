@@ -10,48 +10,41 @@ import Foundation
 
 class Character:Entity, EntityBehavior, CharacterBehavior {
     
+    var owner : GameViewController?
     var bag = [String]()
     var exp: Int = 0
-    var maxHP: Int
-    var currentHP: Int {
-        didSet {
-            if currentHP <= 0 {
-                print("HP is in death bounds")
-            }
-        }
-    }
-    
-    var maxMP: Int
-    var currentMP: Int
-    var attackDMG = 5
-    
+
     //var weapon: WeaponBehavior?
     //var inventory:
     //var gear:
     var target : Monster?
     
-    init(hp: Int, mp: Int) {
+    init(hp: Int, mp: Int, owner: GameViewController? = nil) {
+        self.owner = owner
+        super.init()
         self.maxHP = hp
         self.currentHP = hp
         self.maxMP = mp
         self.currentMP = mp
+        
     }
     
-    func attack() {
-        if self.target != nil {
-            print("You swing for mighty dmg")
-            //damgage calculation here?
-            //get player attack, get monster def, submit to dmg algorithm
-            self.target?.takeDmg(amount: self.attackDMG)
-        }
-        else {
-            print("player has no target to attack")
-        }
+    func attack(target: Entity) {
+        
+        print("You swing for mighty dmg")
+        
     }
     
-    func takeDmg(amount: Int) {
+    func attack(targets: [Entity]) {
+        print("mad aoe bro")
+    }
+    
+    func takeDmg(amount: Int) -> Int{
         print("Ow, you took \(amount) dmg")
-        self.currentHP -= amount
+
+        self.currentHP = max(self.currentHP - amount, 0)
+        
+        return self.currentHP
     }
     
     func expire() {

@@ -15,8 +15,9 @@ protocol EntityBehavior {
     var currentMP : Int { get set}
     var maxMP : Int { get set}
     
-    func attack()
-    func takeDmg(amount: Int)
+    func attack(target: Entity)
+    func attack(targets: [Entity])
+    func takeDmg(amount: Int) -> Int
     func expire()
     func consume()
     
