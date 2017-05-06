@@ -20,12 +20,14 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     var target : Monster?
     
     init(hp: Int, mp: Int, owner: GameViewController? = nil) {
+        
         self.owner = owner
         super.init()
         self.maxHP = hp
         self.currentHP = hp
         self.maxMP = mp
         self.currentMP = mp
+        self.atk = 5
         
     }
     
@@ -37,6 +39,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     
     func attack(targets: [Entity]) {
         print("mad aoe bro")
+        
     }
     
     func takeDmg(amount: Int) -> Int{

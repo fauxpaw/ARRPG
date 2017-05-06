@@ -17,4 +17,5 @@ class Entity {
     var currentHP = 1
     var maxMP = 1
     var currentMP =  1
+    //var weapon = unarmed
 }

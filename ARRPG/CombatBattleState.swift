@@ -20,6 +20,8 @@ class CombatBattleState: BattleState {
     override func onExit() {
         super.onExit()
         print("leaving combat state")
+        battleVC.mob = nil
+        battleVC.player.target = nil
         //disable the combat menu
     }
     

@@ -34,11 +34,8 @@ class Monster: Entity, EntityBehavior, MonsterBehavior {
     
     func takeDmg(amount: Int) -> Int {
         print("Monster got hit for \(amount)!")
-        
-        self.currentHP -= amount
-        if self.currentHP < 1 {
-            self.currentHP = 0
-        }
+        self.currentHP = max(self.currentHP - amount, 0)
+    
         return self.currentHP
     }
     

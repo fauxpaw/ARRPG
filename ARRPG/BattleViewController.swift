@@ -16,7 +16,6 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     var mob : Monster?
     let menuController = BattleMenu()
     let arController = ARController()
-    let dmgHandler = String()
     
     //players, monsters
     //menu controller
@@ -130,8 +129,12 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.enableAttackButton), userInfo: nil, repeats: false)
         
         //add roll to see who attacks first?
-        
-        player.attack(target: player.target!)
+        let dmg = DamageHandler.shared.calculateDMG(attacker: player, defender: player.target!)
+        let hpResult = player.target!.takeDmg(amount: dmg)
+        self.updateStats()
+        if hpResult < 1 {
+            self.changeState(toState: LootBattleState(owner: self))
+        }
         
     }
 

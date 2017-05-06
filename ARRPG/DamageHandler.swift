@@ -18,10 +18,10 @@ class DamageHandler {
     
     private init() {}
     
-    func calculateDMG(attacker: Entity, defender: Entity) {
+    func calculateDMG(attacker: Entity, defender: Entity) -> Int {
         // atk * atk / (atk + def)
         let dmg = attacker.atk * attacker.atk / (attacker.atk + defender.def)
-        
+        return dmg
     }
     
     func calculateDMG(attacker: Entity, defender: [Entity]) {
