@@ -10,6 +10,6 @@ import Foundation
 
 protocol CharacterBehavior {
     
-    func collectItem(itemToCollect: String)
+    func collectItem(itemToCollect: Item)
     
 }

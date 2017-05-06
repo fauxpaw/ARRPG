@@ -12,6 +12,7 @@ import SceneKit
 class Monster: Entity, EntityBehavior, MonsterBehavior {
     
     var target : Character
+    var items = [Item]()
     
     init(hp: Int, mp: Int, target: Character) {
         self.target = target

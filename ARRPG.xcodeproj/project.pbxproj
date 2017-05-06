@@ -27,6 +27,7 @@
 		4C7A275E1EB762140074C220 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A275D1EB762140074C220 /* Entity.swift */; };
 		4CB737881EBE2629006A92FF /* DamageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB737871EBE2628006A92FF /* DamageHandler.swift */; };
 		4CB7378A1EBE3290006A92FF /* LootBattleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB737891EBE3290006A92FF /* LootBattleState.swift */; };
+		4CB7378C1EBE4FAE006A92FF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7378B1EBE4FAE006A92FF /* Item.swift */; };
 		4CC90E201EBCF8A800085824 /* WorldMapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E1F1EBCF8A800085824 /* WorldMapState.swift */; };
 		4CC90E231EBCF98200085824 /* ItemMenuMapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E221EBCF98200085824 /* ItemMenuMapState.swift */; };
 		4CC90E251EBCF9AC00085824 /* EquipMenuMapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E241EBCF9AC00085824 /* EquipMenuMapState.swift */; };
@@ -96,6 +97,7 @@
 		4C7A275D1EB762140074C220 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		4CB737871EBE2628006A92FF /* DamageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageHandler.swift; sourceTree = "<group>"; };
 		4CB737891EBE3290006A92FF /* LootBattleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LootBattleState.swift; sourceTree = "<group>"; };
+		4CB7378B1EBE4FAE006A92FF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		4CC90E1F1EBCF8A800085824 /* WorldMapState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldMapState.swift; sourceTree = "<group>"; };
 		4CC90E221EBCF98200085824 /* ItemMenuMapState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMenuMapState.swift; sourceTree = "<group>"; };
 		4CC90E241EBCF9AC00085824 /* EquipMenuMapState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipMenuMapState.swift; sourceTree = "<group>"; };
@@ -212,8 +214,9 @@
 				4CC90E261EBCFB0700085824 /* GooglePlacesAPI.swift */,
 				4CC90E2A1EBD074900085824 /* JSONParser.swift */,
 				4CB737871EBE2628006A92FF /* DamageHandler.swift */,
-				4C7A274B1EB7208A0074C220 /* Entity */,
-				4CDC5B4F1EBADF5700A194DD /* State */,
+				4C7A274B1EB7208A0074C220 /* Entities */,
+				4CDC5B4F1EBADF5700A194DD /* States */,
+				4CB7378D1EBE4FC0006A92FF /* Items */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -227,25 +230,25 @@
 			name = "Player Character";
 			sourceTree = "<group>";
 		};
-		4C7A274B1EB7208A0074C220 /* Entity */ = {
+		4C7A274B1EB7208A0074C220 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				4C7A27411EB6E4160074C220 /* EntityBehavior.swift */,
 				4C7A275D1EB762140074C220 /* Entity.swift */,
 				4CDC5B471EBA305E00A194DD /* StatTypes.swift */,
-				4C7A274E1EB720B80074C220 /* Monster */,
+				4C7A274E1EB720B80074C220 /* Monsters */,
 				4C7A274A1EB7044F0074C220 /* Player Character */,
 			);
-			name = Entity;
+			name = Entities;
 			sourceTree = "<group>";
 		};
-		4C7A274E1EB720B80074C220 /* Monster */ = {
+		4C7A274E1EB720B80074C220 /* Monsters */ = {
 			isa = PBXGroup;
 			children = (
 				4C7A274C1EB7209D0074C220 /* Monster.swift */,
 				4C7A274F1EB7211A0074C220 /* MonsterBehavior.swift */,
 			);
-			name = Monster;
+			name = Monsters;
 			sourceTree = "<group>";
 		};
 		4C7A27581EB72A220074C220 /* Controller */ = {
@@ -277,6 +280,14 @@
 				4CDC5B6A1EBCF3CA00A194DD /* Map Scene */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		4CB7378D1EBE4FC0006A92FF /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				4CB7378B1EBE4FAE006A92FF /* Item.swift */,
+			);
+			name = Items;
 			sourceTree = "<group>";
 		};
 		4CC90E211EBCF94000085824 /* World Map States */ = {
@@ -313,7 +324,7 @@
 			name = "Story Boards";
 			sourceTree = "<group>";
 		};
-		4CDC5B4F1EBADF5700A194DD /* State */ = {
+		4CDC5B4F1EBADF5700A194DD /* States */ = {
 			isa = PBXGroup;
 			children = (
 				4CDC5B501EBADF6E00A194DD /* State.swift */,
@@ -322,7 +333,7 @@
 				4CDC5B601EBB68D100A194DD /* Battle States */,
 				4CC90E211EBCF94000085824 /* World Map States */,
 			);
-			name = State;
+			name = States;
 			sourceTree = "<group>";
 		};
 		4CDC5B601EBB68D100A194DD /* Battle States */ = {
@@ -497,6 +508,7 @@
 				4C7A274D1EB7209D0074C220 /* Monster.swift in Sources */,
 				4CDC5B691EBCF3A700A194DD /* WorldMap.swift in Sources */,
 				4CDC5B621EBCA49B00A194DD /* ARController.swift in Sources */,
+				4CB7378C1EBE4FAE006A92FF /* Item.swift in Sources */,
 				4CB7378A1EBE3290006A92FF /* LootBattleState.swift in Sources */,
 				4CDC5B571EBAE65100A194DD /* GameViewController.swift in Sources */,
 				4C7A275E1EB762140074C220 /* Entity.swift in Sources */,

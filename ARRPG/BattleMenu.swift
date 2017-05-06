@@ -32,7 +32,7 @@ class BattleMenu: UIView {
         }
     }
     
-    fileprivate func hideAttackMenu() {
+    func hideAttackMenu() {
         for button in buttons {
             if button.isKind(of: AttackMenuButton.self) {
                 button.isHidden = true
@@ -41,7 +41,7 @@ class BattleMenu: UIView {
         }
     }
     
-    fileprivate func showAttackMenu() {
+    func showAttackMenu() {
         for button in buttons {
             if button.isKind(of: AttackMenuButton.self) {
                 button.isHidden = false
@@ -50,7 +50,7 @@ class BattleMenu: UIView {
         }
     }
     
-    fileprivate func hideLootMenu() {
+    func hideLootMenu() {
         for button in buttons {
             if button.isKind(of: LootMenuButton.self) {
                 button.isHidden = true
@@ -59,7 +59,7 @@ class BattleMenu: UIView {
         }
     }
     
-    fileprivate func showLootMenu() {
+    func showLootMenu() {
         for button in buttons {
             if button.isKind(of: LootMenuButton.self) {
                 button.isHidden = false

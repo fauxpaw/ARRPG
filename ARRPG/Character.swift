@@ -11,7 +11,7 @@ import Foundation
 class Character:Entity, EntityBehavior, CharacterBehavior {
     
     var owner : GameViewController?
-    var bag = [String]()
+    var bag = [Item]()
     var exp: Int = 0
 
     //var weapon: WeaponBehavior?
@@ -69,9 +69,10 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     
     //Character Behavior Protocol
     
-    func collectItem(itemToCollect: String) {
+    func collectItem(itemToCollect: Item) {
         
         bag.append(itemToCollect)
+        
         print("You have received a \(itemToCollect)")
     }
     
