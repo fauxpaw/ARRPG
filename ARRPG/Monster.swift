@@ -19,9 +19,12 @@ class Monster: Entity, EntityBehavior, MonsterBehavior {
         super.init()
         self.maxHP.setValue(to: hp)
         self.currentHP.setValue(to: hp)
+        self.currentHP.setUpperBound(value: hp)
         self.maxMP.setValue(to: mp)
         self.currentMP.setValue(to: mp)
-        
+        self.currentMP.setUpperBound(value: mp)
+        self.lvl.setLowerBound(value: 1)
+        self.lvl.setUpperBound(value: 99)
         
     }
     

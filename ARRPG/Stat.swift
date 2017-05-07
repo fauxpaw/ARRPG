@@ -13,6 +13,7 @@ class Stat: NSObject {
     
     private var value: Int
     private var maxValue: Int?
+    private var minVlaue: Int?
     
     init(val: Int) {
         self.value = val
@@ -38,4 +39,41 @@ class Stat: NSObject {
             }
         }
     }
+    
+    func setUpperBound(value: Int) {
+        self.maxValue = value
+    }
+    
+    func getUpperBound() -> Int? {
+        if let max = self.maxValue {
+            return max
+        }
+        return nil
+    }
+    
+    func setLowerBound(value: Int) {
+        self.minVlaue = value
+    }
+    
+    func getLowerBound() -> Int? {
+        if let min = self.minVlaue {
+            return min
+        }
+        return nil
+    }
+    
+    func modifyUpperBound(value: Int) {
+        if var max = self.maxValue {
+            max += value
+            self.maxValue = max
+        }
+    }
+    
+    func modifyLowerBound(value: Int) {
+        if var min = self.minVlaue {
+            min += value
+            self.minVlaue = min
+        }
+    }
+    
 }

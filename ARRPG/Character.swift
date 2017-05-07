@@ -24,11 +24,16 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         
         self.owner = owner
         super.init()
+        self.atk.setValue(to: 6)
+        self.atk.setLowerBound(value: 1)
         self.maxHP.setValue(to: hp)
         self.currentHP.setValue(to: hp)
+        self.currentHP.setUpperBound(value: hp)
         self.maxMP.setValue(to: mp)
         self.currentMP.setValue(to: mp)
-        self.atk.setValue(to: 6)
+        self.currentMP.setUpperBound(value: mp)
+        self.lvl.setLowerBound(value: 1)
+        self.lvl.setUpperBound(value: 99)
         
     }
     
