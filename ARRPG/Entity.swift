@@ -22,7 +22,3 @@ class Entity {
     //var weapon = unarmed
 }
 
-enum things {
-    case lvl(Level)
-    case atk(Attack)
-}

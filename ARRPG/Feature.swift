@@ -20,8 +20,10 @@ class Feature: NSObject, FeatureBehavior {
         }
     }
     
-    func deactivate() {
-        guard self.target != nil else {return}
+    func deactivate(target: Entity) {
+        if self.target == nil {
+            self.target = target
+        }
         self.onRemove()
         self.target = nil
     }
@@ -30,6 +32,7 @@ class Feature: NSObject, FeatureBehavior {
         self.target = target
         self.onApply()
         self.target = nil
+
     }
     
     func onRemove() {}

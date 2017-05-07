@@ -131,14 +131,20 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         self.updateStats()
     }
     
-    
     @IBAction func itemButtonSelected(_ sender: Any) {
         
+        print("Item button pressed!")
+        if player.bag.isEmpty {
+            let item = TestItem(owner: self.player)
+            self.player.equipItem(item: item)
+            self.updateStats()
+        } else {
+            player.dequipItem(item: player.bag.first as! Equipable)
+            player.bag.remove(at: 0)
+            self.updateStats()
+        }
         
-        print("Max hp potion!")
-        let item = TestItem(name: "MHPPot", description: "such max hp", cost: 500, owner: self.player)
-        self.player.equipItem(item: item.effect)
-        self.updateStats()
+        
         
     }
     
@@ -148,10 +154,11 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         performSegue(withIdentifier: "endBattle", sender: self)
         
     }
-        
+    
     @IBAction func lootButtonSelected(_ sender: Any) {
         
         performSegue(withIdentifier: "endBattle", sender: self)
+        
     }
     
 }
