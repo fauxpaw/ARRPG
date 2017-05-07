@@ -98,8 +98,8 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     
     func updateStats() {
         playerLvlLabel.text = "Lvl: \(player.lvl.getValue())"
-        playerHPLabel.text = "HP: \(player.currentHP.getValue())"
-        playerMPLabel.text = "MP: \(player.currentMP.getValue())"
+        playerHPLabel.text = "HP: \(player.currentHP.getValue())/\(player.maxHP.getValue())"
+        playerMPLabel.text = "MP: \(player.currentMP.getValue())/\(player.maxMP.getValue())"
         guard let mob = mob else {return}
         enemyHPLabel.text = "Enemy HP: \(mob.currentHP.getValue())"
     }
@@ -135,7 +135,11 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     
     @IBAction func itemButtonSelected(_ sender: Any) {
         
-        print("Which item would you like to use?")
+        
+        print("Max hp potion!")
+        let item = TestItem(name: "MHPPot", description: "such max hp", cost: 500, owner: self.player)
+        self.player.equipItem(item: item.effect)
+        self.updateStats()
         
     }
     

@@ -48,6 +48,7 @@
 		4CC90E291EBD033400085824 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E281EBD033400085824 /* PlaceAnnotation.swift */; };
 		4CC90E2B1EBD074900085824 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E2A1EBD074900085824 /* JSONParser.swift */; };
 		4CC90E2D1EBD0B2A00085824 /* ARItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E2C1EBD0B2A00085824 /* ARItemFactory.swift */; };
+		4CD190E11EBEC095004B2C04 /* TestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD190E01EBEC095004B2C04 /* TestItem.swift */; };
 		4CDC5B381EB935D300A194DD /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B371EB935D300A194DD /* SpriteScene.swift */; };
 		4CDC5B3A1EB9399A00A194DD /* arrowsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */; };
 		4CDC5B401EBA133400A194DD /* BattleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */; };
@@ -130,6 +131,7 @@
 		4CC90E281EBD033400085824 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		4CC90E2A1EBD074900085824 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		4CC90E2C1EBD0B2A00085824 /* ARItemFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARItemFactory.swift; sourceTree = "<group>"; };
+		4CD190E01EBEC095004B2C04 /* TestItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestItem.swift; sourceTree = "<group>"; };
 		4CDC5B371EB935D300A194DD /* SpriteScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
 		4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arrowsProtocol.swift; sourceTree = "<group>"; };
 		4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleMenu.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 		4CB737981EBE5583006A92FF /* Swords */ = {
 			isa = PBXGroup;
 			children = (
+				4CD190E01EBEC095004B2C04 /* TestItem.swift */,
 			);
 			name = Swords;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				4CC90E201EBCF8A800085824 /* WorldMapState.swift in Sources */,
 				4CDC5B3A1EB9399A00A194DD /* arrowsProtocol.swift in Sources */,
 				4CC0736C1EBEB4070080CD6A /* Attack.swift in Sources */,
+				4CD190E11EBEC095004B2C04 /* TestItem.swift in Sources */,
 				4C7A27111EB6E3A10074C220 /* AppDelegate.swift in Sources */,
 				4C7A27461EB6FBE60074C220 /* Character.swift in Sources */,
 				4CC90E271EBCFB0700085824 /* GooglePlacesAPI.swift in Sources */,
