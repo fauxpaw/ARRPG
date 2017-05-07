@@ -320,11 +320,11 @@
 				4CB737901EBE545A006A92FF /* ConsumableItemBehavior.swift */,
 				4CB737921EBE5518006A92FF /* Buyable.swift */,
 				4CB737941EBE5521006A92FF /* Sellable.swift */,
-				4CB737981EBE5583006A92FF /* Swords */,
 				4C95AB0C1EBE5842003E4A50 /* Equipable.swift */,
 				4C95AB0E1EBE68E5003E4A50 /* Feature.swift */,
 				4C95AB101EBE6B66003E4A50 /* FeatureBehavior.swift */,
 				4C95AB121EBE6BD7003E4A50 /* StatModifierFeature.swift */,
+				4CB737981EBE5583006A92FF /* Swords */,
 			);
 			name = Items;
 			sourceTree = "<group>";

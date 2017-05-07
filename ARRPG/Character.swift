@@ -69,14 +69,14 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         print("You have died...game over")
     }
     
-    func equipItem(item: StatModifierFeature) {
+    func equipItem(item: Equipable) {
         
-        item.activate(target: self)
-        
+        bag.append(item)
+        item.onEquip()
     }
     
-    func dequipItem() {
-        
+    func dequipItem(item: Equipable) {
+        item.onDequip()
     }
     
     func consume() {

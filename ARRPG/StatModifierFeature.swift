@@ -42,6 +42,7 @@ class StatModifierFeature: Feature {
         }
         
         if statToMod == StatsType.MMP {
+           
             target?.maxMP.modifyBy(val: self.amount)
         }
         
@@ -55,6 +56,8 @@ class StatModifierFeature: Feature {
     }
     
     override func onRemove() {
+        print("Removing stat: \(statToMod) feature...")
+
         if statToMod == StatsType.ATK {
             target?.atk.modifyBy(val: -self.amount)
         }
@@ -68,6 +71,7 @@ class StatModifierFeature: Feature {
         }
         
         if statToMod == StatsType.MHP {
+            
             target?.maxHP.modifyBy(val: -self.amount)
         }
         
@@ -87,7 +91,6 @@ class StatModifierFeature: Feature {
             target?.lvl.modifyBy(val: -self.amount)
         }
     }
-    
 }
 
 
