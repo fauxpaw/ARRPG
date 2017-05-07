@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class TestItem: Equipable {
     
@@ -22,5 +23,6 @@ class TestItem: Equipable {
         self.effects.append(effect1)
         self.effects.append(effect2)
         self.owner = owner
+        self.image = #imageLiteral(resourceName: "axe")
     }
 }

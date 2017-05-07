@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Item: NSObject {
     
@@ -15,6 +16,7 @@ class Item: NSObject {
     let desc: String
     let cost: Int
     let sellValue: Int
+    var image = #imageLiteral(resourceName: "x")
     
     init(name: String, description: String, cost: Int, owner: Character? = nil) {
         self.name = name

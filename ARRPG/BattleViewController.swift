@@ -144,8 +144,6 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
             self.updateStats()
         }
         
-        
-        
     }
     
     @IBAction func runButtonSelected(_ sender: Any) {
