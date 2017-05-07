@@ -20,7 +20,7 @@ class DamageHandler {
     
     func calculateDMG(attacker: Entity, defender: Entity) -> Int {
         // atk * atk / (atk + def)
-        let dmg = attacker.atk * attacker.atk / (attacker.atk + defender.def)
+        let dmg = attacker.atk.getValue() * attacker.atk.getValue() / (attacker.atk.getValue() + defender.def.getValue())
         return dmg
     }
     
@@ -28,7 +28,10 @@ class DamageHandler {
         
     }
     
+    func heal(caster: Entity, target: Entity) -> Int {
+        //TODO checks for bonuses etc
     
-    
-    
+        let value = caster.atk.getValue() //<- change from atk value to some heal value
+        return value
+    }
 }

@@ -9,12 +9,7 @@
 import Foundation
 
 protocol EntityBehavior {
-    
-    var currentHP : Int { get set}
-    var maxHP: Int { get set}
-    var currentMP : Int { get set}
-    var maxMP : Int { get set}
-    
+        
     func attack(target: Entity)
     func attack(targets: [Entity])
     func takeDmg(amount: Int) -> Int

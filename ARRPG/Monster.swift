@@ -17,10 +17,10 @@ class Monster: Entity, EntityBehavior, MonsterBehavior {
     init(hp: Int, mp: Int, target: Character) {
         self.target = target
         super.init()
-        self.maxHP = hp
-        self.currentHP = hp
-        self.maxMP = mp
-        self.currentMP = mp
+        self.maxHP.setValue(to: hp)
+        self.currentHP.setValue(to: hp)
+        self.maxMP.setValue(to: mp)
+        self.currentMP.setValue(to: mp)
         
         
     }
@@ -35,9 +35,9 @@ class Monster: Entity, EntityBehavior, MonsterBehavior {
     
     func takeDmg(amount: Int) -> Int {
         print("Monster got hit for \(amount)!")
-        self.currentHP = max(self.currentHP - amount, 0)
+        self.currentHP.modifyBy(val: -1 * amount)
     
-        return self.currentHP
+        return self.currentHP.getValue()
     }
     
     func expire() {

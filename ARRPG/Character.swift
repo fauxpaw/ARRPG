@@ -24,11 +24,11 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         
         self.owner = owner
         super.init()
-        self.maxHP = hp
-        self.currentHP = hp
-        self.maxMP = mp
-        self.currentMP = mp
-        self.atk = 5
+        self.maxHP.setValue(to: hp)
+        self.currentHP.setValue(to: hp)
+        self.maxMP.setValue(to: mp)
+        self.currentMP.setValue(to: mp)
+        self.atk.setValue(to: 6)
         
     }
     
@@ -46,9 +46,9 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     func takeDmg(amount: Int) -> Int{
         print("Ow, you took \(amount) dmg")
 
-        self.currentHP = max(self.currentHP - amount, 0)
+        self.currentHP.modifyBy(val: -amount)
         
-        return self.currentHP
+        return self.currentHP.getValue()
     }
     
     func expire() {

@@ -29,7 +29,7 @@
 		4C95AB0F1EBE68E5003E4A50 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95AB0E1EBE68E5003E4A50 /* Feature.swift */; };
 		4C95AB111EBE6B66003E4A50 /* FeatureBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95AB101EBE6B66003E4A50 /* FeatureBehavior.swift */; };
 		4C95AB131EBE6BD7003E4A50 /* StateModifierFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95AB121EBE6BD7003E4A50 /* StateModifierFeature.swift */; };
-		4C95AB151EBE6F2B003E4A50 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95AB141EBE6F2B003E4A50 /* Stats.swift */; };
+		4C95AB151EBE6F2B003E4A50 /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95AB141EBE6F2B003E4A50 /* Stat.swift */; };
 		4CB737881EBE2629006A92FF /* DamageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB737871EBE2628006A92FF /* DamageHandler.swift */; };
 		4CB7378A1EBE3290006A92FF /* LootBattleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB737891EBE3290006A92FF /* LootBattleState.swift */; };
 		4CB7378C1EBE4FAE006A92FF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7378B1EBE4FAE006A92FF /* Item.swift */; };
@@ -50,7 +50,6 @@
 		4CDC5B401EBA133400A194DD /* BattleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */; };
 		4CDC5B441EBA156B00A194DD /* AttackMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B431EBA156B00A194DD /* AttackMenuButton.swift */; };
 		4CDC5B461EBA188E00A194DD /* LootMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B451EBA188E00A194DD /* LootMenuButton.swift */; };
-		4CDC5B481EBA305E00A194DD /* StatTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B471EBA305E00A194DD /* StatTypes.swift */; };
 		4CDC5B4E1EBADED500A194DD /* BattleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B4D1EBADED500A194DD /* BattleState.swift */; };
 		4CDC5B511EBADF6E00A194DD /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B501EBADF6E00A194DD /* State.swift */; };
 		4CDC5B531EBADFCF00A194DD /* StateBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B521EBADFCF00A194DD /* StateBehavior.swift */; };
@@ -109,7 +108,7 @@
 		4C95AB0E1EBE68E5003E4A50 /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		4C95AB101EBE6B66003E4A50 /* FeatureBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureBehavior.swift; sourceTree = "<group>"; };
 		4C95AB121EBE6BD7003E4A50 /* StateModifierFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateModifierFeature.swift; sourceTree = "<group>"; };
-		4C95AB141EBE6F2B003E4A50 /* Stats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		4C95AB141EBE6F2B003E4A50 /* Stat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		4CB737871EBE2628006A92FF /* DamageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageHandler.swift; sourceTree = "<group>"; };
 		4CB737891EBE3290006A92FF /* LootBattleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LootBattleState.swift; sourceTree = "<group>"; };
 		4CB7378B1EBE4FAE006A92FF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -130,7 +129,6 @@
 		4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleMenu.swift; sourceTree = "<group>"; };
 		4CDC5B431EBA156B00A194DD /* AttackMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackMenuButton.swift; sourceTree = "<group>"; };
 		4CDC5B451EBA188E00A194DD /* LootMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LootMenuButton.swift; sourceTree = "<group>"; };
-		4CDC5B471EBA305E00A194DD /* StatTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatTypes.swift; sourceTree = "<group>"; };
 		4CDC5B4D1EBADED500A194DD /* BattleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleState.swift; sourceTree = "<group>"; };
 		4CDC5B501EBADF6E00A194DD /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		4CDC5B521EBADFCF00A194DD /* StateBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateBehavior.swift; sourceTree = "<group>"; };
@@ -255,10 +253,9 @@
 			children = (
 				4C7A27411EB6E4160074C220 /* EntityBehavior.swift */,
 				4C7A275D1EB762140074C220 /* Entity.swift */,
-				4CDC5B471EBA305E00A194DD /* StatTypes.swift */,
 				4C7A274E1EB720B80074C220 /* Monsters */,
 				4C7A274A1EB7044F0074C220 /* Player Character */,
-				4C95AB141EBE6F2B003E4A50 /* Stats.swift */,
+				4C95AB141EBE6F2B003E4A50 /* Stat.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -563,7 +560,7 @@
 				4CC90E2B1EBD074900085824 /* JSONParser.swift in Sources */,
 				4CDC5B381EB935D300A194DD /* SpriteScene.swift in Sources */,
 				4CB737951EBE5521006A92FF /* Sellable.swift in Sources */,
-				4C95AB151EBE6F2B003E4A50 /* Stats.swift in Sources */,
+				4C95AB151EBE6F2B003E4A50 /* Stat.swift in Sources */,
 				4CDC5B441EBA156B00A194DD /* AttackMenuButton.swift in Sources */,
 				4CC90E291EBD033400085824 /* PlaceAnnotation.swift in Sources */,
 				4CB737931EBE5518006A92FF /* Buyable.swift in Sources */,
@@ -582,7 +579,6 @@
 				4C7A27501EB7211A0074C220 /* MonsterBehavior.swift in Sources */,
 				4C7A275C1EB72C390074C220 /* ARItem.swift in Sources */,
 				4C2735711EB7A338006B4642 /* MainScene.swift in Sources */,
-				4CDC5B481EBA305E00A194DD /* StatTypes.swift in Sources */,
 				4CC90E2D1EBD0B2A00085824 /* ARItemFactory.swift in Sources */,
 				4CDC5B591EBAE88000A194DD /* NullState.swift in Sources */,
 				4CB7378F1EBE544F006A92FF /* EquipableItemBehavior.swift in Sources */,

@@ -76,20 +76,6 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         self.menuController.styleUI()
     }
     
-    func deathChecks() {
-        guard let monster = mob else {return}
-        if monster.currentHP <= 0 {
-            player.target = nil
-            self.sceneView.removeMonster()
-            self.enterLootState()
-        }
-        
-        if player.currentHP <= 0 {
-            player.expire()
-            performSegue(withIdentifier: "death", sender: self)
-        }
-    }
-    
     func enterLootState() {
         menuController.lootState()
     }
@@ -111,11 +97,11 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     }
     
     func updateStats() {
-        playerLvlLabel.text = "Lvl: \(player.lvl)"
-        playerHPLabel.text = "HP: \(player.currentHP)"
-        playerMPLabel.text = "MP: \(player.currentMP)"
+        playerLvlLabel.text = "Lvl: \(player.lvl.getValue())"
+        playerHPLabel.text = "HP: \(player.currentHP.getValue())"
+        playerMPLabel.text = "MP: \(player.currentMP.getValue())"
         guard let mob = mob else {return}
-        enemyHPLabel.text = "Enemy HP: \(mob.currentHP)"
+        enemyHPLabel.text = "Enemy HP: \(mob.currentHP.getValue())"
     }
     
     func enableAttackButton() {
@@ -141,7 +127,9 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     @IBAction func magicButtonSelected(_ sender: Any) {
         
         print("Casting magic")
-        
+        let heal = DamageHandler.shared.heal(caster: player, target: player.target!)
+        _ = player.target?.takeDmg(amount: -heal)
+        self.updateStats()
     }
     
     

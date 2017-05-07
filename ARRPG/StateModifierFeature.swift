@@ -11,10 +11,11 @@ import Foundation
 
 class StatModifierFeature: Feature {
     
-    var stat: StatTypes
+    //var stat: StatTypes
+    var stat: Stat
     var amount: Int = 0
     
-    init(stat: StatTypes, amount: Int) {
+    init(stat: Stat ,amount: Int) {
         self.stat = stat
         self.amount = amount
     }
