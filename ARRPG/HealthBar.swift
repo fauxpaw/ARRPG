@@ -31,7 +31,7 @@ class HealthBar: SKSpriteNode  {
         
         //draw bar with colored rectangle
         fillColor.setFill()
-        let barWidth = (barSize.width - 1) * CGFloat((delegate?.mob?.currentHP)!) / CGFloat((delegate?.mob?.maxHP)!)
+        let barWidth = (barSize.width - 1) * CGFloat((delegate?.mob?.currentHP.getValue())!) / CGFloat((delegate?.mob?.maxHP.getValue())!)
         let barRect = CGRect(x: 0.5, y: 0.5, width: barWidth, height: barSize.height - 1)
         context!.fill(barRect)
         

@@ -2,14 +2,13 @@
 //  StatTypes.swift
 //  ARRPG
 //
-//  Created by Michael Sweeney on 5/3/17.
+//  Created by Michael Sweeney on 5/6/17.
 //  Copyright © 2017 Michael Sweeney. All rights reserved.
 //
 
 import Foundation
 
-enum StatTypes {
-    
+enum StatsType {
     case LVL // Level
     case EXP // Experience
     case HP  // Hit Points
@@ -23,5 +22,6 @@ enum StatTypes {
     case EVD // Evade
     case RES // Status Resistance
     case SPD // Speed
-    
+    case MOV // Move Range
+    case JMP // Jump Height
 }

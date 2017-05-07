@@ -12,6 +12,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     
     var owner : GameViewController?
     var bag = [Item]()
+    var gear = [Item]()
     var exp: Int = 0
 
     //var weapon: WeaponBehavior?
@@ -23,11 +24,16 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         
         self.owner = owner
         super.init()
-        self.maxHP = hp
-        self.currentHP = hp
-        self.maxMP = mp
-        self.currentMP = mp
-        self.atk = 5
+        self.atk.setValue(to: 6)
+        self.atk.setLowerBound(value: 1)
+        self.maxHP.setValue(to: hp)
+        self.currentHP.setValue(to: hp)
+        self.currentHP.setUpperBound(value: hp)
+        self.maxMP.setValue(to: mp)
+        self.currentMP.setValue(to: mp)
+        self.currentMP.setUpperBound(value: mp)
+        self.lvl.setLowerBound(value: 1)
+        self.lvl.setUpperBound(value: 99)
         
     }
     
@@ -45,9 +51,9 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     func takeDmg(amount: Int) -> Int{
         print("Ow, you took \(amount) dmg")
 
-        self.currentHP = max(self.currentHP - amount, 0)
+        self.currentHP.modifyBy(val: -amount)
         
-        return self.currentHP
+        return self.currentHP.getValue()
     }
     
     func expire() {
@@ -55,7 +61,9 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         print("You have died...game over")
     }
     
-    func equipItem() {
+    func equipItem(item: StatModifierFeature) {
+        
+        item.activate(target: self)
         
     }
     
