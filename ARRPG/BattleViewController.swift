@@ -114,7 +114,6 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         self.attackButton.isHighlighted = true
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.enableAttackButton), userInfo: nil, repeats: false)
         
-        //add roll to see who attacks first?
         let dmg = DamageHandler.shared.calculateDMG(attacker: player, defender: player.target!)
         let hpResult = player.target!.takeDmg(amount: dmg)
         self.updateStats()
@@ -123,7 +122,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         }
         
     }
-
+    
     @IBAction func magicButtonSelected(_ sender: Any) {
         
         print("Casting magic")

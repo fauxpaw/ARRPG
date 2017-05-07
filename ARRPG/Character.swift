@@ -11,8 +11,8 @@ import Foundation
 class Character:Entity, EntityBehavior, CharacterBehavior {
     
     var owner : GameViewController?
-    var bag = [Item]()
-    var gear = [Item]()
+    var bag = [Item]() //seperate manager
+    var gear = [Equipable]() //seperate manager
     var exp: Int = 0
 
     //var weapon: WeaponBehavior?
@@ -24,14 +24,22 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         
         self.owner = owner
         super.init()
+        //set atk value
         self.atk.setValue(to: 6)
         self.atk.setLowerBound(value: 1)
+        //set max hp
         self.maxHP.setValue(to: hp)
+        self.maxHP.setLowerBound(value: 1)
+        //set current hp
         self.currentHP.setValue(to: hp)
         self.currentHP.setUpperBound(value: hp)
+        //set max mp
         self.maxMP.setValue(to: mp)
+        self.maxMP.setLowerBound(value: 1)
+        //set current mp
         self.currentMP.setValue(to: mp)
         self.currentMP.setUpperBound(value: mp)
+        //set lvl
         self.lvl.setLowerBound(value: 1)
         self.lvl.setUpperBound(value: 99)
         
@@ -78,8 +86,6 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     //Character Behavior Protocol
     
     func collectItem(itemToCollect: Item) {
-        
-        bag.append(itemToCollect)
         
         print("You have received a \(itemToCollect)")
     }
