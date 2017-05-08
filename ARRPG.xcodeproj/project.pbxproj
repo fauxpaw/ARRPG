@@ -11,6 +11,8 @@
 		4C2735711EB7A338006B4642 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2735701EB7A338006B4642 /* MainScene.swift */; };
 		4C59C8871EBFD190002D754F /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C59C8861EBFD190002D754F /* InventoryViewController.swift */; };
 		4C59C8891EBFE3AE002D754F /* BestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C59C8881EBFE3AE002D754F /* BestItem.swift */; };
+		4C59C88B1EBFF0FE002D754F /* EquipmentSlots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C59C88A1EBFF0FE002D754F /* EquipmentSlots.swift */; };
+		4C59C88D1EBFF61B002D754F /* EquipmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C59C88C1EBFF61B002D754F /* EquipmentManager.swift */; };
 		4C7A27111EB6E3A10074C220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27101EB6E3A10074C220 /* AppDelegate.swift */; };
 		4C7A27131EB6E3A10074C220 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27121EB6E3A10074C220 /* TestViewController.swift */; };
 		4C7A27161EB6E3A10074C220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7A27141EB6E3A10074C220 /* Main.storyboard */; };
@@ -50,6 +52,7 @@
 		4CC90E291EBD033400085824 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E281EBD033400085824 /* PlaceAnnotation.swift */; };
 		4CC90E2B1EBD074900085824 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E2A1EBD074900085824 /* JSONParser.swift */; };
 		4CC90E2D1EBD0B2A00085824 /* ARItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E2C1EBD0B2A00085824 /* ARItemFactory.swift */; };
+		4CCFA4731EC01FAB009A0D2F /* EquipmentManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCFA4721EC01FAB009A0D2F /* EquipmentManagerTests.swift */; };
 		4CD190E11EBEC095004B2C04 /* TestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD190E01EBEC095004B2C04 /* TestItem.swift */; };
 		4CDC5B381EB935D300A194DD /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B371EB935D300A194DD /* SpriteScene.swift */; };
 		4CDC5B3A1EB9399A00A194DD /* arrowsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */; };
@@ -90,6 +93,8 @@
 		4C2735701EB7A338006B4642 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		4C59C8861EBFD190002D754F /* InventoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		4C59C8881EBFE3AE002D754F /* BestItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestItem.swift; sourceTree = "<group>"; };
+		4C59C88A1EBFF0FE002D754F /* EquipmentSlots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentSlots.swift; sourceTree = "<group>"; };
+		4C59C88C1EBFF61B002D754F /* EquipmentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentManager.swift; sourceTree = "<group>"; };
 		4C7A270D1EB6E3A10074C220 /* ARRPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARRPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7A27101EB6E3A10074C220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C7A27121EB6E3A10074C220 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +140,7 @@
 		4CC90E281EBD033400085824 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		4CC90E2A1EBD074900085824 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		4CC90E2C1EBD0B2A00085824 /* ARItemFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARItemFactory.swift; sourceTree = "<group>"; };
+		4CCFA4721EC01FAB009A0D2F /* EquipmentManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentManagerTests.swift; sourceTree = "<group>"; };
 		4CD190E01EBEC095004B2C04 /* TestItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestItem.swift; sourceTree = "<group>"; };
 		4CDC5B371EB935D300A194DD /* SpriteScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
 		4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arrowsProtocol.swift; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 				4C7A27281EB6E3A20074C220 /* ARRPGTests.swift */,
 				4C7A272A1EB6E3A20074C220 /* Info.plist */,
 				4CC073671EBEAAAC0080CD6A /* StatTests.swift */,
+				4CCFA4721EC01FAB009A0D2F /* EquipmentManagerTests.swift */,
 			);
 			path = ARRPGTests;
 			sourceTree = "<group>";
@@ -330,6 +337,8 @@
 				4C95AB101EBE6B66003E4A50 /* FeatureBehavior.swift */,
 				4C95AB121EBE6BD7003E4A50 /* StatModifierFeature.swift */,
 				4CB737981EBE5583006A92FF /* Swords */,
+				4C59C88A1EBFF0FE002D754F /* EquipmentSlots.swift */,
+				4C59C88C1EBFF61B002D754F /* EquipmentManager.swift */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -556,6 +565,7 @@
 			files = (
 				4CDC5B401EBA133400A194DD /* BattleMenu.swift in Sources */,
 				4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */,
+				4C59C88B1EBFF0FE002D754F /* EquipmentSlots.swift in Sources */,
 				4CDC5B511EBADF6E00A194DD /* State.swift in Sources */,
 				4CC90E231EBCF98200085824 /* ItemMenuMapState.swift in Sources */,
 				4C7A274D1EB7209D0074C220 /* Monster.swift in Sources */,
@@ -589,6 +599,7 @@
 				4CC0736A1EBEB38B0080CD6A /* Level.swift in Sources */,
 				4CB737911EBE545A006A92FF /* ConsumableItemBehavior.swift in Sources */,
 				4CC90E201EBCF8A800085824 /* WorldMapState.swift in Sources */,
+				4C59C88D1EBFF61B002D754F /* EquipmentManager.swift in Sources */,
 				4CDC5B3A1EB9399A00A194DD /* arrowsProtocol.swift in Sources */,
 				4CC0736C1EBEB4070080CD6A /* Attack.swift in Sources */,
 				4CD190E11EBEC095004B2C04 /* TestItem.swift in Sources */,
@@ -614,6 +625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CCFA4731EC01FAB009A0D2F /* EquipmentManagerTests.swift in Sources */,
 				4C7A27291EB6E3A20074C220 /* ARRPGTests.swift in Sources */,
 				4CC073681EBEAAAC0080CD6A /* StatTests.swift in Sources */,
 			);

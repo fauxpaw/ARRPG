@@ -16,13 +16,14 @@ class BestItem: Equipable {
     var effect2 = StatModifierFeature(stat: StatsType.MMP, amount: 25)
     
     init(owner: Character) {
-        let name = "Best Item"
-        let desc = "Danger Zone"
+        let name = "Great Axe"
+        let desc = "+50HP +25MP"
         let cost = 10000
         super.init(name: name, description: desc, cost: cost)
         self.effects.append(effect1)
         self.effects.append(effect2)
         self.owner = owner
         self.image = #imageLiteral(resourceName: "axeDouble2")
+        self.requiredSlots = [.Primary, .Secondary]
     }
 }
