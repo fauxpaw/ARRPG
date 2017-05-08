@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0E350D1EC0D297007386D3 /* HealthPotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E350C1EC0D297007386D3 /* HealthPotion.swift */; };
+		4C0E35101EC0D2FE007386D3 /* Consumable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E350F1EC0D2FE007386D3 /* Consumable.swift */; };
 		4C27356F1EB7985E006B4642 /* HealthBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C27356E1EB7985E006B4642 /* HealthBar.swift */; };
 		4C2735711EB7A338006B4642 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2735701EB7A338006B4642 /* MainScene.swift */; };
 		4C59C8871EBFD190002D754F /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C59C8861EBFD190002D754F /* InventoryViewController.swift */; };
@@ -90,12 +92,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0E350C1EC0D297007386D3 /* HealthPotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPotion.swift; sourceTree = "<group>"; };
+		4C0E350F1EC0D2FE007386D3 /* Consumable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consumable.swift; sourceTree = "<group>"; };
 		4C27356E1EB7985E006B4642 /* HealthBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthBar.swift; sourceTree = "<group>"; };
 		4C2735701EB7A338006B4642 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		4C59C8861EBFD190002D754F /* InventoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		4C59C8881EBFE3AE002D754F /* GreatAxe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreatAxe.swift; sourceTree = "<group>"; };
 		4C59C88A1EBFF0FE002D754F /* EquipmentSlots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentSlots.swift; sourceTree = "<group>"; };
-		4C59C88C1EBFF61B002D754F /* EquipmentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentManager.swift; sourceTree = "<group>"; };
+		4C59C88C1EBFF61B002D754F /* EquipmentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EquipmentManager.swift; path = ARRPG/EquipmentManager.swift; sourceTree = "<group>"; };
 		4C7A270D1EB6E3A10074C220 /* ARRPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARRPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7A27101EB6E3A10074C220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C7A27121EB6E3A10074C220 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +190,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C0E350E1EC0D29F007386D3 /* Consumable */ = {
+			isa = PBXGroup;
+			children = (
+				4C0E350C1EC0D297007386D3 /* HealthPotion.swift */,
+			);
+			name = Consumable;
+			sourceTree = "<group>";
+		};
 		4C2735721EB7A33C006B4642 /* Battle Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				4C7A270F1EB6E3A10074C220 /* ARRPG */,
+				4C59C88C1EBFF61B002D754F /* EquipmentManager.swift */,
 				4C7A27271EB6E3A20074C220 /* ARRPGTests */,
 				4C7A27321EB6E3A20074C220 /* ARRPGUITests */,
 				4C7A270E1EB6E3A10074C220 /* Products */,
@@ -266,6 +279,7 @@
 			children = (
 				4C7A27431EB6FB9C0074C220 /* CharacterBehavior.swift */,
 				4C7A27451EB6FBE60074C220 /* Character.swift */,
+				4C59C88A1EBFF0FE002D754F /* EquipmentSlots.swift */,
 			);
 			name = "Player Character";
 			sourceTree = "<group>";
@@ -338,10 +352,10 @@
 				4C95AB0E1EBE68E5003E4A50 /* Feature.swift */,
 				4C95AB101EBE6B66003E4A50 /* FeatureBehavior.swift */,
 				4C95AB121EBE6BD7003E4A50 /* StatModifierFeature.swift */,
+				4C0E350F1EC0D2FE007386D3 /* Consumable.swift */,
 				4CD559ED1EC0476700902B96 /* Axes */,
 				4CB737981EBE5583006A92FF /* Swords */,
-				4C59C88A1EBFF0FE002D754F /* EquipmentSlots.swift */,
-				4C59C88C1EBFF61B002D754F /* EquipmentManager.swift */,
+				4C0E350E1EC0D29F007386D3 /* Consumable */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -587,10 +601,12 @@
 				4CB7378A1EBE3290006A92FF /* LootBattleState.swift in Sources */,
 				4CDC5B571EBAE65100A194DD /* GameViewController.swift in Sources */,
 				4CC073701EBEBA1D0080CD6A /* StatsType.swift in Sources */,
+				4C0E350D1EC0D297007386D3 /* HealthPotion.swift in Sources */,
 				4C7A275E1EB762140074C220 /* Entity.swift in Sources */,
 				4C7A27441EB6FB9C0074C220 /* CharacterBehavior.swift in Sources */,
 				4CC90E251EBCF9AC00085824 /* EquipMenuMapState.swift in Sources */,
 				4CDC5B531EBADFCF00A194DD /* StateBehavior.swift in Sources */,
+				4C0E35101EC0D2FE007386D3 /* Consumable.swift in Sources */,
 				4C59C8891EBFE3AE002D754F /* GreatAxe.swift in Sources */,
 				4CDC5B5F1EBB68A700A194DD /* CombatBattleState.swift in Sources */,
 				4C59C8871EBFD190002D754F /* InventoryViewController.swift in Sources */,
