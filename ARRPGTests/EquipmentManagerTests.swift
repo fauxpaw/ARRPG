@@ -42,8 +42,10 @@ class EquipmentManagerTests: XCTestCase {
         manager.equip(item: spatha)
         XCTAssertEqual(300, player.maxHP.getValue())
         XCTAssert(manager.itemsEquipped.count == 2)
-
-        
+        manager.dequip(atSlot: EquipmentSlots.OffHand)
+        XCTAssertEqual(200, player.maxHP.getValue())
+        manager.equip(item: twohandedAxe_1)
+        XCTAssert(manager.itemsEquipped.count == 1)
     }
     
     func testPerformanceExample() {
