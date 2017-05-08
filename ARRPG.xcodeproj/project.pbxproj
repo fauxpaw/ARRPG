@@ -10,6 +10,8 @@
 		4C0E350D1EC0D297007386D3 /* HealthPotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E350C1EC0D297007386D3 /* HealthPotion.swift */; };
 		4C0E35101EC0D2FE007386D3 /* Consumable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E350F1EC0D2FE007386D3 /* Consumable.swift */; };
 		4C0E35121EC12888007386D3 /* CrusaderHelm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E35111EC12888007386D3 /* CrusaderHelm.swift */; };
+		4C0E35161EC12EF8007386D3 /* KiteShield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E35151EC12EF8007386D3 /* KiteShield.swift */; };
+		4C0E35181EC1346C007386D3 /* KnightsCuirass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E35171EC1346C007386D3 /* KnightsCuirass.swift */; };
 		4C27356F1EB7985E006B4642 /* HealthBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C27356E1EB7985E006B4642 /* HealthBar.swift */; };
 		4C2735711EB7A338006B4642 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2735701EB7A338006B4642 /* MainScene.swift */; };
 		4C59C8871EBFD190002D754F /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C59C8861EBFD190002D754F /* InventoryViewController.swift */; };
@@ -96,6 +98,8 @@
 		4C0E350C1EC0D297007386D3 /* HealthPotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPotion.swift; sourceTree = "<group>"; };
 		4C0E350F1EC0D2FE007386D3 /* Consumable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consumable.swift; sourceTree = "<group>"; };
 		4C0E35111EC12888007386D3 /* CrusaderHelm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrusaderHelm.swift; sourceTree = "<group>"; };
+		4C0E35151EC12EF8007386D3 /* KiteShield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiteShield.swift; sourceTree = "<group>"; };
+		4C0E35171EC1346C007386D3 /* KnightsCuirass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnightsCuirass.swift; sourceTree = "<group>"; };
 		4C27356E1EB7985E006B4642 /* HealthBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthBar.swift; sourceTree = "<group>"; };
 		4C2735701EB7A338006B4642 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		4C59C8861EBFD190002D754F /* InventoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 				4CD559ED1EC0476700902B96 /* Axes */,
 				4C0E35131EC1289A007386D3 /* Helms */,
 				4CB737981EBE5583006A92FF /* Swords */,
+				4C0E35151EC12EF8007386D3 /* KiteShield.swift */,
 			);
 			name = Equipment;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				4C95AB121EBE6BD7003E4A50 /* StatModifierFeature.swift */,
 				4C0E35141EC12910007386D3 /* Equipment */,
 				4C0E350E1EC0D29F007386D3 /* Consumable */,
+				4C0E35171EC1346C007386D3 /* KnightsCuirass.swift */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -644,6 +650,7 @@
 				4C7A27131EB6E3A10074C220 /* TestViewController.swift in Sources */,
 				4CC0736A1EBEB38B0080CD6A /* Level.swift in Sources */,
 				4CB737911EBE545A006A92FF /* ConsumableItemBehavior.swift in Sources */,
+				4C0E35161EC12EF8007386D3 /* KiteShield.swift in Sources */,
 				4CC90E201EBCF8A800085824 /* WorldMapState.swift in Sources */,
 				4C59C88D1EBFF61B002D754F /* EquipmentManager.swift in Sources */,
 				4C0E35121EC12888007386D3 /* CrusaderHelm.swift in Sources */,
@@ -657,6 +664,7 @@
 				4CDC5B4E1EBADED500A194DD /* BattleState.swift in Sources */,
 				4C7A27191EB6E3A10074C220 /* ARRPG.xcdatamodeld in Sources */,
 				4CB737881EBE2629006A92FF /* DamageHandler.swift in Sources */,
+				4C0E35181EC1346C007386D3 /* KnightsCuirass.swift in Sources */,
 				4C95AB0D1EBE5842003E4A50 /* Equipable.swift in Sources */,
 				4C7A27501EB7211A0074C220 /* MonsterBehavior.swift in Sources */,
 				4C7A275C1EB72C390074C220 /* ARItem.swift in Sources */,

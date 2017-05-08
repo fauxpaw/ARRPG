@@ -19,7 +19,7 @@ class BroadAxe: Equipable {
     //init should have an icon image, slots, owner, name, explaination, cost, effects
     init(owner: Character) {
         let name = "Broad Axe"
-        let desc = "+20HP +5MP"
+        let desc = "no desc here..."
         let cost = 500
         super.init(name: name, description: desc, cost: cost)
         self.effects.append(effect1)
@@ -28,6 +28,7 @@ class BroadAxe: Equipable {
         self.image = #imageLiteral(resourceName: "axe")
         self.possibleSlots = slots
         self.requiredSlots = [.MainHand]
+        self.setDescriptioin()
         
     }
 }

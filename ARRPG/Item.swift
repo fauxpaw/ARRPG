@@ -13,7 +13,7 @@ class Item: NSObject {
     
     var owner: Character?
     let name: String
-    let desc: String
+    var desc: String
     let cost: Int
     let sellValue: Int
     var image = #imageLiteral(resourceName: "x")
@@ -25,5 +25,4 @@ class Item: NSObject {
         self.owner = owner
         self.sellValue = Int(0.5 * Double(cost))
     }
-    
 }

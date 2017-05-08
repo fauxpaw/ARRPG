@@ -15,13 +15,11 @@ enum StatsType {
     case MHP // Max Hit Points
     case MP  // Magic Points
     case MMP // Max Magic Points
-    case ATK // Physical Attack
-    case DEF // Physical Defense
-    case MAT // Magic Attack
-    case MDF // Magic Defense
+    case ATK // Base Physical Attack
+    case DEF // Base Physical Defense
+    case MAT // Base Magic Attack
+    case MDF // Base Magic Defense
     case EVD // Evade
     case RES // Status Resistance
     case SPD // Speed
-    case MOV // Move Range
-    case JMP // Jump Height
 }

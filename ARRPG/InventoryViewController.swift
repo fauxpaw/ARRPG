@@ -38,15 +38,13 @@ class InventoryViewController: GameViewController {
         let item4 = HealthPotion(owner: self.player)
         let item5 = HealthPotion(owner: self.player)
         let item6 = HealthPotion(owner: self.player)
-
+        let item7 = CrusaderHelm(owner: self.player)
+        let item8 = KnightsCuirass(owner: self.player)
+        let item9 = KiteShield(owner: self.player)
+        
+        let allItems = [item, item1, item2, item3, item4, item5, item6, item7, item8, item9]
+        player.bag.append(contentsOf: allItems)
         player.currentHP.modifyBy(val: -40)
-        player.bag.append(item)
-        player.bag.append(item1)
-        player.bag.append(item2)
-        player.bag.append(item3)
-        player.bag.append(item4)
-        player.bag.append(item5)
-        player.bag.append(item6)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.updateLabels()
@@ -66,13 +64,15 @@ class InventoryViewController: GameViewController {
                 offHand.image = image
             case .Head:
                 headView.image = image
+            case .Body:
+                chestView.image = image
             case .Arms:
                 armsView.image = image
             case .Feet:
                 feetView.image = image
             case .Legs:
                 legsView.image = image
-            case .Accessory:
+            case .Shoulder:
                 shoulderView.image = image
             default:
                 print("not exhaustive case yet")
@@ -85,19 +85,29 @@ class InventoryViewController: GameViewController {
             switch slot {
             case .MainHand:
                 mainHand.image = nil
+                mainHand.alpha = 1.0
                 print("removing image from main")
             case .OffHand:
                 offHand.image = nil
+                offHand.alpha = 1.0
                 print("removing image from off")
             case .Head:
+                headView.alpha = 1.0
                 headView.image = nil
+            case .Body:
+                chestView.image = nil
+                chestView.alpha = 1.0
             case .Arms:
                 armsView.image = nil
+                armsView.alpha = 1.0
             case .Feet:
+                feetView.alpha = 1.0
                 feetView.image = nil
             case .Legs:
+                legsView.alpha = 1.0
                 legsView.image = nil
-            case .Accessory:
+            case .Shoulder:
+                shoulderView.alpha = 1.0
                 shoulderView.image = nil
             default:
                 print("not exhaustive case handling")

@@ -94,6 +94,41 @@ class StatModifierFeature: Feature {
             target?.lvl.modifyBy(val: -self.amount)
         }
     }
+    
+    func getInfo() -> String {
+        var string = "+\(amount)"
+        switch statToMod {
+        case .ATK:
+            string += "ATK"
+        case .DEF:
+            string += "DEF"
+        case .EVD:
+            string += "EVD"
+        case .EXP:
+            string += "EXP"
+        case .HP:
+            string += "HP"
+        case .LVL:
+            string += "LVL"
+        case .MAT:
+            string += "MAT"
+        case .MDF:
+            string += "MDF"
+        case .MHP:
+            string += "MHP"
+        case .MMP:
+            string += "MMP"
+        case .MP:
+            string += "MP"
+        case .RES:
+            string += "RES"
+        case .SPD:
+            string += "SPD"
+        default:
+            print("info for \(statToMod) not found")
+        }
+        return string
+    }
 }
 
 

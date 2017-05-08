@@ -24,7 +24,6 @@ class Equipable: Item, EquipableItemBehavior {
         for effect in effects {
             if let owner = owner {
                 effect.activate(target: owner)
-                
             } else {
                 print("no owner for item activation")
                 return
@@ -50,6 +49,14 @@ class Equipable: Item, EquipableItemBehavior {
         if currentSlotsTaken.count > 0 {
            currentSlotsTaken.removeAll()
         }
+    }
+    
+    func setDescriptioin() {
+        var describe = ""
+        for effect in effects {
+           describe += "\(effect.getInfo()) "
+        }
+        self.desc = describe
     }
 
 }
