@@ -20,5 +20,25 @@ class Entity {
     var currentMP =  Stat(val: 1)
     var stats = [Stat]()
     //var weapon = unarmed
+    
+    func maxValueDidChange(statType: StatsType, amount: Int) {
+        switch statType {
+        case .MHP:
+            self.currentHP.modifyUpperBound(value: amount)
+            guard let upper = self.currentHP.getUpperBound() else {return}
+            if self.currentHP.getValue() > upper {
+                self.currentHP.setValue(to: upper)
+            }
+        case .MMP :
+            self.currentMP.modifyUpperBound(value: amount)
+            guard let upper = self.currentMP.getUpperBound() else {return}
+            if self.currentMP.getValue() > upper {
+                self.currentMP.setValue(to: upper)
+            }
+        default:
+            print("Not modifying max value, no need for current value max to change")
+        }
+    }
+    
 }
 

@@ -87,17 +87,25 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         self.removeItemFromBag(item: item)
         
         var occupied = Set<EquipmentSlots>()
+        
         for item in self.itemsEquipped {
             for slot in item.currentSlotsTaken {
                 occupied.insert(slot)
             }
         }
         
+        if item.requiredSlots.count > 1 {
+            for slot in item.requiredSlots {
+                dequip(atSlot: slot)
+            }
+            equipItemAtSlots(item: item, slots: item.requiredSlots)
+            return item.requiredSlots
+        }
+        
         for slot in possibleSlots {
             if !occupied.contains(slot) {
                 
                 self.equipItemAtOpenSlot(item: item, slot: slot)
-                
                 return [slot]
             } else {
                 print("slot not open")
@@ -121,9 +129,6 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     }
     
     fileprivate func equipItemAtOpenSlot(item: Equipable, slot: EquipmentSlots) {
-        //add item to gear list
-        //set the slots taken
-        //call equip on the item
         print("Equiped a \(item.name) to \(slot)")
         self.itemsEquipped.append(item)
         item.currentSlotsTaken.append(slot)

@@ -27,9 +27,19 @@ class InventoryViewController: GameViewController {
         let item = BroadAxe(owner: self.player)
         let item1 = GreatAxe(owner: self.player)
         let item2 = Spatha(owner: self.player)
+        let item3 = HealthPotion(owner: self.player)
+        let item4 = HealthPotion(owner: self.player)
+        let item5 = HealthPotion(owner: self.player)
+        let item6 = HealthPotion(owner: self.player)
+
+        player.currentHP.modifyBy(val: -40)
         player.bag.append(item)
         player.bag.append(item1)
         player.bag.append(item2)
+        player.bag.append(item3)
+        player.bag.append(item4)
+        player.bag.append(item5)
+        player.bag.append(item6)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.updateLabels()
@@ -73,10 +83,25 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //let cell = tableView.cellForRow(at: indexPath)
-        if let item = player.bag[indexPath.row] as? Equipable {
+        
+        let itemz = player.bag[indexPath.row]
+        if itemz.isKind(of: Equipable.self) {
+            if let equip = itemz as? Equipable {
+                let destination = player.equipItem(item: equip, possibleSlots: equip.possibleSlots)
+                addItemImage(image: equip.image, toSlots: destination)
+            }
+        }
+        
+        else if itemz.isKind(of: Consumable.self) {
+            if let consume = player.bag[indexPath.row] as? Consumable {
+                consume.consumeItem()
+            }
+        }
+        
+        /*if let item = player.bag[indexPath.row] as? Equipable {
             let destination = player.equipItem(item: item, possibleSlots: item.possibleSlots)
             addItemImage(image: item.image, toSlots: destination)
-        }
+        }*/
         
         self.updateLabels()
         self.tableView.reloadData()
