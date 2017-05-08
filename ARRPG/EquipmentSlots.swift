@@ -19,7 +19,5 @@ enum EquipmentSlots {
     case Hands
     case Legs
     case Feet
-    
-    
     case Accessory  // ring, belt, etc
 }

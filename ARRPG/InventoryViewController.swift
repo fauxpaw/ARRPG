@@ -19,6 +19,13 @@ class InventoryViewController: GameViewController {
     @IBOutlet weak var hpLabel: UILabel!
     @IBOutlet weak var mpLabel: UILabel!
     @IBOutlet weak var offHand: UIImageView!
+    @IBOutlet weak var headView: UIImageView!
+    @IBOutlet weak var chestView: UIImageView!
+    @IBOutlet weak var legsView: UIImageView!
+    @IBOutlet weak var feetView: UIImageView!
+    @IBOutlet weak var shoulderView: UIImageView!
+    @IBOutlet weak var armsView: UIImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +64,16 @@ class InventoryViewController: GameViewController {
                 mainHand.image = image
             case .OffHand:
                 offHand.image = image
+            case .Head:
+                headView.image = image
+            case .Arms:
+                armsView.image = image
+            case .Feet:
+                feetView.image = image
+            case .Legs:
+                legsView.image = image
+            case .Accessory:
+                shoulderView.image = image
             default:
                 print("not exhaustive case yet")
             }
@@ -72,6 +89,16 @@ class InventoryViewController: GameViewController {
             case .OffHand:
                 offHand.image = nil
                 print("removing image from off")
+            case .Head:
+                headView.image = nil
+            case .Arms:
+                armsView.image = nil
+            case .Feet:
+                feetView.image = nil
+            case .Legs:
+                legsView.image = nil
+            case .Accessory:
+                shoulderView.image = nil
             default:
                 print("not exhaustive case handling")
             }
