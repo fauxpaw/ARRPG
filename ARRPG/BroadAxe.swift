@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-class TestItem: Equipable {
+class BroadAxe: Equipable {
     
     //item increase max hp by 20 and max mp by 5
     var effect1 = StatModifierFeature(stat: StatsType.MHP, amount: 20)
     var effect2 = StatModifierFeature(stat: StatsType.MMP, amount: 5)
-    private let slots : [EquipmentSlots] = [.Primary, .Secondary]
+    private let slots : [EquipmentSlots] = [.MainHand, .OffHand]
     
     //init should have an icon image, slots, owner, name, explaination, cost, effects
     init(owner: Character) {
@@ -27,7 +27,7 @@ class TestItem: Equipable {
         self.owner = owner
         self.image = #imageLiteral(resourceName: "axe")
         self.possibleSlots = slots
-        self.requiredSlots = [.Primary]
+        self.requiredSlots = [.MainHand]
         
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 
 class Character:Entity, EntityBehavior, CharacterBehavior {
     
+    var money = 0
     var owner : GameViewController?
     var bag = [Item]() //seperate manager
     var gear = [Equipable]() //seperate manager
@@ -69,7 +70,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         print("You have died...game over")
     }
     
-    func equipItem(item: Equipable) {
+    /*func equipItem(item: Equipable) {
         
         bag.append(item)
         item.onEquip()
@@ -77,7 +78,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     
     func dequipItem(item: Equipable) {
         item.onDequip()
-    }
+    }*/
     
     func consume() {
         

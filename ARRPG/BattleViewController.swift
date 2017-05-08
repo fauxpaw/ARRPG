@@ -134,15 +134,6 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     @IBAction func itemButtonSelected(_ sender: Any) {
         
         print("Item button pressed!")
-        if player.bag.isEmpty {
-            let item = TestItem(owner: self.player)
-            self.player.equipItem(item: item)
-            self.updateStats()
-        } else {
-            player.dequipItem(item: player.bag.first as! Equipable)
-            player.bag.remove(at: 0)
-            self.updateStats()
-        }
         
     }
     

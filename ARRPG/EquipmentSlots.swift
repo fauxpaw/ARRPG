@@ -11,9 +11,15 @@ import Foundation
 
 enum EquipmentSlots {
     case None
-    case Primary    // usually a weapon (sword etc)
-    case Secondary  // usually a shield, but could be another sword (dual-wield) or occupied by two-handed weapon
+    case MainHand    // usually a weapon
+    case OffHand  // usually a shield, but could be another sword (dual-wield) or occupied by two-handed weapon
     case Head       // helmet, hat, etc
     case Body       // body armor, robe, etc
+    case Arms
+    case Hands
+    case Legs
+    case Feet
+    
+    
     case Accessory  // ring, belt, etc
 }
