@@ -13,7 +13,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     var money = 0
     var owner : GameViewController?
     var bag = [Item]() //seperate manager
-    var gear = [Equipable]() //seperate manager
+    var itemsEquipped = [Equipable]() //seperate manager
     var exp: Int = 0
 
     //var weapon: WeaponBehavior?
@@ -70,15 +70,87 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         print("You have died...game over")
     }
     
-    /*func equipItem(item: Equipable) {
+    func addItemToBag(item: Item) {
+        self.bag.append(item)
+    }
+    
+    func removeItemFromBag(item: Item) {
+        for (i,thing) in self.bag.enumerated() {
+            if thing == item {
+                self.bag.remove(at: i)
+            }
+        }
+    }
+    
+    func equipItem(item: Equipable, possibleSlots: [EquipmentSlots]) -> [EquipmentSlots] {
         
-        bag.append(item)
+        self.removeItemFromBag(item: item)
+        
+        var occupied = Set<EquipmentSlots>()
+        for item in self.itemsEquipped {
+            for slot in item.currentSlotsTaken {
+                occupied.insert(slot)
+            }
+        }
+        
+        for slot in possibleSlots {
+            if !occupied.contains(slot) {
+                
+                self.equipItemAtOpenSlot(item: item, slot: slot)
+                
+                return [slot]
+            } else {
+                print("slot not open")
+            }
+        }
+        
+        for slot in item.requiredSlots {
+            dequip(atSlot: slot)
+        }
+        
+        self.equipItemAtSlots(item: item, slots: item.requiredSlots)
+        return item.requiredSlots
+    }
+    
+    fileprivate func equipItemAtSlots(item: Equipable, slots: [EquipmentSlots]) {
+        print("Equiped a \(item.name) to \(slots)")
+        self.itemsEquipped.append(item)
+        item.currentSlotsTaken = slots
+        item.onEquip()
+        
+    }
+    
+    fileprivate func equipItemAtOpenSlot(item: Equipable, slot: EquipmentSlots) {
+        //add item to gear list
+        //set the slots taken
+        //call equip on the item
+        print("Equiped a \(item.name) to \(slot)")
+        self.itemsEquipped.append(item)
+        item.currentSlotsTaken.append(slot)
         item.onEquip()
     }
     
-    func dequipItem(item: Equipable) {
+    fileprivate func dequip(item: Equipable, atIndex: Int) {
+        if let inventoryVC = owner as? InventoryViewController {
+            print("owning VC is InventoryVC")
+            inventoryVC.removeItemImage(fromSlot: item.currentSlotsTaken)
+        }
         item.onDequip()
-    }*/
+        item.currentSlotsTaken.removeAll()
+        self.itemsEquipped.remove(at: atIndex)
+        self.addItemToBag(item: item)
+    }
+    
+    func dequip(atSlot: EquipmentSlots) {
+        for (index, item) in self.itemsEquipped.enumerated() {
+            for slot in item.currentSlotsTaken {
+                if slot == atSlot {
+                    print("removing an item at \(atSlot)")
+                    self.dequip(item: item, atIndex: index)
+                }
+            }
+        }
+    }
     
     func consume() {
         

@@ -9,10 +9,12 @@
 import Foundation
 
 
+
+//THIS CLASS CURRENTLY EXISTS FOR TESTING PURPOSES ONLY, FUNCTIONALITY IS ATTACHED TO CHARACTER CLASS
+
 class EquipmentManager {
     
     var itemsEquipped = [Equipable]()
-    var lastAtMain = false
     
     func equip(item: Equipable) {
         
@@ -61,10 +63,6 @@ class EquipmentManager {
                 }
             }
         }
-        //for items in array, find items that match argument
-        //if item.slot == slots &&
-        //items.dequip
-        
     }
     
     func isSlotOpen(item: Equipable, possibleSlots: [EquipmentSlots]) {
