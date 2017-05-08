@@ -8,37 +8,50 @@
 
 import Foundation
 
-
 class Equipable: Item, EquipableItemBehavior {
     
     var effects = [StatModifierFeature]()
-
-    //let defaultSlot : String
-    //let secondarySlot : String?
+    //possible slots
     
-    //let isEquiped : Bool
+    var possibleSlots: [EquipmentSlots] = [.None]
+    var requiredSlots : [EquipmentSlots] = [.None]
+    //current slot taken
+    var currentSlotsTaken = [EquipmentSlots]()
+    var isEquiped = false
     
-    func onDequip() {
-        for effect in effects {
-            if let owner = owner {
-                effect.deactivate(target: owner)
-            } else {
-                print("no owner for item deActivation")
-            }
-        }
-    }
-
     func onEquip() {
+        
         for effect in effects {
             if let owner = owner {
                 effect.activate(target: owner)
+                
             } else {
                 print("no owner for item activation")
+                return
             }
+        }
+        isEquiped = true
+    }
+    
+    func onDequip() {
+        
+        if !isEquiped {return}
+        
+        for effect in effects {
+            if let owner = owner {
+                effect.deactivate(target: owner)
+            
+            } else {
+                print("no owner for item deActivation")
+                return
+            }
+        }
+        isEquiped = false
+        if currentSlotsTaken.count > 0 {
+           currentSlotsTaken.removeAll()
         }
     }
 
-    
-    
-    
 }
+
+
