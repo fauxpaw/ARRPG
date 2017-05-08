@@ -35,6 +35,7 @@ class StatModifierFeature: Feature {
         
         if statToMod == StatsType.MHP {
             target?.maxHP.modifyBy(val: self.amount)
+            target?.maxValueDidChange(statType: .MHP, amount: self.amount)
         }
         
         if statToMod == StatsType.HP {
@@ -42,8 +43,8 @@ class StatModifierFeature: Feature {
         }
         
         if statToMod == StatsType.MMP {
-           
             target?.maxMP.modifyBy(val: self.amount)
+            target?.maxValueDidChange(statType: .MMP, amount: self.amount)
         }
         
         if statToMod == StatsType.MP {
@@ -73,6 +74,7 @@ class StatModifierFeature: Feature {
         if statToMod == StatsType.MHP {
             
             target?.maxHP.modifyBy(val: -self.amount)
+            target?.maxValueDidChange(statType: .MHP, amount: -self.amount)
         }
         
         if statToMod == StatsType.HP {
@@ -81,6 +83,7 @@ class StatModifierFeature: Feature {
         
         if statToMod == StatsType.MMP {
             target?.maxMP.modifyBy(val: -self.amount)
+            target?.maxValueDidChange(statType: .MMP, amount: -self.amount)
         }
         
         if statToMod == StatsType.MP {

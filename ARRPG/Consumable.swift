@@ -10,7 +10,7 @@ import Foundation
 
 class Consumable: Item, ConsumableItemBehavior {
     
-    var duration: TimeInterval? = nil
+    //var buffs : StatusEffect ---- Future implementation
     var effects = [StatModifierFeature]()
     
     func consumeItem() {
@@ -23,5 +23,7 @@ class Consumable: Item, ConsumableItemBehavior {
                 return
             }
         }
+        self.owner?.removeItemFromBag(item: self)
+        self.owner = nil
     }
 }
