@@ -22,4 +22,11 @@ class HealthPotion: Consumable {
         self.effects.append(effect1)
         self.owner = owner
     }
+    
+    override func consumeItem() {
+        if owner?.currentHP.getValue() == owner?.currentHP.getUpperBound() {
+            return
+        }
+        super.consumeItem()
+    }
 }

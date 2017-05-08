@@ -28,11 +28,18 @@ class InventoryViewController: GameViewController {
         let item1 = GreatAxe(owner: self.player)
         let item2 = Spatha(owner: self.player)
         let item3 = HealthPotion(owner: self.player)
+        let item4 = HealthPotion(owner: self.player)
+        let item5 = HealthPotion(owner: self.player)
+        let item6 = HealthPotion(owner: self.player)
+
         player.currentHP.modifyBy(val: -40)
         player.bag.append(item)
         player.bag.append(item1)
         player.bag.append(item2)
         player.bag.append(item3)
+        player.bag.append(item4)
+        player.bag.append(item5)
+        player.bag.append(item6)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.updateLabels()
