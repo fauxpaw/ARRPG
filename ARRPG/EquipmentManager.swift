@@ -12,42 +12,43 @@ import Foundation
 class EquipmentManager {
     
     var itemsEquipped = [Equipable]()
+    var lastAtMain = false
     
     func equip(item: Equipable) {
         
-        //check for dual wield
+        self.isSlotOpen(item: item, possibleSlots: item.possibleSlots)
         
-        
-        //case of slot open
-        if areSlotsOpen(requiredSlots: item.requiredSlots) {
-            self.equipItemAtOpenSlot(item: item, slots: item.requiredSlots)
-            return
+        var occupied = Set<EquipmentSlots>()
+        for item in itemsEquipped {
+            for slot in item.currentSlotsTaken {
+                occupied.insert(slot)
+            }
         }
-        
-        //case of taken slot
-        for slot in item.requiredSlots {
-            self.dequip(atSlot: slot)
-        }
-        //case of slot taken
-        //unequip on slots needed
-        //add item to array
-        //item.slots = slots
-        //item.equip
+        print("After an equip, current slots taken: \(occupied)")
         
     }
     
-    func equipItemAtOpenSlot(item: Equipable, slots: [EquipmentSlots]) {
-        //add item to gear list
-        //set the slots taken
-        //call equip on the item
+    func equipItemAtSlots(item: Equipable, slots: [EquipmentSlots]){
+        print("Equiped a \(item.name) to \(slots)")
         self.itemsEquipped.append(item)
         item.currentSlotsTaken = slots
         item.onEquip()
     }
     
-    func dequip(item: Equipable, atIndex: Int) {
+    func equipItemAtOpenSlot(item: Equipable, slot: EquipmentSlots) {
+        //add item to gear list
+        //set the slots taken
+        //call equip on the item
+        print("Equiped a \(item.name) to \(slot)")
+        self.itemsEquipped.append(item)
+        item.currentSlotsTaken.append(slot)
+        item.onEquip()
+    }
+    
+    fileprivate func dequip(item: Equipable, atIndex: Int) {
         item.onDequip()
         item.currentSlotsTaken.removeAll()
+        self.itemsEquipped.remove(at: atIndex)
         
     }
     
@@ -55,6 +56,7 @@ class EquipmentManager {
         for (index, item) in self.itemsEquipped.enumerated() {
             for slot in item.currentSlotsTaken {
                 if slot == atSlot {
+                    print("removing an item at \(atSlot)")
                     self.dequip(item: item, atIndex: index)
                 }
             }
@@ -65,16 +67,31 @@ class EquipmentManager {
         
     }
     
-    func areSlotsOpen(requiredSlots: [EquipmentSlots]) -> Bool {
-        for reqSlot in requiredSlots {
-            for item in self.itemsEquipped {
-                for slot in item.currentSlotsTaken {
-                    if reqSlot == slot {
-                        return false
-                    }
-                }
+    func isSlotOpen(item: Equipable, possibleSlots: [EquipmentSlots]) {
+        
+        var occupied = Set<EquipmentSlots>()
+        for item in itemsEquipped {
+            for slot in item.currentSlotsTaken {
+                occupied.insert(slot)
             }
         }
-        return true
+        
+        for slot in possibleSlots {
+            if !occupied.contains(slot) {
+                
+                equipItemAtOpenSlot(item: item, slot: slot)
+                
+                return
+            } else {
+                print("slot not open")
+            }
+        }
+        
+        for slot in item.requiredSlots {
+            dequip(atSlot: slot)
+        }
+        
+        equipItemAtSlots(item: item, slots: item.requiredSlots)
+        
     }
 }

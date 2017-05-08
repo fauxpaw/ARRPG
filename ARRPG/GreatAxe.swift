@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BestItem: Equipable {
+class GreatAxe: Equipable {
     
     //item increase max hp by 20 and max mp by 5
     var effect1 = StatModifierFeature(stat: StatsType.MHP, amount: 50)
@@ -24,6 +24,7 @@ class BestItem: Equipable {
         self.effects.append(effect2)
         self.owner = owner
         self.image = #imageLiteral(resourceName: "axeDouble2")
-        self.requiredSlots = [.Primary, .Secondary]
+        self.possibleSlots = [.MainHand]
+        self.requiredSlots = [.MainHand, .OffHand]
     }
 }

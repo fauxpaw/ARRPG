@@ -25,19 +25,25 @@ class EquipmentManagerTests: XCTestCase {
     func testEquip() {
         let player = Character(hp: 100, mp: 10)
         let manager = EquipmentManager()
-        let onehandedAxe_1 = TestItem(owner: player)
-        let onehandedAxe_2 = TestItem(owner: player)
-        let twohandedAxe_1 = BestItem(owner: player)
+        let onehandedAxe_1 = BroadAxe(owner: player)
+        let onehandedSword_1 = Spatha(owner: player)
+        let twohandedAxe_1 = GreatAxe(owner: player)
+        let spatha = Spatha(owner: player)
+        let spatha2 = Spatha(owner: player)
         
         manager.equip(item: onehandedAxe_1)
-        manager.equip(item: onehandedAxe_2)
+        manager.equip(item: onehandedSword_1)
+        manager.equip(item: spatha)
         manager.equip(item: twohandedAxe_1)
-        for item in manager.itemsEquipped {
-            print(item.name)
-            print("required slots: \(item.requiredSlots)")
-            print("current slots: \(item.currentSlotsTaken)")
-        }
+        manager.equip(item: spatha2)
+        XCTAssertEqual(200, player.maxHP.getValue())
+        XCTAssertNotNil(manager.itemsEquipped)
+        XCTAssert(manager.itemsEquipped.count == 1)
+        manager.equip(item: spatha)
+        XCTAssertEqual(300, player.maxHP.getValue())
+        XCTAssert(manager.itemsEquipped.count == 2)
 
+        
     }
     
     func testPerformanceExample() {

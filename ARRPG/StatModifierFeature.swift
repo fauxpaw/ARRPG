@@ -56,7 +56,7 @@ class StatModifierFeature: Feature {
     }
     
     override func onRemove() {
-        print("Removing stat: \(statToMod) feature...")
+        //print("Removing stat: \(statToMod) feature...")
 
         if statToMod == StatsType.ATK {
             target?.atk.modifyBy(val: -self.amount)
