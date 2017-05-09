@@ -9,8 +9,8 @@
 import Foundation
 
 class ARItemFactory {
-    private init() { }
     
+    private init() { }
     static let shared = ARItemFactory()
     
     func createObjectives(fromArrayOfDict arrayInput: [[String: Any]]) -> [ARItem] {

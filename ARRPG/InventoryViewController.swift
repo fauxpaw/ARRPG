@@ -12,14 +12,19 @@ import UIKit
 //get items from characters bag
 class InventoryViewController: GameViewController {
     
+    @IBOutlet weak var statsView: UITextView!
     let player = Character(hp: 100, mp: 20)
     
     @IBOutlet weak var mainHand: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var hpLabel: UILabel!
-    @IBOutlet weak var mpLabel: UILabel!
     @IBOutlet weak var offHand: UIImageView!
-
+    @IBOutlet weak var headView: UIImageView!
+    @IBOutlet weak var chestView: UIImageView!
+    @IBOutlet weak var legsView: UIImageView!
+    @IBOutlet weak var feetView: UIImageView!
+    @IBOutlet weak var shoulderView: UIImageView!
+    @IBOutlet weak var armsView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,23 +36,23 @@ class InventoryViewController: GameViewController {
         let item4 = HealthPotion(owner: self.player)
         let item5 = HealthPotion(owner: self.player)
         let item6 = HealthPotion(owner: self.player)
-
+        let item7 = CrusaderHelm(owner: self.player)
+        let item8 = KnightsCuirass(owner: self.player)
+        let item9 = KiteShield(owner: self.player)
+        
+        let allItems = [item, item1, item2, item3, item4, item5, item6, item7, item8, item9]
+        player.bag.append(contentsOf: allItems)
         player.currentHP.modifyBy(val: -40)
-        player.bag.append(item)
-        player.bag.append(item1)
-        player.bag.append(item2)
-        player.bag.append(item3)
-        player.bag.append(item4)
-        player.bag.append(item5)
-        player.bag.append(item6)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.updateLabels()
     }
     
     func updateLabels() {
-        hpLabel.text = "HP: \(player.currentHP.getValue())/\(player.maxHP.getValue())"
-        mpLabel.text = "MP: \(player.currentMP.getValue())/\(player.maxMP.getValue())"
+        //hpLabel.text = "HP: \(player.currentHP.getValue())/\(player.maxHP.getValue())"
+        //mpLabel.text = "MP: \(player.currentMP.getValue())/\(player.maxMP.getValue())"
+        statsView.text = "Name: \(player.name) \nLvl: \(player.lvl.getValue()) \nHP: \(player.currentHP.getValue())/\(player.maxHP.getValue()) \nMP: \(player.currentMP.getValue())/\(player.maxMP.getValue()) \nATK: \(player.atk.getValue()) \nDEF: \(player.def.getValue()) \nPAT: \(player.PAT.getValue()) \nSAT: \(player.SAT.getValue()) \nCAT: \(player.CAT.getValue()) \nMAT: \(player.MAT.getValue()) \nMDF: \(player.MDF.getValue())"
+        
     }
     
     func addItemImage(image: UIImage, toSlots: [EquipmentSlots]) {
@@ -57,6 +62,18 @@ class InventoryViewController: GameViewController {
                 mainHand.image = image
             case .OffHand:
                 offHand.image = image
+            case .Head:
+                headView.image = image
+            case .Body:
+                chestView.image = image
+            case .Arms:
+                armsView.image = image
+            case .Feet:
+                feetView.image = image
+            case .Legs:
+                legsView.image = image
+            case .Shoulder:
+                shoulderView.image = image
             default:
                 print("not exhaustive case yet")
             }
@@ -68,10 +85,30 @@ class InventoryViewController: GameViewController {
             switch slot {
             case .MainHand:
                 mainHand.image = nil
+                mainHand.alpha = 1.0
                 print("removing image from main")
             case .OffHand:
                 offHand.image = nil
+                offHand.alpha = 1.0
                 print("removing image from off")
+            case .Head:
+                headView.alpha = 1.0
+                headView.image = nil
+            case .Body:
+                chestView.image = nil
+                chestView.alpha = 1.0
+            case .Arms:
+                armsView.image = nil
+                armsView.alpha = 1.0
+            case .Feet:
+                feetView.alpha = 1.0
+                feetView.image = nil
+            case .Legs:
+                legsView.alpha = 1.0
+                legsView.image = nil
+            case .Shoulder:
+                shoulderView.alpha = 1.0
+                shoulderView.image = nil
             default:
                 print("not exhaustive case handling")
             }
@@ -128,5 +165,11 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Bag Contents"
     }
+    
+}
+
+extension InventoryViewController: UIScrollViewDelegate {
+    
+    
     
 }
