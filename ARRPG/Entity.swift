@@ -13,31 +13,32 @@ class Entity {
     var name = "Cool Name"
     var lvl = Level(val: 1)
     var atk = Attack(val: 1)
-    var def = Stat(val: 0)
-    var maxHP = Stat(val: 1)
-    var currentHP = Stat(val: 1)
-    var maxMP = Stat(val: 1)
-    var currentMP =  Stat(val: 1)
-    var EXP = Stat(val: 0) // Base Arcane Attack
-    var MAT = Stat(val: 1) // Base Arcane Attack
-    var MDF = Stat(val: 0) // Base Arcane Defense
-    var EVD = Stat(val: 0) // Evade
-    var RES = Stat(val: 0) // Status Resistance
-    var SPD = Stat(val: 0) // Speed
-    var PAT = Stat(val: 0) // Piercing Attack
-    var CAT = Stat(val: 0) // Crushing Attack
-    var SAT = Stat(val: 0) // Slashing Attack
-    var PDF = Stat(val: 0) // Piercing Defense
-    var CDF = Stat(val: 0) // Crushing Defense
-    var SDF = Stat(val: 0) // Slashing Defense
-    var FAT = Stat(val: 0) // Fire Attack
-    var WAT = Stat(val: 0) // Water Attack
-    var AAT = Stat(val: 0) // Air Attack
-    var EAT = Stat(val: 0) // Earth Attack
-    var FR  = Stat(val: 0) // Fire Resistance
-    var AR  = Stat(val: 0) // Air Resistance
-    var WR  = Stat(val: 0) // Water Resistance
-    var ER  = Stat(val: 0) // Earth Resistance
+    var def = Stat(statName: "DEF", val: 0)
+    var maxHP = Stat(statName: "MHP", val: 1)
+    var currentHP = Stat(statName: "HP", val: 1)
+    var maxMP = Stat(statName: "MMP", val: 1)
+    var currentMP =  Stat(statName: "MP", val: 1)
+    var EXP = Stat(statName: "EXP", val: 0) // Base Arcane Attack
+    var MAT = Stat(statName: "MAT", val: 1) // Base Arcane Attack
+    var MDF = Stat(statName: "MDF", val: 0) // Base Arcane Defense
+    var EVD = Stat(statName: "EVD", val: 0) // Evade
+    var RES = Stat(statName: "RES", val: 0)// Status Resistance
+    var SPD = Stat(statName: "SPD", val: 0) // Speed
+    var PAT = Stat(statName: "PAT", val: 0) // Piercing Attack
+    var CAT = Stat(statName: "CAT", val: 0) // Crushing Attack
+    var SAT = Stat(statName: "SAT", val: 0) // Slashing Attack
+    var PDF = Stat(statName: "PDF", val: 0) // Piercing Defense
+    var CDF = Stat(statName: "CDF", val: 0) // Crushing Defense
+    var SDF = Stat(statName: "SDF", val: 0) // Slashing Defense
+    var FAT = Stat(statName: "FAT", val: 0) // Fire Attack
+    var WAT = Stat(statName: "WAT", val: 0) // Water Attack
+    var AAT = Stat(statName: "AAT", val: 0) // Air Attack
+    var EAT = Stat(statName: "EAT", val: 0) // Earth Attack
+    var FR  = Stat(statName: "FR", val: 0) // Fire Resistance
+    var AR  = Stat(statName: "AR", val: 0) // Air Resistance
+    var WR  = Stat(statName: "WR", val: 0) // Water Resistance
+    var ER  = Stat(statName: "ER", val: 0) // Earth Resistance
+    var stats : [Stat]
     
     init() {
         let floor0Stats = [MDF, def, EVD, RES, SPD, PAT, CAT, SAT, PDF, CDF, SDF, FAT, WAT, AAT, EAT, FR, AR, WR, ER, currentHP, currentMP, EXP]
@@ -48,6 +49,8 @@ class Entity {
         for stat in floor1Stats {
             stat.setLowerBound(value: 1)
         }
+        
+        self.stats = [MDF, def, EVD, RES, SPD, PAT, CAT, SAT, PDF, CDF, SDF, FAT, WAT, AAT, EAT, FR, AR, WR, ER, currentHP, currentMP, EXP, atk, MAT, maxHP, maxMP]
     }
     
     func maxValueDidChange(statType: StatsType, amount: Int) {
@@ -55,13 +58,20 @@ class Entity {
         case .MHP:
             self.currentHP.modifyUpperBound(value: amount)
             self.currentHP.modifyBy(val: amount)
-            
         case .MMP :
             self.currentMP.modifyUpperBound(value: amount)
             self.currentMP.modifyBy(val: amount)
         default:
             print("Not modifying max value, no need for current value max to change")
         }
+    }
+    
+    func experienceDidChange(amount: Int) {
+        
+    }
+    
+    func levelDidChange() {
+        
     }
     
 }

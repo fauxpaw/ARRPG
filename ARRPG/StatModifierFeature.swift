@@ -11,7 +11,6 @@ import Foundation
 
 class StatModifierFeature: Feature {
     
-    //var stat: StatTypes
     var statToMod: StatsType
     var amount: Int = 0
     
@@ -21,40 +20,7 @@ class StatModifierFeature: Feature {
     }
     
     override func onApply() {
-       /* if statToMod == StatsType.ATK {
-            target?.atk.modifyBy(val: self.amount)
-        }
-        
-        if statToMod == StatsType.DEF {
-            target?.def.modifyBy(val: self.amount)
-        }
-        
-        if statToMod == StatsType.EXP {
-            //TODO
-        }
-        
-        if statToMod == StatsType.MHP {
-            target?.maxHP.modifyBy(val: self.amount)
-            target?.maxValueDidChange(statType: .MHP, amount: self.amount)
-        }
-        
-        if statToMod == StatsType.HP {
-            target?.currentHP.modifyBy(val: self.amount)
-        }
-        
-        if statToMod == StatsType.MMP {
-            target?.maxMP.modifyBy(val: self.amount)
-            target?.maxValueDidChange(statType: .MMP, amount: self.amount)
-        }
-        
-        if statToMod == StatsType.MP {
-            target?.currentMP.modifyBy(val: self.amount)
-        }
-        
-        if statToMod == StatsType.LVL {
-            target?.lvl.modifyBy(val: self.amount)
-        } */
-        
+      
         switch statToMod {
         case .ATK:
             target?.atk.modifyBy(val: self.amount)
@@ -117,41 +83,6 @@ class StatModifierFeature: Feature {
     
     override func onRemove() {
         
-       /* if statToMod == StatsType.ATK {
-            target?.atk.modifyBy(val: -self.amount)
-        }
-        
-        if statToMod == StatsType.DEF {
-            target?.def.modifyBy(val: -self.amount)
-        }
-        
-        if statToMod == StatsType.EXP {
-            //TODO
-        }
-        
-        if statToMod == StatsType.MHP {
-            
-            target?.maxHP.modifyBy(val: -self.amount)
-            target?.maxValueDidChange(statType: .MHP, amount: -self.amount)
-        }
-        
-        if statToMod == StatsType.HP {
-            target?.currentHP.modifyBy(val: -self.amount)
-        }
-        
-        if statToMod == StatsType.MMP {
-            target?.maxMP.modifyBy(val: -self.amount)
-            target?.maxValueDidChange(statType: .MMP, amount: -self.amount)
-        }
-        
-        if statToMod == StatsType.MP {
-            target?.currentMP.modifyBy(val: -self.amount)
-        }
-        
-        if statToMod == StatsType.LVL {
-            target?.lvl.modifyBy(val: -self.amount)
-        } */
-        
         switch statToMod {
         case .ATK:
             target?.atk.modifyBy(val: -self.amount)
@@ -210,7 +141,7 @@ class StatModifierFeature: Feature {
         case .ER:  // Earth Resistance
             target?.ER.modifyBy(val: -self.amount)
         }
-
+        
     }
     
     func getInfo() -> String {

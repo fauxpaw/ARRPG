@@ -10,8 +10,8 @@ import Foundation
 
 class Attack: Stat {
     
-    override init(val: Int) {
-        super.init(val: val)
+    init(val: Int) {
+        super.init(statName: "ATK", val: val)
         self.setLowerBound(value: 1)
     }
     

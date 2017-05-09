@@ -12,6 +12,9 @@
 		4C0E35121EC12888007386D3 /* CrusaderHelm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E35111EC12888007386D3 /* CrusaderHelm.swift */; };
 		4C0E35161EC12EF8007386D3 /* KiteShield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E35151EC12EF8007386D3 /* KiteShield.swift */; };
 		4C0E35181EC1346C007386D3 /* KnightsCuirass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E35171EC1346C007386D3 /* KnightsCuirass.swift */; };
+		4C0E351C1EC2437C007386D3 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E351B1EC2437C007386D3 /* ShopViewController.swift */; };
+		4C0E351E1EC24718007386D3 /* StatCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E351D1EC24718007386D3 /* StatCalculator.swift */; };
+		4C0E35201EC25C9A007386D3 /* TestLevelGrowth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0E351F1EC25C9A007386D3 /* TestLevelGrowth.swift */; };
 		4C27356F1EB7985E006B4642 /* HealthBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C27356E1EB7985E006B4642 /* HealthBar.swift */; };
 		4C2735711EB7A338006B4642 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2735701EB7A338006B4642 /* MainScene.swift */; };
 		4C59C8871EBFD190002D754F /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C59C8861EBFD190002D754F /* InventoryViewController.swift */; };
@@ -100,6 +103,9 @@
 		4C0E35111EC12888007386D3 /* CrusaderHelm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrusaderHelm.swift; sourceTree = "<group>"; };
 		4C0E35151EC12EF8007386D3 /* KiteShield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiteShield.swift; sourceTree = "<group>"; };
 		4C0E35171EC1346C007386D3 /* KnightsCuirass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnightsCuirass.swift; sourceTree = "<group>"; };
+		4C0E351B1EC2437C007386D3 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		4C0E351D1EC24718007386D3 /* StatCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatCalculator.swift; sourceTree = "<group>"; };
+		4C0E351F1EC25C9A007386D3 /* TestLevelGrowth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLevelGrowth.swift; sourceTree = "<group>"; };
 		4C27356E1EB7985E006B4642 /* HealthBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthBar.swift; sourceTree = "<group>"; };
 		4C2735701EB7A338006B4642 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		4C59C8861EBFD190002D754F /* InventoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +312,7 @@
 		4C7A27491EB7043E0074C220 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4C0E351D1EC24718007386D3 /* StatCalculator.swift */,
 				4CC90E2C1EBD0B2A00085824 /* ARItemFactory.swift */,
 				4C7A275B1EB72C390074C220 /* ARItem.swift */,
 				4CC90E261EBCFB0700085824 /* GooglePlacesAPI.swift */,
@@ -360,6 +367,8 @@
 				4CDC5B561EBAE65100A194DD /* GameViewController.swift */,
 				4CDC5B661EBCF28F00A194DD /* MapViewController.swift */,
 				4C59C8861EBFD190002D754F /* InventoryViewController.swift */,
+				4C0E351B1EC2437C007386D3 /* ShopViewController.swift */,
+				4C0E351F1EC25C9A007386D3 /* TestLevelGrowth.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -632,6 +641,7 @@
 				4CDC5B401EBA133400A194DD /* BattleMenu.swift in Sources */,
 				4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */,
 				4C59C88B1EBFF0FE002D754F /* EquipmentSlots.swift in Sources */,
+				4C0E35201EC25C9A007386D3 /* TestLevelGrowth.swift in Sources */,
 				4CDC5B511EBADF6E00A194DD /* State.swift in Sources */,
 				4CC90E231EBCF98200085824 /* ItemMenuMapState.swift in Sources */,
 				4C7A274D1EB7209D0074C220 /* Monster.swift in Sources */,
@@ -670,6 +680,7 @@
 				4CC90E201EBCF8A800085824 /* WorldMapState.swift in Sources */,
 				4C59C88D1EBFF61B002D754F /* EquipmentManager.swift in Sources */,
 				4C0E35121EC12888007386D3 /* CrusaderHelm.swift in Sources */,
+				4C0E351E1EC24718007386D3 /* StatCalculator.swift in Sources */,
 				4CDC5B3A1EB9399A00A194DD /* arrowsProtocol.swift in Sources */,
 				4CC0736C1EBEB4070080CD6A /* Attack.swift in Sources */,
 				4CD559EC1EC0375600902B96 /* Spatha.swift in Sources */,
@@ -679,6 +690,7 @@
 				4CC90E271EBCFB0700085824 /* GooglePlacesAPI.swift in Sources */,
 				4CDC5B4E1EBADED500A194DD /* BattleState.swift in Sources */,
 				4C7A27191EB6E3A10074C220 /* ARRPG.xcdatamodeld in Sources */,
+				4C0E351C1EC2437C007386D3 /* ShopViewController.swift in Sources */,
 				4CB737881EBE2629006A92FF /* DamageHandler.swift in Sources */,
 				4C0E35181EC1346C007386D3 /* KnightsCuirass.swift in Sources */,
 				4C95AB0D1EBE5842003E4A50 /* Equipable.swift in Sources */,

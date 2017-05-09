@@ -154,8 +154,9 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         }
     }
     
-    func consume() {
-        
+    
+    func consume(item: Consumable) {
+        print("Item so tasty")
     }
     
     //Character Behavior Protocol

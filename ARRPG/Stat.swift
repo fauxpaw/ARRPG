@@ -11,12 +11,14 @@ import Foundation
 
 class Stat: NSObject {
     
+    let name: String
     private var value: Int
     private var maxValue: Int?
     private var minVlaue: Int?
     
-    init(val: Int) {
+    init(statName: String, val: Int) {
         self.value = val
+        self.name = statName
     }
     
     func setValue(to: Int) {
@@ -76,4 +78,7 @@ class Stat: NSObject {
         }
     }
     
+    func getName() -> String {
+        return self.name
+    }
 }
