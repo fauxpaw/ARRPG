@@ -51,7 +51,7 @@ class InventoryViewController: GameViewController {
     func updateLabels() {
         //hpLabel.text = "HP: \(player.currentHP.getValue())/\(player.maxHP.getValue())"
         //mpLabel.text = "MP: \(player.currentMP.getValue())/\(player.maxMP.getValue())"
-        statsView.text = "Name: \(player.name) \nLvl: \(player.lvl.getValue()) \nHP: \(player.currentHP.getValue())/\(player.maxHP.getValue()) \nMP: \(player.currentMP.getValue())/\(player.maxMP.getValue()) \nATK: \(player.atk.getValue()) \nDEF: \(player.def.getValue()) \nPAT: \(player.PAT.getValue()) \nSAT: \(player.SAT.getValue()) \nCAT: \(player.CAT.getValue()) \nMAT: \(player.MAT.getValue()) \nMDF: \(player.MDF.getValue())"
+        statsView.text = "Name: \(player.name) \nLvl: \(player.lvl.getValue()) \nHP: \(player.currentHP.getValue())/\(player.maxHP.getValue()) \nMP: \(player.currentMP.getValue())/\(player.maxMP.getValue()) \nATK: \(player.atk.getValue())  \nPAT: \(player.PAT.getValue()) \nSAT: \(player.SAT.getValue()) \nCAT: \(player.CAT.getValue()) \nMAT: \(player.MAT.getValue()) \nEAT: \(player.EAT.getValue()) \nFAT: \(player.FAT.getValue()) \nAAT: \(player.AAT.getValue()) \nWAT: \(player.WAT.getValue()) \nDEF: \(player.def.getValue()) \nPDF: \(player.PDF.getValue()) \nCDF: \(player.CDF.getValue()) \nSDF: \(player.SDF.getValue()) \nMDF: \(player.MDF.getValue()) \nER: \(player.ER.getValue()) \nFR: \(player.FR.getValue()) \nAR: \(player.AR.getValue()) \nWR: \(player.WR.getValue()) \nRES: \(player.RES.getValue()) \nEVD: \(player.EVD.getValue()) \nSPD: \(player.SPD.getValue())"
         
     }
     
