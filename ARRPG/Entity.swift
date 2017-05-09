@@ -54,16 +54,11 @@ class Entity {
         switch statType {
         case .MHP:
             self.currentHP.modifyUpperBound(value: amount)
-            guard let upper = self.currentHP.getUpperBound() else {return}
-            if self.currentHP.getValue() > upper {
-                self.currentHP.setValue(to: upper)
-            }
+            self.currentHP.modifyBy(val: amount)
+            
         case .MMP :
             self.currentMP.modifyUpperBound(value: amount)
-            guard let upper = self.currentMP.getUpperBound() else {return}
-            if self.currentMP.getValue() > upper {
-                self.currentMP.setValue(to: upper)
-            }
+            self.currentMP.modifyBy(val: amount)
         default:
             print("Not modifying max value, no need for current value max to change")
         }
