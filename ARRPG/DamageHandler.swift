@@ -18,12 +18,20 @@ class DamageHandler {
     
     private init() {}
     
-    func calculateDMG(attacker: Entity, defender: Entity) -> Int {
+    //Physical DMGs
+    func calculateBaseDMG(attacker: Entity, defender: Entity) -> Int {
         // atk * atk / (atk + def)
         let dmg = attacker.atk.getValue() * attacker.atk.getValue() / (attacker.atk.getValue() + defender.def.getValue())
         return dmg
     }
     
+    func calculatePiercingDMG(attacker: Entity, defender: Entity) -> Int {
+        // atk * atk / (atk + def)
+        let dmg = attacker.atk.getValue() * attacker.atk.getValue() / (attacker.atk.getValue() + defender.def.getValue())
+        return dmg
+    }
+    
+    //Magical DMGs
     func calculateDMG(attacker: Entity, defender: [Entity]) {
         
     }

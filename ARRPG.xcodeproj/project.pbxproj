@@ -218,11 +218,28 @@
 			children = (
 				4C95AB0C1EBE5842003E4A50 /* Equipable.swift */,
 				4CD559ED1EC0476700902B96 /* Axes */,
+				4C0E351A1EC14FC4007386D3 /* Body Armor */,
 				4C0E35131EC1289A007386D3 /* Helms */,
+				4C0E35191EC14FB5007386D3 /* Shields */,
 				4CB737981EBE5583006A92FF /* Swords */,
-				4C0E35151EC12EF8007386D3 /* KiteShield.swift */,
 			);
 			name = Equipment;
+			sourceTree = "<group>";
+		};
+		4C0E35191EC14FB5007386D3 /* Shields */ = {
+			isa = PBXGroup;
+			children = (
+				4C0E35151EC12EF8007386D3 /* KiteShield.swift */,
+			);
+			name = Shields;
+			sourceTree = "<group>";
+		};
+		4C0E351A1EC14FC4007386D3 /* Body Armor */ = {
+			isa = PBXGroup;
+			children = (
+				4C0E35171EC1346C007386D3 /* KnightsCuirass.swift */,
+			);
+			name = "Body Armor";
 			sourceTree = "<group>";
 		};
 		4C2735721EB7A33C006B4642 /* Battle Scene */ = {
@@ -380,7 +397,6 @@
 				4C95AB121EBE6BD7003E4A50 /* StatModifierFeature.swift */,
 				4C0E35141EC12910007386D3 /* Equipment */,
 				4C0E350E1EC0D29F007386D3 /* Consumable */,
-				4C0E35171EC1346C007386D3 /* KnightsCuirass.swift */,
 			);
 			name = Items;
 			sourceTree = "<group>";

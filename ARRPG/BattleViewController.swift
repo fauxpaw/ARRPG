@@ -114,7 +114,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         self.attackButton.isHighlighted = true
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.enableAttackButton), userInfo: nil, repeats: false)
         
-        let dmg = DamageHandler.shared.calculateDMG(attacker: player, defender: player.target!)
+        let dmg = DamageHandler.shared.calculateBaseDMG(attacker: player, defender: player.target!)
         let hpResult = player.target!.takeDmg(amount: dmg)
         self.updateStats()
         if hpResult < 1 {

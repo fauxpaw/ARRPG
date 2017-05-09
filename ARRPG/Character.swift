@@ -12,11 +12,10 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     
     var money = 0
     var owner : GameViewController?
-    var bag = [Item]() //seperate manager
-    var itemsEquipped = [Equipable]() //seperate manager
+    var bag = [Item]() //seperate manager?
+    var itemsEquipped = [Equipable]() //seperate manager?
     var exp: Int = 0
 
-    //var weapon: WeaponBehavior?
     //var inventory:
     //var gear:
     var target : Monster?
@@ -26,17 +25,14 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         self.owner = owner
         super.init()
         //set atk value
-        self.atk.setValue(to: 6)
         self.atk.setLowerBound(value: 1)
         //set max hp
         self.maxHP.setValue(to: hp)
-        self.maxHP.setLowerBound(value: 1)
         //set current hp
         self.currentHP.setValue(to: hp)
         self.currentHP.setUpperBound(value: hp)
         //set max mp
         self.maxMP.setValue(to: mp)
-        self.maxMP.setLowerBound(value: 1)
         //set current mp
         self.currentMP.setValue(to: mp)
         self.currentMP.setUpperBound(value: mp)
@@ -54,6 +50,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     
     func attack(targets: [Entity]) {
         print("mad aoe bro")
+        
         
     }
     

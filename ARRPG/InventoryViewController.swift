@@ -26,7 +26,6 @@ class InventoryViewController: GameViewController {
     @IBOutlet weak var shoulderView: UIImageView!
     @IBOutlet weak var armsView: UIImageView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
