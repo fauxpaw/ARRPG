@@ -47,8 +47,8 @@ class Monster: Entity, EntityBehavior, MonsterBehavior {
         print("Monster has died!")
     }
     
-    func consume() {
-        print("Monster consumed an item")
+    func consume(item: Consumable) {
+        print("Item so tasty")
     }
     
 }

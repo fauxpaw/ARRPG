@@ -14,6 +14,6 @@ protocol EntityBehavior {
     func attack(targets: [Entity])
     func takeDmg(amount: Int) -> Int
     func expire()
-    func consume()
+    func consume(item: Consumable)
     
 }

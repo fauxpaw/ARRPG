@@ -11,9 +11,12 @@ import Foundation
 
 class Level: Stat {
     
-    override init(val: Int) {
-        super.init(val: val)
+    init(val: Int) {
+        super.init(statName: "LVL", val: val)
         self.setLowerBound(value: 1)
         self.setUpperBound(value: 99)
     }
+    
+    
+    
 }
