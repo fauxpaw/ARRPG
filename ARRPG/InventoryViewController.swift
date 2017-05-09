@@ -12,12 +12,11 @@ import UIKit
 //get items from characters bag
 class InventoryViewController: GameViewController {
     
+    @IBOutlet weak var statsView: UITextView!
     let player = Character(hp: 100, mp: 20)
     
     @IBOutlet weak var mainHand: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var hpLabel: UILabel!
-    @IBOutlet weak var mpLabel: UILabel!
     @IBOutlet weak var offHand: UIImageView!
     @IBOutlet weak var headView: UIImageView!
     @IBOutlet weak var chestView: UIImageView!
@@ -50,8 +49,10 @@ class InventoryViewController: GameViewController {
     }
     
     func updateLabels() {
-        hpLabel.text = "HP: \(player.currentHP.getValue())/\(player.maxHP.getValue())"
-        mpLabel.text = "MP: \(player.currentMP.getValue())/\(player.maxMP.getValue())"
+        //hpLabel.text = "HP: \(player.currentHP.getValue())/\(player.maxHP.getValue())"
+        //mpLabel.text = "MP: \(player.currentMP.getValue())/\(player.maxMP.getValue())"
+        statsView.text = "Name: \(player.name) \nLvl: \(player.lvl.getValue()) \nHP: \(player.currentHP.getValue())/\(player.maxHP.getValue()) \nMP: \(player.currentMP.getValue())/\(player.maxMP.getValue()) \nATK: \(player.atk.getValue()) \nDEF: \(player.def.getValue()) \nPAT: \(player.PAT.getValue()) \nSAT: \(player.SAT.getValue()) \nCAT: \(player.CAT.getValue()) \nMAT: \(player.MAT.getValue()) \nMDF: \(player.MDF.getValue())"
+        
     }
     
     func addItemImage(image: UIImage, toSlots: [EquipmentSlots]) {
@@ -164,5 +165,11 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Bag Contents"
     }
+    
+}
+
+extension InventoryViewController: UIScrollViewDelegate {
+    
+    
     
 }

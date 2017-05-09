@@ -10,6 +10,7 @@ import Foundation
 
 class Entity {
     
+    var name = "Cool Name"
     var lvl = Level(val: 1)
     var atk = Attack(val: 1)
     var def = Stat(val: 0)
