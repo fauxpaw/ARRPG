@@ -14,7 +14,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     var owner : GameViewController?
     var bag = [Item]() //seperate manager?
     var itemsEquipped = [Equipable]() //seperate manager?
-    var exp: Int = 0
+    
 
     //var inventory:
     //var gear:
@@ -40,6 +40,12 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         self.lvl.setLowerBound(value: 1)
         self.lvl.setUpperBound(value: 99)
         
+    }
+    
+    init(withLvl: Int) {
+        super.init()
+        self.lvl.setValue(to: withLvl)
+        StatCalculator.shared.reCalcStats(entity: self)
     }
     
     func attack(target: Entity) {

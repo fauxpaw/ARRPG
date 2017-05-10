@@ -37,6 +37,7 @@
 		4C7A27571EB72A180074C220 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A27561EB72A180074C220 /* BattleViewController.swift */; };
 		4C7A275C1EB72C390074C220 /* ARItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A275B1EB72C390074C220 /* ARItem.swift */; };
 		4C7A275E1EB762140074C220 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A275D1EB762140074C220 /* Entity.swift */; };
+		4C7C12441EC37DF500BEDC99 /* ExperienceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C12431EC37DF500BEDC99 /* ExperienceCalculator.swift */; };
 		4C95AB0D1EBE5842003E4A50 /* Equipable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95AB0C1EBE5842003E4A50 /* Equipable.swift */; };
 		4C95AB0F1EBE68E5003E4A50 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95AB0E1EBE68E5003E4A50 /* Feature.swift */; };
 		4C95AB111EBE6B66003E4A50 /* FeatureBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95AB101EBE6B66003E4A50 /* FeatureBehavior.swift */; };
@@ -51,7 +52,6 @@
 		4CB737951EBE5521006A92FF /* Sellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB737941EBE5521006A92FF /* Sellable.swift */; };
 		4CC073681EBEAAAC0080CD6A /* StatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC073671EBEAAAC0080CD6A /* StatTests.swift */; };
 		4CC0736A1EBEB38B0080CD6A /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC073691EBEB38B0080CD6A /* Level.swift */; };
-		4CC0736C1EBEB4070080CD6A /* Attack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0736B1EBEB4070080CD6A /* Attack.swift */; };
 		4CC073701EBEBA1D0080CD6A /* StatsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0736F1EBEBA1D0080CD6A /* StatsType.swift */; };
 		4CC90E201EBCF8A800085824 /* WorldMapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E1F1EBCF8A800085824 /* WorldMapState.swift */; };
 		4CC90E231EBCF98200085824 /* ItemMenuMapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90E221EBCF98200085824 /* ItemMenuMapState.swift */; };
@@ -134,6 +134,7 @@
 		4C7A27561EB72A180074C220 /* BattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		4C7A275B1EB72C390074C220 /* ARItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARItem.swift; sourceTree = "<group>"; };
 		4C7A275D1EB762140074C220 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		4C7C12431EC37DF500BEDC99 /* ExperienceCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceCalculator.swift; sourceTree = "<group>"; };
 		4C95AB0C1EBE5842003E4A50 /* Equipable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equipable.swift; sourceTree = "<group>"; };
 		4C95AB0E1EBE68E5003E4A50 /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		4C95AB101EBE6B66003E4A50 /* FeatureBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureBehavior.swift; sourceTree = "<group>"; };
@@ -148,7 +149,6 @@
 		4CB737941EBE5521006A92FF /* Sellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sellable.swift; sourceTree = "<group>"; };
 		4CC073671EBEAAAC0080CD6A /* StatTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatTests.swift; sourceTree = "<group>"; };
 		4CC073691EBEB38B0080CD6A /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
-		4CC0736B1EBEB4070080CD6A /* Attack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attack.swift; sourceTree = "<group>"; };
 		4CC0736F1EBEBA1D0080CD6A /* StatsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsType.swift; sourceTree = "<group>"; };
 		4CC90E1F1EBCF8A800085824 /* WorldMapState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldMapState.swift; sourceTree = "<group>"; };
 		4CC90E221EBCF98200085824 /* ItemMenuMapState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMenuMapState.swift; sourceTree = "<group>"; };
@@ -313,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				4C0E351D1EC24718007386D3 /* StatCalculator.swift */,
+				4C7C12431EC37DF500BEDC99 /* ExperienceCalculator.swift */,
 				4CC90E2C1EBD0B2A00085824 /* ARItemFactory.swift */,
 				4C7A275B1EB72C390074C220 /* ARItem.swift */,
 				4CC90E261EBCFB0700085824 /* GooglePlacesAPI.swift */,
@@ -342,7 +343,6 @@
 				4C7A275D1EB762140074C220 /* Entity.swift */,
 				4C95AB141EBE6F2B003E4A50 /* Stat.swift */,
 				4CC073691EBEB38B0080CD6A /* Level.swift */,
-				4CC0736B1EBEB4070080CD6A /* Attack.swift */,
 				4CC0736F1EBEBA1D0080CD6A /* StatsType.swift */,
 				4C7A274E1EB720B80074C220 /* Monsters */,
 				4C7A274A1EB7044F0074C220 /* Player Character */,
@@ -645,6 +645,7 @@
 				4CDC5B511EBADF6E00A194DD /* State.swift in Sources */,
 				4CC90E231EBCF98200085824 /* ItemMenuMapState.swift in Sources */,
 				4C7A274D1EB7209D0074C220 /* Monster.swift in Sources */,
+				4C7C12441EC37DF500BEDC99 /* ExperienceCalculator.swift in Sources */,
 				4CDC5B691EBCF3A700A194DD /* WorldMap.swift in Sources */,
 				4CDC5B621EBCA49B00A194DD /* ARController.swift in Sources */,
 				4CB7378C1EBE4FAE006A92FF /* Item.swift in Sources */,
@@ -682,7 +683,6 @@
 				4C0E35121EC12888007386D3 /* CrusaderHelm.swift in Sources */,
 				4C0E351E1EC24718007386D3 /* StatCalculator.swift in Sources */,
 				4CDC5B3A1EB9399A00A194DD /* arrowsProtocol.swift in Sources */,
-				4CC0736C1EBEB4070080CD6A /* Attack.swift in Sources */,
 				4CD559EC1EC0375600902B96 /* Spatha.swift in Sources */,
 				4CD190E11EBEC095004B2C04 /* BroadAxe.swift in Sources */,
 				4C7A27111EB6E3A10074C220 /* AppDelegate.swift in Sources */,

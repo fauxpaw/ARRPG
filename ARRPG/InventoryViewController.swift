@@ -13,7 +13,7 @@ import UIKit
 class InventoryViewController: GameViewController {
     
     @IBOutlet weak var statsView: UITextView!
-    let player = Character(hp: 100, mp: 20)
+    let player = Character(withLvl: 1)
     
     @IBOutlet weak var mainHand: UIImageView!
     @IBOutlet weak var tableView: UITableView!
@@ -46,11 +46,45 @@ class InventoryViewController: GameViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.updateLabels()
+        self.addGesture()
+        
+    }
+    
+    func addGesture() {
+        let views = [mainHand, offHand, headView, chestView, shoulderView, legsView, feetView, armsView]
+        
+        
+        for view in views {
+            if let v = view {
+                let gesture = UITapGestureRecognizer(target: self, action: #selector(InventoryViewController.handleTouch(sender:)))
+                gesture.numberOfTapsRequired = 1
+                v.isUserInteractionEnabled = true
+                v.addGestureRecognizer(gesture)
+                print("adding gesture to \(v)")
+
+            }
+        }
+    }
+    
+    func handleTouch(sender: UITapGestureRecognizer) {
+        print("Image view tapped")
+        if let tappedView = sender.view as? UIImageView {
+            
+            for item in player.itemsEquipped {
+                if item.image == tappedView.image {
+                    for slot in item.currentSlotsTaken {
+                        player.dequip(atSlot: slot)
+                        self.tableView.reloadData()
+                        self.updateLabels()
+                    }
+                }
+            }
+            tappedView.image = nil
+        }
+        
     }
     
     func updateLabels() {
-        //hpLabel.text = "HP: \(player.currentHP.getValue())/\(player.maxHP.getValue())"
-        //mpLabel.text = "MP: \(player.currentMP.getValue())/\(player.maxMP.getValue())"
         statsView.text = "Name: \(player.name) \nLvl: \(player.lvl.getValue()) \nHP: \(player.currentHP.getValue())/\(player.maxHP.getValue()) \nMP: \(player.currentMP.getValue())/\(player.maxMP.getValue()) \nATK: \(player.atk.getValue())  \nPAT: \(player.PAT.getValue()) \nSAT: \(player.SAT.getValue()) \nCAT: \(player.CAT.getValue()) \nMAT: \(player.MAT.getValue()) \nEAT: \(player.EAT.getValue()) \nFAT: \(player.FAT.getValue()) \nAAT: \(player.AAT.getValue()) \nWAT: \(player.WAT.getValue()) \nDEF: \(player.def.getValue()) \nPDF: \(player.PDF.getValue()) \nCDF: \(player.CDF.getValue()) \nSDF: \(player.SDF.getValue()) \nMDF: \(player.MDF.getValue()) \nER: \(player.ER.getValue()) \nFR: \(player.FR.getValue()) \nAR: \(player.AR.getValue()) \nWR: \(player.WR.getValue()) \nRES: \(player.RES.getValue()) \nEVD: \(player.EVD.getValue()) \nSPD: \(player.SPD.getValue())"
         
     }
@@ -135,11 +169,6 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        /*if let item = player.bag[indexPath.row] as? Equipable {
-            let destination = player.equipItem(item: item, possibleSlots: item.possibleSlots)
-            addItemImage(image: item.image, toSlots: destination)
-        }*/
-        
         self.updateLabels()
         self.tableView.reloadData()
     }
@@ -168,8 +197,3 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension InventoryViewController: UIScrollViewDelegate {
-    
-    
-    
-}

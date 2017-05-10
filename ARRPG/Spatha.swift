@@ -29,5 +29,4 @@ class Spatha: Equipable {
         self.setDescriptioin()
     }
     
-    
 }
