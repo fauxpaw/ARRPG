@@ -17,7 +17,7 @@ class KiteShield: Equipable {
     init(owner: Character) {
         let name = "Kite Shield"
         let desc = ""
-        let cost = 5000
+        let cost = 250
         super.init(name: name, description: desc, cost: cost)
         self.effects = [effect1, effect2, effect3]
         self.owner = owner

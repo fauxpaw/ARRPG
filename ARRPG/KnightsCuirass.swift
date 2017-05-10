@@ -18,7 +18,7 @@ class KnightsCuirass: Equipable {
     init(owner: Character) {
         let name = "Knight's Cuirass"
         let desc = ""
-        let cost = 5000
+        let cost = 750
         super.init(name: name, description: desc, cost: cost)
         self.effects = [effect1, effect2, effect3]
         self.owner = owner

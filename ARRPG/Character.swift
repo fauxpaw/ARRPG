@@ -160,7 +160,6 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         }
     }
     
-    
     func consume(item: Consumable) {
         print("Item so tasty")
     }

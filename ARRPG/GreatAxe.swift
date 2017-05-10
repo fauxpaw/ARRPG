@@ -20,7 +20,7 @@ class GreatAxe: Equipable {
     init(owner: Character) {
         let name = "Great Axe"
         let desc = ""
-        let cost = 2000
+        let cost = 950
         super.init(name: name, description: desc, cost: cost)
         self.effects = [effect1, effect2, effect3, effect4]
         self.owner = owner
