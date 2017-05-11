@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+// Create factories for items etc
 class ShopViewController: GameViewController {
     
     @IBOutlet weak var currencyLabel: UILabel!
@@ -67,9 +69,9 @@ extension ShopViewController : UITableViewDelegate, UITableViewDataSource {
         case self.bagTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
                 ?? UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
-            cell.textLabel?.text = player.bag[indexPath.row].name
-            cell.detailTextLabel?.text = player.bag[indexPath.row].desc
-            cell.imageView?.image = player.bag[indexPath.row].image
+            cell.textLabel?.text = player.bag.contents[indexPath.row].name
+            cell.detailTextLabel?.text = player.bag.contents[indexPath.row].desc
+            cell.imageView?.image = player.bag.contents[indexPath.row].image
             return cell
         default:
             let cell = UITableViewCell(style: .default, reuseIdentifier: "none")
@@ -84,7 +86,7 @@ extension ShopViewController : UITableViewDelegate, UITableViewDataSource {
         case self.shopTableView:
             return shopsItems.count
         case self.bagTableView:
-            return player.bag.count
+            return player.bag.contents.count
         default:
             print("no such table view")
             return 0

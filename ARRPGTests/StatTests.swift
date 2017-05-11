@@ -22,26 +22,26 @@ class StatTests: XCTestCase {
     }
     
     func testMaxValueSet() {
-        let stat = Stat(val: 5)
+        let stat = Stat(statName: "DEX", val: 5)
         stat.setUpperBound(value: 20)
         XCTAssertTrue(stat.getUpperBound() == 20)
     }
     
     func testMaxValueMod() {
-        let stat = Stat(val: 5)
+        let stat = Stat(statName: "DEX", val: 5)
         stat.setUpperBound(value: 20)
         stat.modifyUpperBound(value: 5)
         XCTAssertTrue(stat.getUpperBound() == 25)
     }
     
     func testMinValueSet() {
-        let stat = Stat(val: 5)
+        let stat = Stat(statName: "DEX", val: 5)
         stat.setLowerBound(value: 20)
         XCTAssertTrue(stat.getLowerBound() == 20)
     }
     
     func testMinValueMod() {
-        let stat = Stat(val: 5)
+        let stat = Stat(statName: "DEX", val: 5)
         stat.setLowerBound(value: 20)
         stat.modifyLowerBound(value: 6)
         XCTAssertTrue(stat.getLowerBound() == 26)

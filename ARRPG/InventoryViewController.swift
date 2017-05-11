@@ -41,7 +41,7 @@ class InventoryViewController: GameViewController {
         let item9 = KiteShield(owner: self.player)
         
         let allItems = [item, item1, item2, item3, item4, item5, item6, item7, item8, item9]
-        player.bag.append(contentsOf: allItems)
+        player.bag.contents = allItems
         player.currentHP.modifyBy(val: -40)
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -155,16 +155,17 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //let cell = tableView.cellForRow(at: indexPath)
         
-        let itemz = player.bag[indexPath.row]
-        if itemz.isKind(of: Equipable.self) {
-            if let equip = itemz as? Equipable {
+        let item = player.bag.contents[indexPath.row]
+        if item.isKind(of: Equipable.self) {
+            if let equip = item as? Equipable {
                 let destination = player.equipItem(item: equip, possibleSlots: equip.possibleSlots)
                 addItemImage(image: equip.image, toSlots: destination)
+                
             }
         }
         
-        else if itemz.isKind(of: Consumable.self) {
-            if let consume = player.bag[indexPath.row] as? Consumable {
+        else if item.isKind(of: Consumable.self) {
+            if let consume = player.bag.contents[indexPath.row] as? Consumable {
                 consume.consumeItem()
             }
         }
@@ -181,14 +182,14 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
             ?? UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
-        cell.textLabel?.text = player.bag[indexPath.row].name
-        cell.detailTextLabel?.text = player.bag[indexPath.row].desc
-        cell.imageView?.image = player.bag[indexPath.row].image
+        cell.textLabel?.text = player.bag.contents[indexPath.row].name
+        cell.detailTextLabel?.text = player.bag.contents[indexPath.row].desc
+        cell.imageView?.image = player.bag.contents[indexPath.row].image
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return player.bag.count
+        return player.bag.contents.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
