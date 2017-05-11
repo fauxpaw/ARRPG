@@ -160,7 +160,10 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     }
     
     func consume(item: Consumable) {
-        print("Item so tasty")
+        //check if can consume
+        item.consumeItem()
+        item.owner?.removeItemFromBag(item: item)
+        item.owner = nil
     }
     
     

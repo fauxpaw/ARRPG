@@ -47,7 +47,7 @@ class InventoryViewController: GameViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.addGesture()
-        StatCalculator.shared.reCalcStats(entity: player)
+        //StatCalculator.shared.reCalcStats(entity: player)
         self.updateLabels()
     }
     
@@ -166,7 +166,7 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
         
         else if item.isKind(of: Consumable.self) {
             if let consume = player.bag.contents[indexPath.row] as? Consumable {
-                consume.consumeItem()
+                player.consume(item: consume)
             }
         }
         

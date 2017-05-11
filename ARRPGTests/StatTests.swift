@@ -49,6 +49,13 @@ class StatTests: XCTestCase {
         XCTAssertTrue(stat.getLowerBound() == 10)
     }
     
+    func testValueCap() {
+        let STR = Stat(statName: "STR", val: 5)
+        STR.setUpperBound(value: 10)
+        STR.modifyBy(val: 15)
+        XCTAssertTrue(STR.getValue() == 10)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

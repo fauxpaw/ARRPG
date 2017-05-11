@@ -23,7 +23,5 @@ class Consumable: Item, ConsumableItemBehavior {
                 return
             }
         }
-        self.owner?.removeItemFromBag(item: self)
-        self.owner = nil
     }
 }
