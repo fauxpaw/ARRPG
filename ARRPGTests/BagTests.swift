@@ -65,6 +65,24 @@ class BagTests: XCTestCase {
         XCTAssert(player.bag.stacked[item.name] == nil)
     }
     
+    func testItemAddAfterCapacity() {
+        let player = Character(withLvl: 3)
+        player.bag.capacity = 2
+        let item = HealthPotion(owner: player)
+        let item2 = HealthPotion(owner: player)
+        player.addItemToBag(item: item)
+        player.addItemToBag(item: item2)
+        let item3 = HealthPotion(owner: player)
+        player.addItemToBag(item: item3)
+        XCTAssertTrue(player.canAddItemToBag())
+        let item4 = Spatha(owner: player)
+        let item5 = KiteShield(owner: player)
+        player.addItemToBag(item: item4)
+        XCTAssertFalse(player.canAddItemToBag())
+        player.addItemToBag(item: item5)
+        XCTAssert(player.bag.contents.count == 2)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

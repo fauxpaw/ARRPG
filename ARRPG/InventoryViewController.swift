@@ -41,13 +41,14 @@ class InventoryViewController: GameViewController {
         let item9 = KiteShield(owner: self.player)
         
         let allItems = [item, item1, item2, item3, item4, item5, item6, item7, item8, item9]
-        player.bag.contents = allItems
-        player.currentHP.modifyBy(val: -40)
+        for item in allItems {
+            player.addItemToBag(item: item)
+        }
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.updateLabels()
         self.addGesture()
-        
+        StatCalculator.shared.reCalcStats(entity: player)
+        self.updateLabels()
     }
     
     func addGesture() {
@@ -153,7 +154,6 @@ class InventoryViewController: GameViewController {
 extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let cell = tableView.cellForRow(at: indexPath)
         
         let item = player.bag.contents[indexPath.row]
         if item.isKind(of: Equipable.self) {

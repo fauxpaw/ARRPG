@@ -28,6 +28,7 @@ class HealthPotion: Consumable, StackableItem {
         if owner?.currentHP.getValue() == owner?.currentHP.getUpperBound() {
             return
         }
+        
         super.consumeItem()
     }
 }

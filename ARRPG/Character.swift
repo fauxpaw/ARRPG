@@ -155,9 +155,14 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         }
     }
     
+    func canAddItemToBag() -> Bool {
+        return self.bag.contents.count < self.bag.capacity
+    }
+    
     func consume(item: Consumable) {
         print("Item so tasty")
     }
+    
     
     //Character Behavior Protocol
     

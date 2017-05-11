@@ -51,6 +51,13 @@ struct StatCalculator {
                 stat.setValue(to: newValue)
             }
         }
+        
+        //reset max HPs and Mps
+        let maxHP = entity.maxHP.getValue()
+        let maxMP = entity.maxMP.getValue()
+        entity.currentHP.setUpperBound(value: maxHP)
+        entity.currentHP.setUpperBound(value: maxMP)
+        
         //reapply item bonuses
         if let player = entity as? Character {
             for item in player.itemsEquipped {
