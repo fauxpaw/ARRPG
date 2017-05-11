@@ -12,10 +12,9 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     
     var money = 0
     var owner : GameViewController?
-    var bag = [Item]() //seperate manager?
+    var bag : Bag = Bag() //seperate manager?
     var itemsEquipped = [Equipable]() //seperate manager?
-    var exp: Int = 0
-
+    
     //var inventory:
     //var gear:
     var target : Monster?
@@ -40,6 +39,12 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         self.lvl.setLowerBound(value: 1)
         self.lvl.setUpperBound(value: 99)
         
+    }
+    
+    init(withLvl: Int) {
+        super.init()
+        self.lvl.setValue(to: withLvl)
+        StatCalculator.shared.reCalcStats(entity: self)
     }
     
     func attack(target: Entity) {
@@ -68,15 +73,11 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     }
     
     func addItemToBag(item: Item) {
-        self.bag.append(item)
+        self.bag.addItem(item: item)
     }
     
     func removeItemFromBag(item: Item) {
-        for (i,thing) in self.bag.enumerated() {
-            if thing == item {
-                self.bag.remove(at: i)
-            }
-        }
+        self.bag.remove(item: item)
     }
     
     func equipItem(item: Equipable, possibleSlots: [EquipmentSlots]) -> [EquipmentSlots] {
@@ -153,7 +154,6 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
             }
         }
     }
-    
     
     func consume(item: Consumable) {
         print("Item so tasty")

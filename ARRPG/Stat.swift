@@ -81,4 +81,5 @@ class Stat: NSObject {
     func getName() -> String {
         return self.name
     }
+    
 }

@@ -12,7 +12,7 @@ import AVFoundation
 
 class BattleViewController: GameViewController, arrowsUIProtocol {
 
-    var player = Character(hp: 100, mp: 10)
+    var player = Character(withLvl: 2)
     var mob : Monster?
     let menuController = BattleMenu()
     let arController = ARController()

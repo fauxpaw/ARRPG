@@ -9,8 +9,9 @@
 import Foundation
 
 
-class HealthPotion: Consumable {
+class HealthPotion: Consumable, StackableItem {
     
+    var isStackable: Bool = true
     let effect1 = StatModifierFeature(stat:StatsType.HP , amount: 50)
     
     init(owner: Character) {

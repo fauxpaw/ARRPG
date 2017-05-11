@@ -10,17 +10,26 @@ import UIKit
 
 class TestLevelGrowth: GameViewController {
     
-    
-    let player = Character(hp: 1, mp: 1)
+    let player = Character(withLvl: 3)
     @IBOutlet weak var statsView: UITextView!
     @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var levelMetrics: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         player.owner = self
         self.givePlayerItems()
         StatCalculator.shared.reCalcStats(entity: self.player)
+        self.testExpLvlEqs()
         self.updateStats()
+        
+    }
+    
+    func testExpLvlEqs() {
+       let next = ExperienceCalculator.shared.experienceNeededForNextLevel(entity: player)
+        if let totalExp = ExperienceCalculator.shared.experienceForLevel(entity: player){
+            levelMetrics.text = "Total exp needed for this level: \(totalExp) \nExp until next level: \(next)"
+        }
         
     }
     
@@ -37,8 +46,7 @@ class TestLevelGrowth: GameViewController {
         
         player.lvl.setValue(to: Int(sender.value))
         StatCalculator.shared.reCalcStats(entity: self.player)
+        self.testExpLvlEqs()
         self.updateStats()
     }
-    
-    
 }

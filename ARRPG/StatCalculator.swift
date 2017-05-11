@@ -9,7 +9,7 @@
 import Foundation
 
 
-class StatCalculator {
+struct StatCalculator {
     
     static let shared = StatCalculator()
     
