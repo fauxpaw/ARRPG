@@ -56,6 +56,21 @@ class Entity {
         self.stats = [maxHP, maxMP, MDF, def, EVD, RES, SPD, PAT, CAT, SAT, PDF, CDF, SDF, FAT, WAT, AAT, EAT, FR, AR, WR, ER, currentHP, currentMP, EXP, atk, MAT]
     }
     
+    func maxValueWasSet(statType: StatsType, amount: Int) {
+        switch statType {
+        case .MHP:
+            let difference = amount - self.currentHP.getValue()
+            self.currentHP.setUpperBound(value: amount)
+            self.currentHP.modifyBy(val: difference)
+        case .MMP:
+            let difference = amount - self.currentMP.getValue()
+            self.currentMP.setUpperBound(value: amount)
+            self.currentMP.modifyBy(val: difference)
+        default:
+            print("Not a max value, no need for change")
+        }
+    }
+    
     func maxValueDidChange(statType: StatsType, amount: Int) {
         switch statType {
         case .MHP:

@@ -50,6 +50,12 @@ struct StatCalculator {
                 let newValue = Int(Double(lvl) * multiplier)
                 print("Setting \(stat.getName()) to \(newValue)")
                 stat.setValue(to: newValue)
+                if name == "MHP" {
+                    entity.maxValueWasSet(statType: .MHP, amount: newValue)
+                }
+                if name == "MMP" {
+                    entity.maxValueWasSet(statType: .MMP, amount: newValue)
+                }
             }
         }
     }
