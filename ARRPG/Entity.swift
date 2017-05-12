@@ -53,7 +53,7 @@ class Entity {
         self.EXP.setUpperBound(value: 999999)
         self.lvl.setUpperBound(value: 99)
         
-        self.stats = [MDF, def, EVD, RES, SPD, PAT, CAT, SAT, PDF, CDF, SDF, FAT, WAT, AAT, EAT, FR, AR, WR, ER, currentHP, currentMP, EXP, atk, MAT, maxHP, maxMP]
+        self.stats = [maxHP, maxMP, MDF, def, EVD, RES, SPD, PAT, CAT, SAT, PDF, CDF, SDF, FAT, WAT, AAT, EAT, FR, AR, WR, ER, currentHP, currentMP, EXP, atk, MAT]
     }
     
     func maxValueDidChange(statType: StatsType, amount: Int) {
@@ -67,10 +67,6 @@ class Entity {
         default:
             print("Not modifying max value, no need for current value max to change")
         }
-    }
-    
-    func experienceDidChange(amount: Int) {
-        
     }
     
     func levelDidChange() {

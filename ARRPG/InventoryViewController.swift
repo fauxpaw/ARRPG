@@ -47,7 +47,7 @@ class InventoryViewController: GameViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.addGesture()
-        //StatCalculator.shared.reCalcStats(entity: player)
+        player.reCalculateStats()
         self.updateLabels()
     }
     
@@ -61,8 +61,6 @@ class InventoryViewController: GameViewController {
                 gesture.numberOfTapsRequired = 1
                 v.isUserInteractionEnabled = true
                 v.addGestureRecognizer(gesture)
-                print("adding gesture to \(v)")
-
             }
         }
     }
@@ -172,6 +170,13 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
         
         self.updateLabels()
         self.tableView.reloadData()
+        print("Player HP is \(player.currentHP.getValue())")
+        print("Player HP max is \(player.currentHP.getUpperBound())")
+        print("Player HP min is \(player.currentHP.getLowerBound())")
+        
+        print("Player MHP is \(player.maxHP.getValue())")
+        print("Player MHP max is \(player.maxHP.getUpperBound())")
+        print("Player MHP min is \(player.maxHP.getLowerBound())")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

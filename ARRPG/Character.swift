@@ -44,7 +44,8 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     init(withLvl: Int) {
         super.init()
         self.lvl.setValue(to: withLvl)
-        StatCalculator.shared.reCalcStats(entity: self)
+        StatCalculator.shared.reCalcBaseStats(entity: self)
+        StatCalculator.shared.applyItemBonues(entity: self)
     }
     
     func attack(target: Entity) {
@@ -164,6 +165,11 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         item.consumeItem()
         item.owner?.removeItemFromBag(item: item)
         item.owner = nil
+    }
+    
+    func reCalculateStats() {
+        StatCalculator.shared.reCalcBaseStats(entity: self)
+        StatCalculator.shared.applyItemBonues(entity: self)
     }
     
     
