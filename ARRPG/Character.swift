@@ -44,7 +44,8 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     init(withLvl: Int) {
         super.init()
         self.lvl.setValue(to: withLvl)
-        StatCalculator.shared.reCalcStats(entity: self)
+        StatCalculator.shared.reCalcBaseStats(entity: self)
+        StatCalculator.shared.applyItemBonues(entity: self)
     }
     
     func attack(target: Entity) {
@@ -155,9 +156,22 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         }
     }
     
-    func consume(item: Consumable) {
-        print("Item so tasty")
+    func canAddItemToBag() -> Bool {
+        return self.bag.contents.count < self.bag.capacity
     }
+    
+    func consume(item: Consumable) {
+        //check if can consume
+        item.consumeItem()
+        item.owner?.removeItemFromBag(item: item)
+        item.owner = nil
+    }
+    
+    func reCalculateStats() {
+        StatCalculator.shared.reCalcBaseStats(entity: self)
+        StatCalculator.shared.applyItemBonues(entity: self)
+    }
+    
     
     //Character Behavior Protocol
     

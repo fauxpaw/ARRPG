@@ -23,6 +23,16 @@ class Stat: NSObject {
     
     func setValue(to: Int) {
         self.value = to
+        
+        if let min = self.minVlaue {
+            if self.value < min {
+                self.value = min
+            }
+        }
+        guard let max = self.maxValue else {return}
+        if self.value > max {
+            self.value = max
+        }
     }
     
     func getValue() -> Int {
@@ -31,14 +41,14 @@ class Stat: NSObject {
     
     func modifyBy(val: Int) {
         self.value += val
+        
         if self.value < 0 {
             self.value = 0
         }
         
-        if let max = self.maxValue {
-            if self.value > max {
-                self.value = max
-            }
+        guard let max = self.maxValue else {return}
+        if self.value > max {
+            self.value = max
         }
     }
     

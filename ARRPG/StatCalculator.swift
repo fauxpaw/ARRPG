@@ -41,17 +41,20 @@ struct StatCalculator {
     
     private init () {}
     
-    func reCalcStats(entity: Entity) {
+    func reCalcBaseStats(entity: Entity) {
         let lvl = entity.lvl.getValue()
         //calculate base stats
         for stat in entity.stats {
             let name = stat.getName()
             if let multiplier = statGrowth[name] {
                 let newValue = Int(Double(lvl) * multiplier)
+                print("Setting \(stat.getName()) to \(newValue)")
                 stat.setValue(to: newValue)
             }
         }
-        //reapply item bonuses
+    }
+    
+    func applyItemBonues(entity: Entity) {
         if let player = entity as? Character {
             for item in player.itemsEquipped {
                 for mod in item.effects {
@@ -59,10 +62,5 @@ struct StatCalculator {
                 }
             }
         }
-        
-        //reapply buffs...
-        
-        
-        //reapply debuffs...
     }
 }

@@ -41,13 +41,14 @@ class InventoryViewController: GameViewController {
         let item9 = KiteShield(owner: self.player)
         
         let allItems = [item, item1, item2, item3, item4, item5, item6, item7, item8, item9]
-        player.bag.contents = allItems
-        player.currentHP.modifyBy(val: -40)
+        for item in allItems {
+            player.addItemToBag(item: item)
+        }
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.updateLabels()
         self.addGesture()
-        
+        player.reCalculateStats()
+        self.updateLabels()
     }
     
     func addGesture() {
@@ -60,8 +61,6 @@ class InventoryViewController: GameViewController {
                 gesture.numberOfTapsRequired = 1
                 v.isUserInteractionEnabled = true
                 v.addGestureRecognizer(gesture)
-                print("adding gesture to \(v)")
-
             }
         }
     }
@@ -153,7 +152,6 @@ class InventoryViewController: GameViewController {
 extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let cell = tableView.cellForRow(at: indexPath)
         
         let item = player.bag.contents[indexPath.row]
         if item.isKind(of: Equipable.self) {
@@ -166,12 +164,19 @@ extension InventoryViewController: UITableViewDelegate, UITableViewDataSource {
         
         else if item.isKind(of: Consumable.self) {
             if let consume = player.bag.contents[indexPath.row] as? Consumable {
-                consume.consumeItem()
+                player.consume(item: consume)
             }
         }
         
         self.updateLabels()
         self.tableView.reloadData()
+        print("Player HP is \(player.currentHP.getValue())")
+        print("Player HP max is \(player.currentHP.getUpperBound())")
+        print("Player HP min is \(player.currentHP.getLowerBound())")
+        
+        print("Player MHP is \(player.maxHP.getValue())")
+        print("Player MHP max is \(player.maxHP.getUpperBound())")
+        print("Player MHP min is \(player.maxHP.getLowerBound())")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

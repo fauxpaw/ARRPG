@@ -18,6 +18,7 @@ class Bag {
     func addItem(item: Item) {
         
         if contents.count >= capacity {
+            print("cannot add more items to bag. Bag is full")
            return
         }
         
@@ -30,8 +31,10 @@ class Bag {
                     return
                 }
             } else {
+                contents.append(item)
                 stacked[item.name] = 1
                 print("creating key for item \(stacked[item.name])")
+                return
             }
         }
         
@@ -44,8 +47,10 @@ class Bag {
             if let count = stacked[item.name] {
                 if count == 1 {
                     stacked[item.name] = nil
+                    return
                 } else {
                     stacked[item.name] = count - 1
+                    return
                 }
             }
         }

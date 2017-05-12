@@ -19,7 +19,7 @@ class TestLevelGrowth: GameViewController {
         super.viewDidLoad()
         player.owner = self
         self.givePlayerItems()
-        StatCalculator.shared.reCalcStats(entity: self.player)
+        StatCalculator.shared.reCalcBaseStats(entity: self.player)
         self.testExpLvlEqs()
         self.updateStats()
         
@@ -45,7 +45,7 @@ class TestLevelGrowth: GameViewController {
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         
         player.lvl.setValue(to: Int(sender.value))
-        StatCalculator.shared.reCalcStats(entity: self.player)
+        StatCalculator.shared.reCalcBaseStats(entity: self.player)
         self.testExpLvlEqs()
         self.updateStats()
     }
