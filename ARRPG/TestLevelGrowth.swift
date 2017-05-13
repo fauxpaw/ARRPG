@@ -10,7 +10,7 @@ import UIKit
 
 class TestLevelGrowth: GameViewController {
     
-    let player = Character(withLvl: 3)
+    let player = Character(withLvl: 1)
     @IBOutlet weak var statsView: UITextView!
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var levelMetrics: UITextView!
@@ -35,7 +35,7 @@ class TestLevelGrowth: GameViewController {
     
     func givePlayerItems() {
         let item1 = Spatha(owner: player)
-        player.equipItem(item: item1, possibleSlots: item1.possibleSlots)
+        let _ = player.equipItem(item: item1, possibleSlots: item1.possibleSlots)
     }
     
     func updateStats() {

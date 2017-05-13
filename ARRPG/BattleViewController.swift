@@ -159,8 +159,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
 extension BattleViewController: SCNSceneRendererDelegate {
     //Game loop logic
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        
-        
+        //monster action on interval
         if time > self.nextMobAction {
             guard let mob = self.mob else {return}
             let dmg = DamageHandler.shared.calculateBaseDMG(attacker: mob, defender: (mob.target))
@@ -169,7 +168,8 @@ extension BattleViewController: SCNSceneRendererDelegate {
             print("mob target hp: \(self.mob?.target.currentHP.getValue()) / \(self.mob?.target.maxHP.getValue()))")
             
             if hpResult < 1 {
-                print("you died")
+                let KO = KOBattleState(owner: self)
+                self.changeState(toState: KO)
             }
             self.nextMobAction = time + TimeInterval(2)
             DispatchQueue.main.async {

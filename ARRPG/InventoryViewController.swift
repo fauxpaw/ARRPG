@@ -13,7 +13,7 @@ import UIKit
 class InventoryViewController: GameViewController {
     
     @IBOutlet weak var statsView: UITextView!
-    let player = Character(withLvl: 1)
+    let player = Character(withLvl: 99)
     
     @IBOutlet weak var mainHand: UIImageView!
     @IBOutlet weak var tableView: UITableView!
@@ -48,7 +48,10 @@ class InventoryViewController: GameViewController {
         self.tableView.dataSource = self
         self.addGesture()
         player.reCalculateStats()
+        //remove some hp for potion testing and stacking
+        player.currentHP.modifyBy(val: -250)
         self.updateLabels()
+
     }
     
     func addGesture() {

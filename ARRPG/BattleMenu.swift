@@ -8,10 +8,7 @@
 
 import UIKit
 
-class BattleMenu: UIView {
-    
-    var buttons = [UIButton]()
-    var labels = [UILabel]()
+class BattleMenu: Menu {
     
     func attackState() {
         self.hideLootMenu()
@@ -29,15 +26,6 @@ class BattleMenu: UIView {
             button.layer.backgroundColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
             button.layer.borderWidth = 2
             button.layer.borderColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
-        }
-    }
-    
-    func hideAttackMenu() {
-        for button in buttons {
-            if button.isKind(of: AttackMenuButton.self) {
-                button.isHidden = true
-                button.isUserInteractionEnabled = false
-            }
         }
     }
     
