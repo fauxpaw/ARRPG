@@ -49,15 +49,12 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     }
     
     func attack(target: Entity) {
-        
         print("You swing for mighty dmg")
         
     }
     
     func attack(targets: [Entity]) {
         print("mad aoe bro")
-        
-        
     }
     
     func takeDmg(amount: Int) -> Int{
@@ -171,7 +168,6 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         StatCalculator.shared.reCalcBaseStats(entity: self)
         StatCalculator.shared.applyItemBonues(entity: self)
     }
-    
     
     //Character Behavior Protocol
     

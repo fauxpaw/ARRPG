@@ -14,7 +14,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
 
     var player = Character(withLvl: 2)
     var mob : Monster?
-    let menuController = BattleMenu()
+    let menuController = BattleMenuController()
     let arController = ARController()
     var nextMobAction: TimeInterval = 2
     
@@ -42,7 +42,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         self.setupScene()
         self.updateStats()
         self.styleLabels()
-        self.menuController.styleUI()
+        self.menuController.setup()
         self.sceneView.delegate = self
     }
     
@@ -75,7 +75,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         for label in labels {
             label?.layer.backgroundColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
         }
-        self.menuController.styleUI()
+        self.menuController.setup()
     }
     
     func enterLootState() {

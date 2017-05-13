@@ -86,6 +86,8 @@
 		4CFB63E51EC7BA0100D2F1CF /* KOBattleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB63E41EC7BA0100D2F1CF /* KOBattleState.swift */; };
 		4CFB63E71EC7C4D800D2F1CF /* LootMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB63E61EC7C4D800D2F1CF /* LootMenu.swift */; };
 		4CFB63E91EC7C4EA00D2F1CF /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB63E81EC7C4EA00D2F1CF /* Menu.swift */; };
+		4CFB63EB1EC7C81400D2F1CF /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB63EA1EC7C81300D2F1CF /* MenuController.swift */; };
+		4CFB63ED1EC7C8A800D2F1CF /* KOMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB63EC1EC7C8A800D2F1CF /* KOMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +193,8 @@
 		4CFB63E41EC7BA0100D2F1CF /* KOBattleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KOBattleState.swift; sourceTree = "<group>"; };
 		4CFB63E61EC7C4D800D2F1CF /* LootMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LootMenu.swift; sourceTree = "<group>"; };
 		4CFB63E81EC7C4EA00D2F1CF /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		4CFB63EA1EC7C81300D2F1CF /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		4CFB63EC1EC7C8A800D2F1CF /* KOMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KOMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +394,7 @@
 				4C59C8861EBFD190002D754F /* InventoryViewController.swift */,
 				4C0E351B1EC2437C007386D3 /* ShopViewController.swift */,
 				4C0E351F1EC25C9A007386D3 /* TestLevelGrowth.swift */,
+				4CFB63EA1EC7C81300D2F1CF /* MenuController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -466,6 +471,7 @@
 				4C2735701EB7A338006B4642 /* MainScene.swift */,
 				4CDC5B371EB935D300A194DD /* SpriteScene.swift */,
 				4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */,
+				4CFB63EC1EC7C8A800D2F1CF /* KOMenu.swift */,
 				4CFB63E61EC7C4D800D2F1CF /* LootMenu.swift */,
 				4C27356E1EB7985E006B4642 /* HealthBar.swift */,
 				4CDC5B431EBA156B00A194DD /* AttackMenuButton.swift */,
@@ -676,6 +682,7 @@
 				4CDC5B621EBCA49B00A194DD /* ARController.swift in Sources */,
 				4CB7378C1EBE4FAE006A92FF /* Item.swift in Sources */,
 				4C95AB0F1EBE68E5003E4A50 /* Feature.swift in Sources */,
+				4CFB63ED1EC7C8A800D2F1CF /* KOMenu.swift in Sources */,
 				4CB7378A1EBE3290006A92FF /* LootBattleState.swift in Sources */,
 				4CDC5B571EBAE65100A194DD /* GameViewController.swift in Sources */,
 				4CC073701EBEBA1D0080CD6A /* StatsType.swift in Sources */,
@@ -728,6 +735,7 @@
 				4C2735711EB7A338006B4642 /* MainScene.swift in Sources */,
 				4CC90E2D1EBD0B2A00085824 /* ARItemFactory.swift in Sources */,
 				4C7C12461EC3EA8600BEDC99 /* Bag.swift in Sources */,
+				4CFB63EB1EC7C81400D2F1CF /* MenuController.swift in Sources */,
 				4CDC5B591EBAE88000A194DD /* NullState.swift in Sources */,
 				4CB7378F1EBE544F006A92FF /* EquipableItemBehavior.swift in Sources */,
 				4C7A27421EB6E4160074C220 /* EntityBehavior.swift in Sources */,

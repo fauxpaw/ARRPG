@@ -9,50 +9,14 @@
 import UIKit
 
 class BattleMenu: Menu {
+
     
-    func attackState() {
-        self.hideLootMenu()
-        self.showAttackMenu()
+    override func animateIn() {
+        print("super cool animation ")
     }
     
-    func lootState() {
-        self.hideAttackMenu()
-        self.showLootMenu()
+    override func animateOut() {
+        print("super cool outro")
     }
     
-    func styleUI(){
-        for button in buttons {
-            button.layer.cornerRadius = 25
-            button.layer.backgroundColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
-            button.layer.borderWidth = 2
-            button.layer.borderColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
-        }
-    }
-    
-    func showAttackMenu() {
-        for button in buttons {
-            if button.isKind(of: AttackMenuButton.self) {
-                button.isHidden = false
-                button.isUserInteractionEnabled = true
-            }
-        }
-    }
-    
-    func hideLootMenu() {
-        for button in buttons {
-            if button.isKind(of: LootMenuButton.self) {
-                button.isHidden = true
-                button.isUserInteractionEnabled = false
-            }
-        }
-    }
-    
-    func showLootMenu() {
-        for button in buttons {
-            if button.isKind(of: LootMenuButton.self) {
-                button.isHidden = false
-                button.isUserInteractionEnabled = true
-            }
-        }
-    }
 }

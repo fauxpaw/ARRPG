@@ -15,7 +15,7 @@ class CombatBattleState: BattleState {
         //setup and enable the combat menu
         print("Entering combat state")
         self.setupAttackMenu()
-        battleVC.menuController.showAttackMenu()
+        battleVC.menuController.attackState()
         battleVC.updateStats()
     }
     
@@ -25,8 +25,7 @@ class CombatBattleState: BattleState {
         battleVC.mob = nil
         battleVC.player.target = nil
         //disable the combat menu
-        battleVC.menuController.hideAttackMenu()
-        
+    
     }
     
     func setupAttackMenu() {
@@ -35,11 +34,11 @@ class CombatBattleState: BattleState {
         battleVC.itemButton.setImage(UIImage(named: "scroll")?.withRenderingMode(.alwaysOriginal), for: .normal)
         battleVC.runButton.setImage(UIImage(named: "x")?.withRenderingMode(.alwaysOriginal), for: .normal)
         
-        menuController.buttons.append(battleVC.attackButton)
-        menuController.buttons.append(battleVC.magicButton)
-        menuController.buttons.append(battleVC.itemButton)
-        menuController.buttons.append(battleVC.runButton)
-        menuController.buttons.append(battleVC.lootButton)
+        menuController.battleMenu.buttons.append(battleVC.attackButton)
+        menuController.battleMenu.buttons.append(battleVC.magicButton)
+        menuController.battleMenu.buttons.append(battleVC.itemButton)
+        menuController.battleMenu.buttons.append(battleVC.runButton)
+        menuController.battleMenu.buttons.append(battleVC.lootButton)
         self.menuController.attackState()
     }
     

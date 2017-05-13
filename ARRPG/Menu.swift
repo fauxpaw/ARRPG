@@ -13,7 +13,12 @@ class Menu: UIView {
     var buttons = [UIButton]()
     
     func applyStyle() {
-        
+        for button in buttons {
+            button.layer.cornerRadius = 25
+            button.layer.backgroundColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
+            button.layer.borderWidth = 2
+            button.layer.borderColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
+        }
     }
     
     func hideMenu() {
@@ -28,5 +33,13 @@ class Menu: UIView {
             button.isHidden = false
             button.isUserInteractionEnabled = true
         }
+    }
+    
+    func animateIn() {
+        
+    }
+    
+    func animateOut() {
+        
     }
 }

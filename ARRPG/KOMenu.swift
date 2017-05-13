@@ -1,5 +1,5 @@
 //
-//  LootMenu.swift
+//  KOMenu.swift
 //  ARRPG
 //
 //  Created by Michael Sweeney on 5/13/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LootMenu: Menu {
+class KOMenu: Menu {
     
     override func animateIn() {
         print("super cool animation ")

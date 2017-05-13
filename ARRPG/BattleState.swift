@@ -11,7 +11,7 @@ import Foundation
 class BattleState : State {
     
     let battleVC: BattleViewController
-    var menuController : BattleMenu { get {return battleVC.menuController}}
+    var menuController : BattleMenuController { get {return battleVC.menuController}}
     
     init(owner: BattleViewController) {
         self.battleVC = owner
