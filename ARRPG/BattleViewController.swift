@@ -16,6 +16,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     var mob : Monster?
     let menuController = BattleMenu()
     let arController = ARController()
+    var nextMobAction: TimeInterval = 2
     
     //players, monsters
     //menu controller
@@ -42,6 +43,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         self.updateStats()
         self.styleLabels()
         self.menuController.styleUI()
+        self.sceneView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,11 +99,13 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     }
     
     func updateStats() {
-        playerLvlLabel.text = "Lvl: \(player.lvl.getValue())"
-        playerHPLabel.text = "HP: \(player.currentHP.getValue())/\(player.maxHP.getValue())"
-        playerMPLabel.text = "MP: \(player.currentMP.getValue())/\(player.maxMP.getValue())"
+        print("update says HP: \(self.player.currentHP.getValue())")
+        
+        self.playerLvlLabel.text = "Lvl: \(player.lvl.getValue())"
+        self.playerHPLabel.text = "HP: \(self.player.currentHP.getValue())/\(self.player.maxHP.getValue())"
+        self.playerMPLabel.text = "MP: \(self.player.currentMP.getValue())/\(self.player.maxMP.getValue())"
         guard let mob = mob else {return}
-        enemyHPLabel.text = "Enemy HP: \(mob.currentHP.getValue())"
+        self.enemyHPLabel.text = "Enemy HP: \(mob.currentHP.getValue())"
     }
     
     func enableAttackButton() {
@@ -134,7 +138,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     @IBAction func itemButtonSelected(_ sender: Any) {
         
         print("Item button pressed!")
-        
+       
     }
     
     @IBAction func runButtonSelected(_ sender: Any) {
@@ -150,4 +154,28 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         
     }
     
+}
+
+extension BattleViewController: SCNSceneRendererDelegate {
+    //Game loop logic
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        
+        
+        if time > self.nextMobAction {
+            guard let mob = self.mob else {return}
+            let dmg = DamageHandler.shared.calculateBaseDMG(attacker: mob, defender: (mob.target))
+            let hpResult = mob.target.takeDmg(amount: dmg)
+            print("HP: \(self.player.currentHP.getValue()) / \(self.player.maxHP.getValue())")
+            print("mob target hp: \(self.mob?.target.currentHP.getValue()) / \(self.mob?.target.maxHP.getValue()))")
+            
+            if hpResult < 1 {
+                print("you died")
+            }
+            self.nextMobAction = time + TimeInterval(2)
+            DispatchQueue.main.async {
+                self.updateStats()
+                
+            }
+        }
+    }
 }

@@ -63,7 +63,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     func takeDmg(amount: Int) -> Int{
         print("Ow, you took \(amount) dmg")
 
-        self.currentHP.modifyBy(val: -amount)
+        self.currentHP.modifyBy(val: -1 * amount)
         
         return self.currentHP.getValue()
     }
