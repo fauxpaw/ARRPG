@@ -12,6 +12,7 @@ class KOBattleState: BattleState {
     
     override func onEnter() {
         print("entering player KO'd state")
+        menuController.koState()
         battleVC.player.target = nil
         battleVC.mob = nil
         print("apply some exp loss")
@@ -22,9 +23,5 @@ class KOBattleState: BattleState {
     
     override func onExit() {
         print("leaving KO'd state")
-        let finalState = NullState()
-        battleVC.changeState(toState: finalState)
-        
-    }
-    
+    }    
 }

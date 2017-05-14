@@ -16,11 +16,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     var mob : Monster?
     let menuController = BattleMenuController()
     let arController = ARController()
-    var nextMobAction: TimeInterval = 2
-    
-    //players, monsters
-    //menu controller
-    //state machine
+    var nextMobAction: TimeInterval = 2 //TODO: Derive from mobs SPD...
     
     var spriteScene: SpriteScene!
     @IBOutlet weak var rightArrow: UIButton!
@@ -36,7 +32,8 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     @IBOutlet weak var playerLvlLabel: UILabel!
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var playerMPLabel: UILabel!
-
+    @IBOutlet weak var reviveButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupScene()
@@ -99,8 +96,6 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     }
     
     func updateStats() {
-        print("update says HP: \(self.player.currentHP.getValue())")
-        
         self.playerLvlLabel.text = "Lvl: \(player.lvl.getValue())"
         self.playerHPLabel.text = "HP: \(self.player.currentHP.getValue())/\(self.player.maxHP.getValue())"
         self.playerMPLabel.text = "MP: \(self.player.currentMP.getValue())/\(self.player.maxMP.getValue())"
@@ -154,12 +149,17 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         
     }
     
+    @IBAction func reviveButtonSelected(_ sender: KOMenuButton) {
+        print("do some revivey stuff...")
+        self.changeState(toState: NullState())
+        performSegue(withIdentifier: "endBattle", sender: self)
+    }
 }
 
 extension BattleViewController: SCNSceneRendererDelegate {
     //Game loop logic
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        //monster action on interval
+        //monster action on interval timer
         if time > self.nextMobAction {
             guard let mob = self.mob else {return}
             let dmg = DamageHandler.shared.calculateBaseDMG(attacker: mob, defender: (mob.target))

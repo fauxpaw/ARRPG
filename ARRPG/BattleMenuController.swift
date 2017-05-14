@@ -17,10 +17,8 @@ class BattleMenuController {
     
     func setup() {
         menus = [battleMenu, lootMenu, koMenu]
-        DispatchQueue.main.async {
-            self.battleMenu.applyStyle()
-            self.lootMenu.applyStyle()
-        }
+        self.battleMenu.applyStyle()
+        self.lootMenu.applyStyle()
     }
     
     func hideAll() {

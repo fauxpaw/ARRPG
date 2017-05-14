@@ -13,26 +13,33 @@ class Menu: UIView {
     var buttons = [UIButton]()
     
     func applyStyle() {
-        for button in buttons {
-            button.layer.cornerRadius = 25
-            button.layer.backgroundColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
-            button.layer.borderWidth = 2
-            button.layer.borderColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
+        DispatchQueue.main.async {
+            for button in self.buttons {
+                button.layer.cornerRadius = 25
+                button.layer.backgroundColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
+                button.layer.borderWidth = 2
+                button.layer.borderColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
+            }
         }
     }
     
     func hideMenu() {
-        for button in buttons {
-            button.isHidden = true
-            button.isUserInteractionEnabled = false
+        DispatchQueue.main.async {
+            for button in self.buttons {
+                button.isHidden = true
+                button.isUserInteractionEnabled = false
+            }
         }
     }
     
     func showMenu() {
-        for button in buttons {
-            button.isHidden = false
-            button.isUserInteractionEnabled = true
+        DispatchQueue.main.async {
+            for button in self.buttons {
+                button.isHidden = false
+                button.isUserInteractionEnabled = true
+            }
         }
+        
     }
     
     func animateIn() {

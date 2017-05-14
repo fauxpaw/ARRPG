@@ -12,6 +12,7 @@ class LootBattleState: BattleState {
     
     override func onEnter() {
         print("entering loot state")
+       
         battleVC.menuController.lootState()
         battleVC.mob?.dropItem()
     }
@@ -19,5 +20,7 @@ class LootBattleState: BattleState {
     override func onExit() {
         print("leaving loot state")
     }
+    //TODO: replace these in each battlestate with setup at initialize!
+    
     
 }

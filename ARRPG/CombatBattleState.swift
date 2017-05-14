@@ -29,16 +29,6 @@ class CombatBattleState: BattleState {
     }
     
     func setupAttackMenu() {
-        battleVC.attackButton.setImage(UIImage(named: "sword")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        battleVC.magicButton.setImage(UIImage(named: "tome")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        battleVC.itemButton.setImage(UIImage(named: "scroll")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        battleVC.runButton.setImage(UIImage(named: "x")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        
-        menuController.battleMenu.buttons.append(battleVC.attackButton)
-        menuController.battleMenu.buttons.append(battleVC.magicButton)
-        menuController.battleMenu.buttons.append(battleVC.itemButton)
-        menuController.battleMenu.buttons.append(battleVC.runButton)
-        menuController.battleMenu.buttons.append(battleVC.lootButton)
         self.menuController.attackState()
     }
     
