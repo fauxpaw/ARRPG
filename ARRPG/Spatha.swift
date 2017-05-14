@@ -13,7 +13,7 @@ class Spatha: Equipable {
     //item increase max hp by 20 and max mp by 5
     var effect1 = StatModifierFeature(stat: StatsType.MHP, amount: 50)
     var effect2 = StatModifierFeature(stat: StatsType.MMP, amount: 5)
-    var effect3 = StatModifierFeature(stat: StatsType.ATK, amount: 2)
+    var effect3 = StatModifierFeature(stat: StatsType.ATK, amount: 1)
     var effect4 = StatModifierFeature(stat: StatsType.SAT, amount: 3)
 
     init(owner: Character) {
@@ -21,7 +21,7 @@ class Spatha: Equipable {
         let desc = ""
         let cost = 500
         super.init(name: name, description: desc, cost: cost)
-        self.effects = [effect1, effect2, effect3]
+        self.effects = [effect1, effect2, effect3, effect4]
         self.owner = owner
         self.image = #imageLiteral(resourceName: "sword")
         self.possibleSlots = [.MainHand, .OffHand]

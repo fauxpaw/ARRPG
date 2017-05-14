@@ -11,9 +11,9 @@ import Foundation
 class Entity {
     
     var name = "Cool Name"
-    var lvl = Level(val: 1)
-    var atk = Stat(statName: "ATK" ,val: 1)
-    var def = Stat(statName: "DEF", val: 0)
+    var LVL = Level(val: 1)
+    var ATK = Stat(statName: "ATK" ,val: 1)
+    var DEF = Stat(statName: "DEF", val: 0)
     var maxHP = Stat(statName: "MHP", val: 1)
     var currentHP = Stat(statName: "HP", val: 1)
     var maxMP = Stat(statName: "MMP", val: 1)
@@ -41,19 +41,19 @@ class Entity {
     var stats : [Stat]
     
     init() {
-        let floor0Stats = [MDF, def, EVD, RES, SPD, PAT, CAT, SAT, PDF, CDF, SDF, FAT, WAT, AAT, EAT, FR, AR, WR, ER, currentHP, currentMP, EXP]
+        let floor0Stats = [MDF, DEF, EVD, RES, SPD, PAT, CAT, SAT, PDF, CDF, SDF, FAT, WAT, AAT, EAT, FR, AR, WR, ER, currentHP, currentMP, EXP]
         for stat in floor0Stats {
             stat.setLowerBound(value: 0)
         }
-        let floor1Stats = [atk, MAT, lvl, maxHP, maxMP]
+        let floor1Stats = [ATK, MAT, LVL, maxHP, maxMP]
         for stat in floor1Stats {
             stat.setLowerBound(value: 1)
         }
         
         self.EXP.setUpperBound(value: 999999)
-        self.lvl.setUpperBound(value: 99)
+        self.LVL.setUpperBound(value: 99)
         
-        self.stats = [maxHP, maxMP, MDF, def, EVD, RES, SPD, PAT, CAT, SAT, PDF, CDF, SDF, FAT, WAT, AAT, EAT, FR, AR, WR, ER, currentHP, currentMP, EXP, atk, MAT]
+        self.stats = [maxHP, maxMP, MDF, DEF, EVD, RES, SPD, PAT, CAT, SAT, PDF, CDF, SDF, FAT, WAT, AAT, EAT, FR, AR, WR, ER, currentHP, currentMP, EXP, ATK, MAT]
     }
     
     func maxValueWasSet(statType: StatsType, amount: Int) {

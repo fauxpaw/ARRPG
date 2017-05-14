@@ -24,7 +24,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         self.owner = owner
         super.init()
         //set atk value
-        self.atk.setLowerBound(value: 1)
+        self.ATK.setLowerBound(value: 1)
         //set max hp
         self.maxHP.setValue(to: hp)
         //set current hp
@@ -36,14 +36,14 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         self.currentMP.setValue(to: mp)
         self.currentMP.setUpperBound(value: mp)
         //set lvl
-        self.lvl.setLowerBound(value: 1)
-        self.lvl.setUpperBound(value: 99)
+        self.LVL.setLowerBound(value: 1)
+        self.LVL.setUpperBound(value: 99)
         
     }
     
     init(withLvl: Int) {
         super.init()
-        self.lvl.setValue(to: withLvl)
+        self.LVL.setValue(to: withLvl)
         StatCalculator.shared.reCalcBaseStats(entity: self)
         StatCalculator.shared.applyItemBonues(entity: self)
     }

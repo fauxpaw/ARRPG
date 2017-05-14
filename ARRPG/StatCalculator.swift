@@ -42,7 +42,7 @@ struct StatCalculator {
     private init () {}
     
     func reCalcBaseStats(entity: Entity) {
-        let lvl = entity.lvl.getValue()
+        let lvl = entity.LVL.getValue()
         //calculate base stats
         for stat in entity.stats {
             let name = stat.getName()

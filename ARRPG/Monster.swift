@@ -17,7 +17,7 @@ class Monster: Entity, EntityBehavior, MonsterBehavior {
     init(withLvl: Int, target: Character) {
         self.target = target
         super.init()
-        self.lvl.setValue(to: withLvl)
+        self.LVL.setValue(to: withLvl)
         StatCalculator.shared.reCalcBaseStats(entity: self)
         StatCalculator.shared.applyItemBonues(entity: self)
         

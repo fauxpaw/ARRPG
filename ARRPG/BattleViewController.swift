@@ -99,7 +99,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     }
     
     func updateStats() {
-        self.playerLvlLabel.text = "Lvl: \(player.lvl.getValue())"
+        self.playerLvlLabel.text = "Lvl: \(player.LVL.getValue())"
         self.playerHPLabel.text = "HP: \(self.player.currentHP.getValue())/\(self.player.maxHP.getValue())"
         self.playerMPLabel.text = "MP: \(self.player.currentMP.getValue())/\(self.player.maxMP.getValue())"
         guard let mob = mob else {return}

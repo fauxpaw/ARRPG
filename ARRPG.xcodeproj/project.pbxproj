@@ -70,6 +70,7 @@
 		4CD559EC1EC0375600902B96 /* Spatha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD559EB1EC0375600902B96 /* Spatha.swift */; };
 		4CDAC3831EC7DD99001E5294 /* KOMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC3821EC7DD99001E5294 /* KOMenuButton.swift */; };
 		4CDAC3851EC91019001E5294 /* AttackRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC3841EC91019001E5294 /* AttackRateCalculator.swift */; };
+		4CDAC3881EC921C5001E5294 /* HitRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC3871EC921C5001E5294 /* HitRateCalculator.swift */; };
 		4CDC5B381EB935D300A194DD /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B371EB935D300A194DD /* SpriteScene.swift */; };
 		4CDC5B3A1EB9399A00A194DD /* arrowsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */; };
 		4CDC5B401EBA133400A194DD /* BattleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */; };
@@ -179,6 +180,7 @@
 		4CD559EB1EC0375600902B96 /* Spatha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spatha.swift; sourceTree = "<group>"; };
 		4CDAC3821EC7DD99001E5294 /* KOMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KOMenuButton.swift; sourceTree = "<group>"; };
 		4CDAC3841EC91019001E5294 /* AttackRateCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackRateCalculator.swift; sourceTree = "<group>"; };
+		4CDAC3871EC921C5001E5294 /* HitRateCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitRateCalculator.swift; sourceTree = "<group>"; };
 		4CDC5B371EB935D300A194DD /* SpriteScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
 		4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arrowsProtocol.swift; sourceTree = "<group>"; };
 		4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleMenu.swift; sourceTree = "<group>"; };
@@ -286,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				4C7A270F1EB6E3A10074C220 /* ARRPG */,
-				4C59C88C1EBFF61B002D754F /* EquipmentManager.swift */,
 				4C7A27271EB6E3A20074C220 /* ARRPGTests */,
 				4C7A27321EB6E3A20074C220 /* ARRPGUITests */,
 				4C7A270E1EB6E3A10074C220 /* Products */,
@@ -309,7 +310,6 @@
 				4C7A27591EB72A400074C220 /* App Global */,
 				4C7A27581EB72A220074C220 /* Controller */,
 				4C7A275A1EB72A5F0074C220 /* View */,
-				4C7A27171EB6E3A10074C220 /* ARRPG.xcdatamodeld */,
 				4C7A27491EB7043E0074C220 /* Model */,
 			);
 			path = ARRPG;
@@ -340,6 +340,7 @@
 		4C7A27491EB7043E0074C220 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4CDAC3871EC921C5001E5294 /* HitRateCalculator.swift */,
 				4CDAC3841EC91019001E5294 /* AttackRateCalculator.swift */,
 				4C0E351D1EC24718007386D3 /* StatCalculator.swift */,
 				4C7C12431EC37DF500BEDC99 /* ExperienceCalculator.swift */,
@@ -407,9 +408,11 @@
 		4C7A27591EB72A400074C220 /* App Global */ = {
 			isa = PBXGroup;
 			children = (
+				4C7A27171EB6E3A10074C220 /* ARRPG.xcdatamodeld */,
 				4C7A27101EB6E3A10074C220 /* AppDelegate.swift */,
 				4C7A271F1EB6E3A10074C220 /* Info.plist */,
 				4C7A271A1EB6E3A10074C220 /* Assets.xcassets */,
+				4CDAC3861EC9216B001E5294 /* Convenience Extras */,
 			);
 			name = "App Global";
 			sourceTree = "<group>";
@@ -466,6 +469,15 @@
 				4C59C8881EBFE3AE002D754F /* GreatAxe.swift */,
 			);
 			name = Axes;
+			sourceTree = "<group>";
+		};
+		4CDAC3861EC9216B001E5294 /* Convenience Extras */ = {
+			isa = PBXGroup;
+			children = (
+				4C59C88C1EBFF61B002D754F /* EquipmentManager.swift */,
+			);
+			name = "Convenience Extras";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		4CDC5B351EB8E43E00A194DD /* UI */ = {
@@ -692,6 +704,7 @@
 				4CFB63ED1EC7C8A800D2F1CF /* KOMenu.swift in Sources */,
 				4CB7378A1EBE3290006A92FF /* LootBattleState.swift in Sources */,
 				4CDC5B571EBAE65100A194DD /* GameViewController.swift in Sources */,
+				4CDAC3881EC921C5001E5294 /* HitRateCalculator.swift in Sources */,
 				4CC073701EBEBA1D0080CD6A /* StatsType.swift in Sources */,
 				4C0E350D1EC0D297007386D3 /* HealthPotion.swift in Sources */,
 				4C7A275E1EB762140074C220 /* Entity.swift in Sources */,
