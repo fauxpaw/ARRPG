@@ -12,11 +12,12 @@ import AVFoundation
 
 class BattleViewController: GameViewController, arrowsUIProtocol {
 
-    var player = Character(withLvl: 2)
+    var pass = true
+    var player = Character(withLvl: 1)
     var mob : Monster?
     let menuController = BattleMenuController()
     let arController = ARController()
-    var nextMobAction: TimeInterval = 2 //TODO: Derive from mobs SPD...
+    var nextMobAction = TimeInterval(2) //TODO: Derive from mobs SPD...
     
     var spriteScene: SpriteScene!
     @IBOutlet weak var rightArrow: UIButton!
@@ -48,6 +49,8 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         self.sceneView.setup()
         self.spriteScene = SpriteScene(size: self.view.bounds.size)
         self.sceneView.overlaySKScene = self.spriteScene
+        let staby = Spatha(owner: player)
+        player.equipItem(item: staby, possibleSlots: staby.possibleSlots)
         self.changeState(toState: InitialBattleState(owner: self))
         self.changeState(toState: CombatBattleState(owner: self))
     }
@@ -111,7 +114,8 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         //button cooldown
         self.attackButton.isEnabled = false
         self.attackButton.isHighlighted = true
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.enableAttackButton), userInfo: nil, repeats: false)
+        let next = AttackRateCalculator.shared.getNextAttack(entity: player)
+        Timer.scheduledTimer(timeInterval: next, target: self, selector: #selector(self.enableAttackButton), userInfo: nil, repeats: false)
         
         let dmg = DamageHandler.shared.calculateBaseDMG(attacker: player, defender: player.target!)
         let hpResult = player.target!.takeDmg(amount: dmg)
@@ -159,22 +163,33 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
 extension BattleViewController: SCNSceneRendererDelegate {
     //Game loop logic
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        //monster action on interval timer
-        if time > self.nextMobAction {
+        
+        //TODO: replace with good implemetation - create time as system time interval for self property and delete the following
+        if pass{
+            pass = false
             guard let mob = self.mob else {return}
-            let dmg = DamageHandler.shared.calculateBaseDMG(attacker: mob, defender: (mob.target))
-            let hpResult = mob.target.takeDmg(amount: dmg)
-            print("HP: \(self.player.currentHP.getValue()) / \(self.player.maxHP.getValue())")
-            print("mob target hp: \(self.mob?.target.currentHP.getValue()) / \(self.mob?.target.maxHP.getValue()))")
-            
-            if hpResult < 1 {
-                let KO = KOBattleState(owner: self)
-                self.changeState(toState: KO)
-            }
-            self.nextMobAction = time + TimeInterval(2)
-            DispatchQueue.main.async {
-                self.updateStats()
+            nextMobAction = time + AttackRateCalculator.shared.getNextAttack(entity: mob)
+            return
+        }
+        
+        //monster action on interval timer
+        if self.currentState is CombatBattleState {
+            if time > self.nextMobAction {
+                guard let mob = self.mob else {return}
+                let dmg = DamageHandler.shared.calculateBaseDMG(attacker: mob, defender: (mob.target))
+                let hpResult = mob.target.takeDmg(amount: dmg)
+                print("HP: \(self.player.currentHP.getValue()) / \(self.player.maxHP.getValue())")
+                print("mob target hp: \(self.mob?.target.currentHP.getValue()) / \(self.mob?.target.maxHP.getValue()))")
                 
+                if hpResult < 1 {
+                    let KO = KOBattleState(owner: self)
+                    self.changeState(toState: KO)
+                }
+                
+                self.nextMobAction = time + AttackRateCalculator.shared.getNextAttack(entity: mob)
+                DispatchQueue.main.async {
+                    self.updateStats()
+                }
             }
         }
     }

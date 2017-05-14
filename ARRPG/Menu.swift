@@ -19,6 +19,7 @@ class Menu: UIView {
                 button.layer.backgroundColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
                 button.layer.borderWidth = 2
                 button.layer.borderColor = UIColor(red: 128/255, green: 64/255, blue: 0/255, alpha: 0.5).cgColor
+                
             }
         }
     }

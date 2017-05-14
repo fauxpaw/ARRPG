@@ -15,6 +15,7 @@ class InitialBattleState: BattleState {
         //spawn & setup the players and monsters
         print("Enter init battle state")
         self.attachButtonsToMenus()
+        menuController.setup()
         self.setupAR()
         self.setupMobs()
         
@@ -50,7 +51,8 @@ class InitialBattleState: BattleState {
         //load monster data
         //add 3d model to scene
         self.battleVC.sceneView.setup()
-        self.battleVC.mob = Monster(hp: 20, mp: 20, target: self.battleVC.player)
+        self.battleVC.mob = Monster(withLvl: 1, target: self.battleVC.player)
+        
         self.battleVC.player.target = self.battleVC.mob
     }
     

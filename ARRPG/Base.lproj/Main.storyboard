@@ -494,9 +494,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccH-Ss-MCR" customClass="KOMenuButton" customModule="ARRPG" customModuleProvider="target">
-                                <rect key="frame" x="165" y="383" width="45" height="30"/>
+                                <rect key="frame" x="155" y="383" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Revive"/>
+                                <state key="normal" title="Revive">
+                                    <color key="titleColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="reviveButtonSelected:" destination="U1c-wY-tWa" eventType="touchUpInside" id="jim-HM-eDa"/>
                                 </connections>

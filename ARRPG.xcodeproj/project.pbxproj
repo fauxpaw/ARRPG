@@ -69,6 +69,7 @@
 		4CD190E11EBEC095004B2C04 /* BroadAxe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD190E01EBEC095004B2C04 /* BroadAxe.swift */; };
 		4CD559EC1EC0375600902B96 /* Spatha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD559EB1EC0375600902B96 /* Spatha.swift */; };
 		4CDAC3831EC7DD99001E5294 /* KOMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC3821EC7DD99001E5294 /* KOMenuButton.swift */; };
+		4CDAC3851EC91019001E5294 /* AttackRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC3841EC91019001E5294 /* AttackRateCalculator.swift */; };
 		4CDC5B381EB935D300A194DD /* SpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B371EB935D300A194DD /* SpriteScene.swift */; };
 		4CDC5B3A1EB9399A00A194DD /* arrowsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */; };
 		4CDC5B401EBA133400A194DD /* BattleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */; };
@@ -177,6 +178,7 @@
 		4CD190E01EBEC095004B2C04 /* BroadAxe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadAxe.swift; sourceTree = "<group>"; };
 		4CD559EB1EC0375600902B96 /* Spatha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spatha.swift; sourceTree = "<group>"; };
 		4CDAC3821EC7DD99001E5294 /* KOMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KOMenuButton.swift; sourceTree = "<group>"; };
+		4CDAC3841EC91019001E5294 /* AttackRateCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttackRateCalculator.swift; sourceTree = "<group>"; };
 		4CDC5B371EB935D300A194DD /* SpriteScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteScene.swift; sourceTree = "<group>"; };
 		4CDC5B391EB9399A00A194DD /* arrowsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arrowsProtocol.swift; sourceTree = "<group>"; };
 		4CDC5B3F1EBA133400A194DD /* BattleMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleMenu.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 		4C7A27491EB7043E0074C220 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4CDAC3841EC91019001E5294 /* AttackRateCalculator.swift */,
 				4C0E351D1EC24718007386D3 /* StatCalculator.swift */,
 				4C7C12431EC37DF500BEDC99 /* ExperienceCalculator.swift */,
 				4CC90E2C1EBD0B2A00085824 /* ARItemFactory.swift */,
@@ -724,6 +727,7 @@
 				4CDC5B3A1EB9399A00A194DD /* arrowsProtocol.swift in Sources */,
 				4CD559EC1EC0375600902B96 /* Spatha.swift in Sources */,
 				4C4204DC1EC3FDBF004EE1CA /* StackableItem.swift in Sources */,
+				4CDAC3851EC91019001E5294 /* AttackRateCalculator.swift in Sources */,
 				4CD190E11EBEC095004B2C04 /* BroadAxe.swift in Sources */,
 				4C7A27111EB6E3A10074C220 /* AppDelegate.swift in Sources */,
 				4C7A27461EB6FBE60074C220 /* Character.swift in Sources */,

@@ -17,8 +17,9 @@ class BattleMenuController {
     
     func setup() {
         menus = [battleMenu, lootMenu, koMenu]
-        self.battleMenu.applyStyle()
-        self.lootMenu.applyStyle()
+        for menu in menus {
+            menu.applyStyle()
+        }
     }
     
     func hideAll() {

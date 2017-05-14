@@ -17,22 +17,13 @@ class BattleState : State {
         self.battleVC = owner
     }
     
-    override func onDestroy() {
-
-    }
+    override func onDestroy() {}
     
-    override func onExit() {
-        
-    }
+    override func onExit() {}
     
-    override func onEnter() {
-    }
+    override func onEnter() {}
     
-    override func addListeners() {
-        //anything we need to broadcast
-    }
+    override func addListeners() {}
     
-    override func removeListeners() {
-        //remove broadcast observers
-    }
+    override func removeListeners() {}
 }
