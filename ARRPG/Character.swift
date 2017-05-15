@@ -24,7 +24,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         self.owner = owner
         super.init()
         //set atk value
-        self.atk.setLowerBound(value: 1)
+        self.ATK.setLowerBound(value: 1)
         //set max hp
         self.maxHP.setValue(to: hp)
         //set current hp
@@ -36,34 +36,31 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         self.currentMP.setValue(to: mp)
         self.currentMP.setUpperBound(value: mp)
         //set lvl
-        self.lvl.setLowerBound(value: 1)
-        self.lvl.setUpperBound(value: 99)
+        self.LVL.setLowerBound(value: 1)
+        self.LVL.setUpperBound(value: 99)
         
     }
     
     init(withLvl: Int) {
         super.init()
-        self.lvl.setValue(to: withLvl)
+        self.LVL.setValue(to: withLvl)
         StatCalculator.shared.reCalcBaseStats(entity: self)
         StatCalculator.shared.applyItemBonues(entity: self)
     }
     
     func attack(target: Entity) {
-        
         print("You swing for mighty dmg")
         
     }
     
     func attack(targets: [Entity]) {
         print("mad aoe bro")
-        
-        
     }
     
     func takeDmg(amount: Int) -> Int{
         print("Ow, you took \(amount) dmg")
 
-        self.currentHP.modifyBy(val: -amount)
+        self.currentHP.modifyBy(val: -1 * amount)
         
         return self.currentHP.getValue()
     }
@@ -163,7 +160,7 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
     func consume(item: Consumable) {
         //check if can consume
         item.consumeItem()
-        item.owner?.removeItemFromBag(item: item)
+        bag.remove(item: item)
         item.owner = nil
     }
     
@@ -171,7 +168,6 @@ class Character:Entity, EntityBehavior, CharacterBehavior {
         StatCalculator.shared.reCalcBaseStats(entity: self)
         StatCalculator.shared.applyItemBonues(entity: self)
     }
-    
     
     //Character Behavior Protocol
     

@@ -1,15 +1,14 @@
 //
-//  BattleMenu.swift
+//  LootMenu.swift
 //  ARRPG
 //
-//  Created by Michael Sweeney on 5/3/17.
+//  Created by Michael Sweeney on 5/13/17.
 //  Copyright © 2017 Michael Sweeney. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class BattleMenu: Menu {
-
+class LootMenu: Menu {
     
     override func animateIn() {
         print("super cool animation ")

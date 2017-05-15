@@ -19,7 +19,8 @@ struct StatCalculator {
                                         "MP" : 2,
                                         "RES" : 0.1,
                                         "SPD" : 0.1,
-                                        "EVD" : 0.4,
+                                        "EVD" : 1,
+                                        "ACC" : 3,
                                         "ATK" : 1.2,
                                         "PAT" : 0.1,
                                         "CAT" : 0.1,
@@ -42,7 +43,7 @@ struct StatCalculator {
     private init () {}
     
     func reCalcBaseStats(entity: Entity) {
-        let lvl = entity.lvl.getValue()
+        let lvl = entity.LVL.getValue()
         //calculate base stats
         for stat in entity.stats {
             let name = stat.getName()
@@ -50,6 +51,12 @@ struct StatCalculator {
                 let newValue = Int(Double(lvl) * multiplier)
                 print("Setting \(stat.getName()) to \(newValue)")
                 stat.setValue(to: newValue)
+                if name == "MHP" {
+                    entity.maxValueWasSet(statType: .MHP, amount: newValue)
+                }
+                if name == "MMP" {
+                    entity.maxValueWasSet(statType: .MMP, amount: newValue)
+                }
             }
         }
     }

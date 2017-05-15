@@ -25,9 +25,10 @@ class Bag {
         if let _ = item as? StackableItem {
             print("found stackable item")
             if let count = stacked[item.name] {
-                print("count for item is \(count)")
+                
                 if count > 0 {
                     stacked[item.name] = count + 1
+                    print("count for item is \(count + 1)")
                     return
                 }
             } else {
@@ -43,11 +44,10 @@ class Bag {
     
     func remove(item: Item) {
         
-        if let stackable = item as? StackableItem {
+        if item is StackableItem {
             if let count = stacked[item.name] {
                 if count == 1 {
                     stacked[item.name] = nil
-                    return
                 } else {
                     stacked[item.name] = count - 1
                     return
@@ -59,6 +59,7 @@ class Bag {
             if item == ele {
                 print("removing item from bag contents")
                 self.contents.remove(at: i)
+                item.owner = nil
             }
         }
     }

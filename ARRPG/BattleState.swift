@@ -11,28 +11,19 @@ import Foundation
 class BattleState : State {
     
     let battleVC: BattleViewController
-    var menuController : BattleMenu { get {return battleVC.menuController}}
+    var menuController : BattleMenuController { get {return battleVC.menuController}}
     
     init(owner: BattleViewController) {
         self.battleVC = owner
     }
     
-    override func onDestroy() {
-
-    }
+    override func onDestroy() {}
     
-    override func onExit() {
-        
-    }
+    override func onExit() {}
     
-    override func onEnter() {
-    }
+    override func onEnter() {}
     
-    override func addListeners() {
-        //anything we need to broadcast
-    }
+    override func addListeners() {}
     
-    override func removeListeners() {
-        //remove broadcast observers
-    }
+    override func removeListeners() {}
 }

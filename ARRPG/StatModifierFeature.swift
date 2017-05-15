@@ -23,9 +23,9 @@ class StatModifierFeature: Feature {
       
         switch statToMod {
         case .ATK:
-            target?.atk.modifyBy(val: self.amount)
+            target?.ATK.modifyBy(val: self.amount)
         case .DEF:
-            target?.def.modifyBy(val: self.amount)
+            target?.DEF.modifyBy(val: self.amount)
         case .EVD:
             target?.EVD.modifyBy(val: self.amount)
         case .EXP:
@@ -33,7 +33,7 @@ class StatModifierFeature: Feature {
         case .HP:
             target?.currentHP.modifyBy(val: self.amount)
         case .LVL:
-            target?.lvl.modifyBy(val: self.amount)
+            target?.LVL.modifyBy(val: self.amount)
         case .MAT:
             target?.MAT.modifyBy(val: self.amount)
         case .MDF:
@@ -85,9 +85,9 @@ class StatModifierFeature: Feature {
         
         switch statToMod {
         case .ATK:
-            target?.atk.modifyBy(val: -self.amount)
+            target?.ATK.modifyBy(val: -self.amount)
         case .DEF:
-            target?.def.modifyBy(val: -self.amount)
+            target?.DEF.modifyBy(val: -self.amount)
         case .EVD:
             target?.EVD.modifyBy(val: -self.amount)
         case .EXP:
@@ -95,7 +95,7 @@ class StatModifierFeature: Feature {
         case .HP:
             target?.currentHP.modifyBy(val: -self.amount)
         case .LVL:
-            target?.lvl.modifyBy(val: -self.amount)
+            target?.LVL.modifyBy(val: -self.amount)
         case .MAT:
             target?.MAT.modifyBy(val: -self.amount)
         case .MDF:

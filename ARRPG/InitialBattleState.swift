@@ -6,7 +6,7 @@
 //  Copyright © 2017 Michael Sweeney. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class InitialBattleState: BattleState {
     
@@ -14,6 +14,8 @@ class InitialBattleState: BattleState {
         super.onEnter()
         //spawn & setup the players and monsters
         print("Enter init battle state")
+        self.attachButtonsToMenus()
+        menuController.setup()
         self.setupAR()
         self.setupMobs()
         
@@ -23,6 +25,20 @@ class InitialBattleState: BattleState {
         super.onExit()
         //release the players and monsters
         print("Exit init battle state")
+    }
+    
+    fileprivate func attachButtonsToMenus() {
+        //combat menu
+        battleVC.attackButton.setImage(UIImage(named: "sword")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        battleVC.magicButton.setImage(UIImage(named: "tome")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        battleVC.itemButton.setImage(UIImage(named: "scroll")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        battleVC.runButton.setImage(UIImage(named: "x")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        battleVC.menuController.battleMenu.buttons = [battleVC.attackButton, battleVC.magicButton, battleVC.itemButton, battleVC.runButton]
+        //loot menu
+        battleVC.menuController.lootMenu.buttons = [battleVC.lootButton]
+        //ko menu
+        battleVC.menuController.koMenu.buttons = [battleVC.reviveButton]
     }
     
     fileprivate func setupPlayers() {
@@ -35,7 +51,8 @@ class InitialBattleState: BattleState {
         //load monster data
         //add 3d model to scene
         self.battleVC.sceneView.setup()
-        self.battleVC.mob = Monster(hp: 20, mp: 20, target: self.battleVC.player)
+        self.battleVC.mob = Monster(withLvl: 3, target: self.battleVC.player)
+        
         self.battleVC.player.target = self.battleVC.mob
     }
     

@@ -17,7 +17,6 @@ class Consumable: Item, ConsumableItemBehavior {
         for effect in effects {
             if let owner = owner {
                 effect.activate(target: owner)
-                
             } else {
                 print("no owner for item activation")
                 return

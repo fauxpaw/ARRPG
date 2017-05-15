@@ -25,8 +25,12 @@ class HealthPotion: Consumable, StackableItem {
     }
     
     override func consumeItem() {
-        if owner?.currentHP.getValue() == owner?.currentHP.getUpperBound() {
-            return
+        guard let owner = owner else {return}
+        if let upper = owner.currentHP.getUpperBound() {
+            if owner.currentHP.getValue() >= upper {
+                print("Potion will have no effect")
+                return
+            }
         }
         
         super.consumeItem()

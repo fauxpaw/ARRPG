@@ -12,13 +12,15 @@ class LootBattleState: BattleState {
     
     override func onEnter() {
         print("entering loot state")
-        battleVC.menuController.showLootMenu()
+       
+        battleVC.menuController.lootState()
         battleVC.mob?.dropItem()
     }
     
     override func onExit() {
         print("leaving loot state")
-        battleVC.menuController.hideLootMenu()
     }
+    //TODO: replace these in each battlestate with setup at initialize!
+    
     
 }

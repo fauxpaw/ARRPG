@@ -213,18 +213,18 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N4Z-yV-che" id="Si6-Pd-wk3">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gKe-5F-3pU">
-                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vmF-7D-KTW">
-                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -244,18 +244,18 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jf5-CG-Gnk" id="ecq-4D-EgO">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ESu-MH-SOI">
-                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uwf-2Q-8BS">
-                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -436,7 +436,7 @@
                                 <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wq-sU-HKf" customClass="AttackMenuButton" customModule="ARRPG" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wq-sU-HKf" customClass="AttackMenuButton" customModule="ARRPG" customModuleProvider="target">
                                 <rect key="frame" x="295" y="434" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="SJR-jg-4HI"/>
@@ -449,28 +449,28 @@
                                     <action selector="attackButtonPressed:" destination="U1c-wY-tWa" eventType="touchUpInside" id="8J3-i8-Bff"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKo-aP-uG1" customClass="AttackMenuButton" customModule="ARRPG" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKo-aP-uG1" customClass="AttackMenuButton" customModule="ARRPG" customModuleProvider="target">
                                 <rect key="frame" x="207" y="498" width="64" height="64"/>
                                 <state key="normal" title="M"/>
                                 <connections>
                                     <action selector="magicButtonSelected:" destination="U1c-wY-tWa" eventType="touchUpInside" id="RSv-1U-1Gz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMZ-Jm-vLr" customClass="AttackMenuButton" customModule="ARRPG" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMZ-Jm-vLr" customClass="AttackMenuButton" customModule="ARRPG" customModuleProvider="target">
                                 <rect key="frame" x="295" y="539" width="64" height="64"/>
                                 <state key="normal" title="I"/>
                                 <connections>
                                     <action selector="itemButtonSelected:" destination="U1c-wY-tWa" eventType="touchUpInside" id="4QX-Ej-yUw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNM-bq-2OR" customClass="AttackMenuButton" customModule="ARRPG" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNM-bq-2OR" customClass="AttackMenuButton" customModule="ARRPG" customModuleProvider="target">
                                 <rect key="frame" x="207" y="603" width="64" height="64"/>
                                 <state key="normal" title="R"/>
                                 <connections>
                                     <action selector="runButtonSelected:" destination="U1c-wY-tWa" eventType="touchUpInside" id="42b-q7-y9r"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdT-V8-Ty6">
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdT-V8-Ty6">
                                 <rect key="frame" x="16" y="328" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.050765626940152075" blue="0.89479305866490444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -478,12 +478,12 @@
                                     <color key="titleColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOP-Sa-4cm">
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOP-Sa-4cm">
                                 <rect key="frame" x="313" y="328" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.050765626940152075" blue="0.89479305866490444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VG9-dJ-5Q1" customClass="LootMenuButton" customModule="ARRPG" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VG9-dJ-5Q1" customClass="LootMenuButton" customModule="ARRPG" customModuleProvider="target">
                                 <rect key="frame" x="155" y="311" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Loot">
@@ -491,6 +491,16 @@
                                 </state>
                                 <connections>
                                     <action selector="lootButtonSelected:" destination="U1c-wY-tWa" eventType="touchUpInside" id="rg3-1l-6hO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccH-Ss-MCR" customClass="KOMenuButton" customModule="ARRPG" customModuleProvider="target">
+                                <rect key="frame" x="155" y="383" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Revive">
+                                    <color key="titleColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reviveButtonSelected:" destination="U1c-wY-tWa" eventType="touchUpInside" id="jim-HM-eDa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -538,6 +548,7 @@
                         <outlet property="playerLvlLabel" destination="SwF-TO-8t0" id="Ijt-N5-eCV"/>
                         <outlet property="playerMPLabel" destination="yPb-oK-KFg" id="Sqa-sN-Jfx"/>
                         <outlet property="playerNameLabel" destination="ALV-iX-zaq" id="NQA-fk-NML"/>
+                        <outlet property="reviveButton" destination="ccH-Ss-MCR" id="plY-Ns-m9S"/>
                         <outlet property="rightArrow" destination="wOP-Sa-4cm" id="yyN-xL-Lgi"/>
                         <outlet property="runButton" destination="nNM-bq-2OR" id="Ogv-kT-spg"/>
                         <outlet property="sceneView" destination="NHR-rz-D3I" id="ivE-Yb-kJE"/>
@@ -550,7 +561,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Y1a-HK-7J5"/>
         <segue reference="hRE-l5-48Y"/>
+        <segue reference="rs1-Fg-oTL"/>
     </inferredMetricsTieBreakers>
 </document>

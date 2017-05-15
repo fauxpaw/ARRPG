@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ExperienceCalculator {
+class ExperienceCalculator {
     
     static let shared = ExperienceCalculator()
     
@@ -23,8 +23,8 @@ struct ExperienceCalculator {
     
     func levelPercent(entity: Entity) -> Float? {
         
-        let lvl = entity.lvl.getValue()
-        if let minLvl = entity.lvl.getLowerBound(), let maxLvl = entity.lvl.getUpperBound()  {
+        let lvl = entity.LVL.getValue()
+        if let minLvl = entity.LVL.getLowerBound(), let maxLvl = entity.LVL.getUpperBound()  {
             
             return Float(lvl-minLvl) / Float(maxLvl - minLvl)
             
@@ -42,10 +42,10 @@ struct ExperienceCalculator {
     
     func experienceNeededForNextLevel (entity: Entity) -> Int{
         
-        guard let maxEXP = entity.EXP.getUpperBound() else {return -1 }
-        guard let maxLvl = entity.lvl.getUpperBound() else {return -1 }
-        let currentLevel = entity.lvl.getValue()
-        let nextLevel = entity.lvl.getValue() + 1
+        guard let maxEXP = entity.EXP.getUpperBound() else {fatalError("max experience not set")}
+        guard let maxLvl = entity.LVL.getUpperBound() else {fatalError("max level not set");}
+        let currentLevel = entity.LVL.getValue()
+        let nextLevel = entity.LVL.getValue() + 1
         let percent1 = levelPercent(level: currentLevel, maxLevel: maxLvl)
         let nextPercent = levelPercent(level: nextLevel, maxLevel: maxLvl)
         let value1 = Int(self.easeInQuad(start: 0, end: Float(maxEXP), value: percent1))
@@ -65,7 +65,7 @@ struct ExperienceCalculator {
     func levelForExperience(entity: Entity) -> Int {
         
         let exp = entity.EXP.getValue()
-        if let maxLvl = entity.lvl.getUpperBound() {
+        if let maxLvl = entity.LVL.getUpperBound() {
             for lvl in (1...maxLvl).reversed() {
                 if exp >= self.experienceForLevel(entity: entity)! {
                     return lvl
@@ -73,7 +73,7 @@ struct ExperienceCalculator {
             }
         }
         
-        return entity.lvl.getUpperBound() ?? 99
+        return entity.LVL.getUpperBound() ?? 99
     }
     
     func easeInQuad(start: Float, end: Float, value: Float) -> Float {

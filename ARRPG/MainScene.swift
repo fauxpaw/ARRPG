@@ -17,6 +17,7 @@ class MainScene: SCNView {
     var heading: Double = 0.0
     var userLocation = CLLocation()
     let cameraNode = SCNNode()
+    var mobAttackTime: TimeInterval = 0
     
     //let targetNode = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
     var target = ARItem(itemDesc: "monster", loc: CLLocation(latitude: 47.7487386, longitude: -122.30575994599825), node: SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)))
@@ -26,6 +27,7 @@ class MainScene: SCNView {
         self.createScene()
         self.addCameraToScene()
         self.addMonsterToScene()
+        self.isPlaying = true
     }
     
     func tearDown() {
@@ -137,3 +139,5 @@ extension MainScene: CLLocationManagerDelegate {
         self.userLocation = current
     }
 }
+
+

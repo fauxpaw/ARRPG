@@ -14,17 +14,12 @@ class Monster: Entity, EntityBehavior, MonsterBehavior {
     var target : Character
     var items = [Item]()
     
-    init(hp: Int, mp: Int, target: Character) {
+    init(withLvl: Int, target: Character) {
         self.target = target
         super.init()
-        self.maxHP.setValue(to: hp)
-        self.currentHP.setValue(to: hp)
-        self.currentHP.setUpperBound(value: hp)
-        self.maxMP.setValue(to: mp)
-        self.currentMP.setValue(to: mp)
-        self.currentMP.setUpperBound(value: mp)
-        self.lvl.setLowerBound(value: 1)
-        self.lvl.setUpperBound(value: 99)
+        self.LVL.setValue(to: withLvl)
+        StatCalculator.shared.reCalcBaseStats(entity: self)
+        StatCalculator.shared.applyItemBonues(entity: self)
         
     }
     
