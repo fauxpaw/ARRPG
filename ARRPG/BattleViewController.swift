@@ -107,7 +107,15 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     }
     
     func enableAttackButton() {
-        self.attackButton.isEnabled = true
+        DispatchQueue.main.async {
+            self.attackButton.isEnabled = true
+        }
+    }
+    
+    func enableRunButton() {
+        DispatchQueue.main.async {
+            self.runButton.isEnabled = true
+        }
     }
     
     @IBAction func attackButtonPressed(_ sender: Any) {
@@ -131,6 +139,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     
     @IBAction func magicButtonSelected(_ sender: Any) {
         
+        
         print("Casting magic")
         let heal = DamageHandler.shared.heal(caster: player, target: player.target!)
         _ = player.target?.takeDmg(amount: -heal)
@@ -145,8 +154,21 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     
     @IBAction func runButtonSelected(_ sender: Any) {
         
+        DispatchQueue.main.async {
+            self.runButton.isEnabled = false
+            self.runButton.isHighlighted = true
+        }
+        //waits 5 seconds between run attempts
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.enableRunButton), userInfo: nil, repeats: false)
+        
         print("Trying to run away!")
-        performSegue(withIdentifier: "endBattle", sender: self)
+        guard let mob = mob else {return}
+        let check = EscapeHandler.shared.willEscape(player: player, monster: mob)
+        if check {
+            performSegue(withIdentifier: "endBattle", sender: self)
+            return
+        }
+        print("could not escape!")
         
     }
     

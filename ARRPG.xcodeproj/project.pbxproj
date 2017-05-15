@@ -48,6 +48,7 @@
 		4C95AB111EBE6B66003E4A50 /* FeatureBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95AB101EBE6B66003E4A50 /* FeatureBehavior.swift */; };
 		4C95AB131EBE6BD7003E4A50 /* StatModifierFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95AB121EBE6BD7003E4A50 /* StatModifierFeature.swift */; };
 		4C95AB151EBE6F2B003E4A50 /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95AB141EBE6F2B003E4A50 /* Stat.swift */; };
+		4CB051991ECA413900AEE340 /* EscapeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB051981ECA413900AEE340 /* EscapeHandler.swift */; };
 		4CB737881EBE2629006A92FF /* DamageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB737871EBE2628006A92FF /* DamageHandler.swift */; };
 		4CB7378A1EBE3290006A92FF /* LootBattleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB737891EBE3290006A92FF /* LootBattleState.swift */; };
 		4CB7378C1EBE4FAE006A92FF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB7378B1EBE4FAE006A92FF /* Item.swift */; };
@@ -159,6 +160,7 @@
 		4C95AB101EBE6B66003E4A50 /* FeatureBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureBehavior.swift; sourceTree = "<group>"; };
 		4C95AB121EBE6BD7003E4A50 /* StatModifierFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatModifierFeature.swift; sourceTree = "<group>"; };
 		4C95AB141EBE6F2B003E4A50 /* Stat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
+		4CB051981ECA413900AEE340 /* EscapeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EscapeHandler.swift; sourceTree = "<group>"; };
 		4CB737871EBE2628006A92FF /* DamageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageHandler.swift; sourceTree = "<group>"; };
 		4CB737891EBE3290006A92FF /* LootBattleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LootBattleState.swift; sourceTree = "<group>"; };
 		4CB7378B1EBE4FAE006A92FF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				4C7A274B1EB7208A0074C220 /* Entities */,
 				4CDC5B4F1EBADF5700A194DD /* States */,
 				4CB7378D1EBE4FC0006A92FF /* Items */,
+				4CB051981ECA413900AEE340 /* EscapeHandler.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				4CDAC3881EC921C5001E5294 /* HitRateCalculator.swift in Sources */,
 				4CC073701EBEBA1D0080CD6A /* StatsType.swift in Sources */,
 				4C0E350D1EC0D297007386D3 /* HealthPotion.swift in Sources */,
+				4CB051991ECA413900AEE340 /* EscapeHandler.swift in Sources */,
 				4C7A275E1EB762140074C220 /* Entity.swift in Sources */,
 				4C7A27441EB6FB9C0074C220 /* CharacterBehavior.swift in Sources */,
 				4CC90E251EBCF9AC00085824 /* EquipMenuMapState.swift in Sources */,
