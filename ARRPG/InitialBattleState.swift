@@ -51,7 +51,7 @@ class InitialBattleState: BattleState {
         //load monster data
         //add 3d model to scene
         self.battleVC.sceneView.setup()
-        self.battleVC.mob = Monster(withLvl: 1, target: self.battleVC.player)
+        self.battleVC.mob = Monster(withLvl: 3, target: self.battleVC.player)
         
         self.battleVC.player.target = self.battleVC.mob
     }

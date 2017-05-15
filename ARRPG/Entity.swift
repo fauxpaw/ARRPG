@@ -18,6 +18,7 @@ class Entity {
     var currentHP = Stat(statName: "HP", val: 1)
     var maxMP = Stat(statName: "MMP", val: 1)
     var currentMP =  Stat(statName: "MP", val: 1)
+    var ACC = Stat(statName: "ACC", val: 1)
     var EXP = Stat(statName: "EXP", val: 0) // Current Experience
     var MAT = Stat(statName: "MAT", val: 1) // Base Arcane Attack
     var MDF = Stat(statName: "MDF", val: 0) // Base Arcane Defense
@@ -84,9 +85,6 @@ class Entity {
         }
     }
     
-    func levelDidChange() {
-        
-    }
     
 }
 

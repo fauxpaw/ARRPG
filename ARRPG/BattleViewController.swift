@@ -117,13 +117,16 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         let next = AttackRateCalculator.shared.getNextAttack(entity: player)
         Timer.scheduledTimer(timeInterval: next, target: self, selector: #selector(self.enableAttackButton), userInfo: nil, repeats: false)
         
-        let dmg = DamageHandler.shared.calculateBaseDMG(attacker: player, defender: player.target!)
-        let hpResult = player.target!.takeDmg(amount: dmg)
-        self.updateStats()
-        if hpResult < 1 {
-            self.changeState(toState: LootBattleState(owner: self))
+        //check for hit & apply dmg
+        let hit = HitRateCalculator.shared.willAttackHit(attacker: player, defender: player.target!)
+        if hit {
+            let dmg = DamageHandler.shared.calculateBaseDMG(attacker: player, defender: player.target!)
+            let hpResult = player.target!.takeDmg(amount: dmg)
+            self.updateStats()
+            if hpResult < 1 {
+                self.changeState(toState: LootBattleState(owner: self))
+            }
         }
-        
     }
     
     @IBAction func magicButtonSelected(_ sender: Any) {

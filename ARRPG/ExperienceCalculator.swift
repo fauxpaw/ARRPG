@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ExperienceCalculator {
+class ExperienceCalculator {
     
     static let shared = ExperienceCalculator()
     

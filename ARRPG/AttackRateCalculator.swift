@@ -28,6 +28,5 @@ class AttackRateCalculator {
         default:
             return TimeInterval(2)
         }
-    
     }
 }
