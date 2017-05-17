@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class Bag {
     
     var capacity: Int = 30

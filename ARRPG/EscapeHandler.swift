@@ -12,7 +12,6 @@ import Foundation
 class EscapeHandler {
     
     static let shared = EscapeHandler()
-    
     private init() {}
     
     func willEscape(player: Entity, monster: Entity) -> Bool {

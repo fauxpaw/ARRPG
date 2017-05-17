@@ -50,7 +50,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         self.spriteScene = SpriteScene(size: self.view.bounds.size)
         self.sceneView.overlaySKScene = self.spriteScene
         let staby = Spatha(owner: player)
-        player.equipItem(item: staby, possibleSlots: staby.possibleSlots)
+        let _ = player.equipItem(item: staby, possibleSlots: staby.possibleSlots)
         self.changeState(toState: InitialBattleState(owner: self))
         self.changeState(toState: CombatBattleState(owner: self))
     }
@@ -118,6 +118,14 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         }
     }
     
+    func castFrostbolt() {
+        print("frost bolt!")
+    }
+    
+    func castFireball() {
+        print("fireball!")
+    }
+    
     @IBAction func attackButtonPressed(_ sender: Any) {
         //button cooldown
         self.attackButton.isEnabled = false
@@ -139,10 +147,20 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     
     @IBAction func magicButtonSelected(_ sender: Any) {
         
+        let alertVC = UIAlertController(title: "Spellbook", message: nil, preferredStyle: .actionSheet)
+        let fireball = UIAlertAction(title: "Fireball", style: .default) { (action) in
+            self.castFireball()
+            //self.dismiss(animated: true, completion: nil)
+        }
         
-        print("Casting magic")
-        let heal = DamageHandler.shared.heal(caster: player, target: player.target!)
-        _ = player.target?.takeDmg(amount: -heal)
+        let frostbolt = UIAlertAction(title: "Frostbolt", style: .default) { (action) in
+            self.castFrostbolt()
+        }
+        
+        alertVC.addAction(fireball)
+        alertVC.addAction(frostbolt)
+        self.present(alertVC, animated: true, completion: nil)
+        
         self.updateStats()
     }
     

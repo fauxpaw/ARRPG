@@ -24,8 +24,7 @@ class CombatBattleState: BattleState {
         print("leaving combat state")
         battleVC.mob = nil
         battleVC.player.target = nil
-        //disable the combat menu
-    
+        battleVC.sceneView.removeMonster()
     }
     
     func setupAttackMenu() {
