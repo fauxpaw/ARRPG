@@ -11,9 +11,7 @@ import Foundation
 class ExperienceCalculator {
     
     static let shared = ExperienceCalculator()
-    
     private init() {}
-    
     
     func determineExpForMonster(killer: Entity, victim: Entity) {
         //check level

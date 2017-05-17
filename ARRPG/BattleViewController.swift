@@ -50,7 +50,7 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
         self.spriteScene = SpriteScene(size: self.view.bounds.size)
         self.sceneView.overlaySKScene = self.spriteScene
         let staby = Spatha(owner: player)
-        player.equipItem(item: staby, possibleSlots: staby.possibleSlots)
+        let _ = player.equipItem(item: staby, possibleSlots: staby.possibleSlots)
         self.changeState(toState: InitialBattleState(owner: self))
         self.changeState(toState: CombatBattleState(owner: self))
     }
@@ -107,7 +107,23 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     }
     
     func enableAttackButton() {
-        self.attackButton.isEnabled = true
+        DispatchQueue.main.async {
+            self.attackButton.isEnabled = true
+        }
+    }
+    
+    func enableRunButton() {
+        DispatchQueue.main.async {
+            self.runButton.isEnabled = true
+        }
+    }
+    
+    func castFrostbolt() {
+        print("frost bolt!")
+    }
+    
+    func castFireball() {
+        print("fireball!")
     }
     
     @IBAction func attackButtonPressed(_ sender: Any) {
@@ -131,9 +147,20 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     
     @IBAction func magicButtonSelected(_ sender: Any) {
         
-        print("Casting magic")
-        let heal = DamageHandler.shared.heal(caster: player, target: player.target!)
-        _ = player.target?.takeDmg(amount: -heal)
+        let alertVC = UIAlertController(title: "Spellbook", message: nil, preferredStyle: .actionSheet)
+        let fireball = UIAlertAction(title: "Fireball", style: .default) { (action) in
+            self.castFireball()
+            //self.dismiss(animated: true, completion: nil)
+        }
+        
+        let frostbolt = UIAlertAction(title: "Frostbolt", style: .default) { (action) in
+            self.castFrostbolt()
+        }
+        
+        alertVC.addAction(fireball)
+        alertVC.addAction(frostbolt)
+        self.present(alertVC, animated: true, completion: nil)
+        
         self.updateStats()
     }
     
@@ -145,8 +172,21 @@ class BattleViewController: GameViewController, arrowsUIProtocol {
     
     @IBAction func runButtonSelected(_ sender: Any) {
         
+        DispatchQueue.main.async {
+            self.runButton.isEnabled = false
+            self.runButton.isHighlighted = true
+        }
+        //waits 5 seconds between run attempts
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.enableRunButton), userInfo: nil, repeats: false)
+        
         print("Trying to run away!")
-        performSegue(withIdentifier: "endBattle", sender: self)
+        guard let mob = mob else {return}
+        let check = EscapeHandler.shared.willEscape(player: player, monster: mob)
+        if check {
+            performSegue(withIdentifier: "endBattle", sender: self)
+            return
+        }
+        print("could not escape!")
         
     }
     

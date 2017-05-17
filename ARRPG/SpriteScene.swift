@@ -11,13 +11,6 @@ import SpriteKit
 
 class SpriteScene: SKScene {
     
-    //
-    //  PauseScene.swift
-    //  CombinedSpriteKitSceneKit
-    //
-    //  Created by Davis Allie on 21/05/2015.
-    //  Copyright (c) 2015 tutsplus. All rights reserved.
-    //
         var pauseNode: SKSpriteNode!
         var scoreNode: SKLabelNode!
         

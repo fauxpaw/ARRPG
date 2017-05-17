@@ -42,4 +42,10 @@ class DamageHandler {
         let value = caster.ATK.getValue() //<- change from atk value to some heal value
         return value
     }
+    
+    func calculateSpellDmg(spell: Spell, target: Entity) {
+        
+        
+        
+    }
 }

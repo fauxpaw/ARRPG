@@ -190,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChK-iG-qt2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1682.4000000000001" y="1665.5172413793105"/>
+            <point key="canvasLocation" x="-1682" y="956"/>
         </scene>
         <!--Shop View Controller-->
         <scene sceneID="f8y-Rz-7AM">
@@ -356,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2506" y="36"/>
+            <point key="canvasLocation" x="-2940" y="36"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="GHm-pl-xXo">
@@ -384,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4P-uM-fX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1682" y="903"/>
+            <point key="canvasLocation" x="-1682" y="1675"/>
         </scene>
         <!--Battle View Controller-->
         <scene sceneID="Buf-U5-POl">
@@ -561,7 +561,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hRE-l5-48Y"/>
-        <segue reference="rs1-Fg-oTL"/>
+        <segue reference="F2D-hj-P7r"/>
+        <segue reference="s2x-sp-d8T"/>
     </inferredMetricsTieBreakers>
 </document>
